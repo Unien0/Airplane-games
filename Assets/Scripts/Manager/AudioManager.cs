@@ -7,26 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    [Header("音楽データベース")]
+    [Header("音乐SO")]
     public SoundDetailsList_SO soundDetailsData;
     public SceneSoundList_SO sceneSoundData;
     [Header("Audio Source")]
     public AudioSource ambientSource;
     public AudioSource gameSource;
 
-    //ランダム再生時間
+    //随机播放时间
     //public float MusicStartSecond => Random.Range(5f,15f);
     //private Coroutine soundRoutine;
 
     [Header("Audio Mixer")]
     public AudioMixer audioMixer;
 
-    //AudioMixerの状態
+    //AudioMixer状态
     [Header("Snapshots")]
     public AudioMixerSnapshot normalSnapShot;
     public AudioMixerSnapshot muteSnapShot;
 
-    //音楽オーバータイムの設定
+    //音乐结束时间
     private float musicTransitionSecond = 3f;
 
 
@@ -43,7 +43,7 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     /// <summary>
-    /// 再生イベントの設定
+    /// 播放事件设定
     /// </summary>
     /// <param name="soundName"></param>
     private void OnPlaySoundEvent(SoundName soundName)
@@ -54,29 +54,29 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     /// <summary>
-    /// シーンBGM再生イベントの設定
+    /// 场景BGM播放设置
     /// </summary>
     private void OnAfterSceneLoadedEvent()
     {
-        //関連シーンが開始されたとき
+        //播放相关BGM
         string currentScene = SceneManager.GetActiveScene().name;
 
-        //対応するシーン音楽の取得
+        //获得对应场景BGM
         SceneSoundItem sceneSound = sceneSoundData.GetSceneSoundItem(currentScene);
 
-        //むだ出し防止
+        //防止BUG
         if (sceneSound == null)
             return;
 
-        //対応する環境音とBGMを読み込む
+        //获取对应环境音和BGM
         SoundDetails ambient = soundDetailsData.GetSoundDetails(sceneSound.ambient);
         SoundDetails music = soundDetailsData.GetSoundDetails(sceneSound.music);
 
-        //音楽インボリュート効果の設定
+        //音乐渐入渐出
         PlayerAmbientClip(ambient,0.5f);
         PlayerMusicClip(music,musicTransitionSecond);
 
-        ////遅延再生関連（今要らないけど削除しない
+        ////延迟播放
         //if (soundRoutine != null)
         //{
         //    StopCoroutine(soundRoutine);
@@ -88,12 +88,12 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     /// <summary>
-    /// BGMを再生
+    /// 音乐播放
     /// </summary>
     /// <param name="soundDetails"></param>
     private void PlayerMusicClip(SoundDetails soundDetails , float transitionTime)
     {
-        //AudioMixerの対応するトラックを取得する
+        //获取音频混合器的相应轨迹
         audioMixer.SetFloat("MusicVolume", ConertSoundVolume(soundDetails.soundVolume));
         gameSource.clip = soundDetails.soundClip;
         if (gameSource.isActiveAndEnabled)
@@ -103,7 +103,7 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     /// <summary>
-    /// 環境音を再生する
+    /// 播放环境音
     /// </summary>
     /// <param name="soundDetails"></param>
     private void PlayerAmbientClip(SoundDetails soundDetails, float transitionTime)
@@ -116,7 +116,7 @@ public class AudioManager : Singleton<AudioManager>
         normalSnapShot.TransitionTo(transitionTime);
     }
 
-    //遅延再生
+    //遅延播放
     //private IEnumerator PlaySoundRoutine(SoundDetails music, SoundDetails ambient)
     //{
     //    if (music != null && ambient != null)
@@ -127,7 +127,7 @@ public class AudioManager : Singleton<AudioManager>
     //    }
     //}
 
-    //音量を(-80,20)の範囲区間に調整する
+    //将音量调整到（-80,20）的范围区间
     private float ConertSoundVolume(float amount)
     {
         return (amount * 100 - 80);

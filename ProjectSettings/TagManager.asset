@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Miner
+  - Zombie
+  - Enemy
+  - Object
   layers:
   - Default
   - TransparentFX
@@ -11,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Object
   - 
   - 
   - 
@@ -40,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 3376556843
+    locked: 0
+  - name: Enemy
+    uniqueID: 2415046221
+    locked: 0
+  - name: Player
+    uniqueID: 1124964761
+    locked: 0
+  - name: UI
+    uniqueID: 804442479
     locked: 0
