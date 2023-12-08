@@ -59,11 +59,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(transform.right * -playerTurningSpeed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Rotate(Vector3.forward * -playerTurningSpeed * playerAcceleration * Time.deltaTime);
+            }
+            else
+            {
+                transform.Rotate(Vector3.forward * -playerTurningSpeed * Time.deltaTime);
+            }
+
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(transform.right * playerTurningSpeed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Rotate(Vector3.forward * playerTurningSpeed * playerAcceleration * Time.deltaTime);
+            }
+            else
+            {
+                transform.Rotate(Vector3.forward * playerTurningSpeed * Time.deltaTime);
+            }
         }
     }
 
