@@ -40,13 +40,13 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _TwirlFrequency: 2
-    - _TwirlStrength: 0.3
+    - _TwirlFrequency: 1
+    - _TwirlStrength: 0.4
     m_Colors:
     - _Color1: {r: 0.04846031, g: 0.8923416, b: 0.9339623, a: 0}
     - _Color2: {r: 0.1122731, g: 0.2097417, b: 0.8207547, a: 0}
-    - _NoiseSpeed: {r: -1, g: 0.2, b: 0, a: 0}
-    - _NoiseTiling: {r: 0.1, g: 1, b: 0, a: 0}
+    - _NoiseSpeed: {r: -4, g: 0, b: 0, a: 0}
+    - _NoiseTiling: {r: 6, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9181053484541106562
 MonoBehaviour:
