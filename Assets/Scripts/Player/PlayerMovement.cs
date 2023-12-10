@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         get { if (playerData != null) return playerData.playerDeceleration; else return 0; }
     }
-    public float playerReverseDecelerationMultiplier//反向减速系数
+    public float playerReverseDecelerationMultiplier//反向减速系数，增加后加快减速速度
     {
         get { if (playerData != null) return playerData.playerReverseDecelerationMultiplier; else return 0; }
     }
@@ -72,11 +72,13 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         if (verticalInput > 0f)
         {
+            //玩家按下W后会缓慢加速
             currentMoveSpeed = Mathf.Clamp(rb2D.velocity.magnitude + verticalInput * playerAcceleration * Time.deltaTime, playerBaseSpeed, playerMaxSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
         else if (verticalInput < 0f)
         {
+            //玩家按下S后会加快减速
             currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude + verticalInput * playerDeceleration * playerReverseDecelerationMultiplier * Time.deltaTime, playerMinSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
@@ -85,6 +87,15 @@ public class PlayerMovement : MonoBehaviour
             currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude - playerDeceleration * Time.deltaTime, playerBaseSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
+    }
+
+    /// <summary>
+    /// 玩家在碰撞后减速
+    /// </summary>
+    /// <param name="decelerationMultiplier"></param>
+    public void DecreaseSpeed(float decelerationMultiplier)
+    {
+        currentMoveSpeed *= (1 - decelerationMultiplier);
     }
 
     /// <summary>

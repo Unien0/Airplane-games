@@ -16,12 +16,12 @@ MonoBehaviour:
   playerIcon: {fileID: 0}
   playerOnWorldSprite: {fileID: 0}
   playerDescription: 
-  playerMaxHP: 0
-  playerHP: 0
+  playerMaxHP: 100
+  playerHP: -2
   playerBaseSpeed: 2
   playerMaxSpeed: 10
-  playerMinSpeed: 0.5
-  playerCurrentSpeed: 2
+  playerMinSpeed: 0
+  playerCurrentSpeed: 1
   playerTurningSpeed: 15
   playerAcceleration: 5
   playerDeceleration: 2
