@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerData_SO", menuName = "Player/PlayerDetails")]
+[CreateAssetMenu(fileName = "PlayerData_SO", menuName = "Data/Player")]
 public class PlayerData_SO : ScriptableObject
 {
     [Header("PlayerData")]
