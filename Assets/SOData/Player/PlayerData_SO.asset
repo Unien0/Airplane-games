@@ -18,10 +18,14 @@ MonoBehaviour:
   playerDescription: 
   playerMaxHP: 0
   playerHP: 0
-  playerMaxSpeed: 2
+  playerBaseSpeed: 2
+  playerMaxSpeed: 10
+  playerMinSpeed: 0.5
   playerCurrentSpeed: 2
   playerTurningSpeed: 15
-  playerAcceleration: 2
+  playerAcceleration: 5
+  playerDeceleration: 2
+  playerReverseDecelerationMultiplier: 1
   isDead: 0
   moveable: 0
   controllable: 0

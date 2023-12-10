@@ -8,17 +8,38 @@ public class PlayerMovement : MonoBehaviour
 
     #region SO数据获取
     //获取移速和转速
-    public float currentMoveSpeed
+    public float playerBaseSpeed//基础速度
+    {
+        get { if (playerData != null) return playerData.playerBaseSpeed; else return 0; }
+    }
+    public float playerMaxSpeed//最大速度
+    {
+        get { if (playerData != null) return playerData.playerMaxSpeed; else return 0; }
+    }
+    public float playerMinSpeed//最小速度
+    {
+        get { if (playerData != null) return playerData.playerMinSpeed; else return 0; }
+    }
+    public float currentMoveSpeed//当前速度【可变】
     {
         get { if (playerData != null) return playerData.playerCurrentSpeed; else return 0; }
+        set { playerData.playerCurrentSpeed = value; }
     }
-    public float playerTurningSpeed
+    public float playerTurningSpeed//转弯速度
     {
         get { if (playerData != null) return playerData.playerTurningSpeed; else return 0; }
     }
-    public float playerAcceleration
+    public float playerAcceleration//加速度
     {
         get { if (playerData != null) return playerData.playerAcceleration; else return 0; }
+    }
+    public float playerDeceleration//减速度
+    {
+        get { if (playerData != null) return playerData.playerDeceleration; else return 0; }
+    }
+    public float playerReverseDecelerationMultiplier//反向减速系数
+    {
+        get { if (playerData != null) return playerData.playerReverseDecelerationMultiplier; else return 0; }
     }
     public bool isDead
     {
@@ -43,18 +64,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 玩家移动
+    /// </summary>
     void Move()
     {
-        if (Input.GetKey(KeyCode.W))
+        float verticalInput = Input.GetAxis("Vertical");
+        if (verticalInput > 0f)
         {
-            rb2D.velocity = transform.up * currentMoveSpeed * playerAcceleration;
+            currentMoveSpeed = Mathf.Clamp(rb2D.velocity.magnitude + verticalInput * playerAcceleration * Time.deltaTime, playerBaseSpeed, playerMaxSpeed);
+            rb2D.velocity = transform.up * currentMoveSpeed;
+        }
+        else if (verticalInput < 0f)
+        {
+            currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude + verticalInput * playerDeceleration * playerReverseDecelerationMultiplier * Time.deltaTime, playerMinSpeed);
+            rb2D.velocity = transform.up * currentMoveSpeed;
         }
         else
         {
+            currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude - playerDeceleration * Time.deltaTime, playerBaseSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
     }
 
+    /// <summary>
+    /// 玩家转向
+    /// </summary>
     void Turnigng()
     {
         if (Input.GetKey(KeyCode.D))
