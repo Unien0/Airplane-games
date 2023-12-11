@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 5462095300063815047}
   - component: {fileID: 9012669791238904705}
   - component: {fileID: 3010991192239105642}
-  - component: {fileID: 3833561013447668250}
-  - component: {fileID: -5410705888625455058}
-  m_Layer: 0
+  - component: {fileID: -4340659510545073716}
+  m_Layer: 9
   m_Name: SpaceArtPublish_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,12 +102,12 @@ Rigidbody2D:
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 9432220c35d1d8f47ad7d66973ab291f, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &3833561013447668250
+--- !u!60 &-4340659510545073716
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +124,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.37, y: 0.38}
+    oldSize: {x: 0.74, y: 0.76}
     newSize: {x: 0.37, y: 0.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,24 +132,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.05355361, y: 0.067580946}
-      - {x: -0.0805361, y: 0.019152077}
-      - {x: -0.056670655, y: -0.044563435}
-      - {x: -0.03679539, y: -0.06975054}
-      - {x: 0.03208202, y: -0.0748129}
-      - {x: 0.0805361, y: -0.026409226}
-      - {x: 0.04764331, y: 0.0726433}
---- !u!114 &-5410705888625455058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176426526327926194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  damageMultiplier: 1
+    - - {x: -0.08808552, y: 0.14869362}
+      - {x: -0.17121616, y: 0.05686936}
+      - {x: -0.13990977, y: -0.07860339}
+      - {x: -0.08617105, y: -0.1549549}
+      - {x: 0.05794686, y: -0.16050014}
+      - {x: 0.1586936, y: -0.09234211}
+      - {x: 0.13364848, y: 0.10069831}
+      - {x: 0.07051785, y: 0.17060807}

@@ -4,9 +4,40 @@ using UnityEngine;
 
 public class SpaceArtPublishState : MonoBehaviour
 {
+    public int stoneHP;
+    
     public int baseDamage = 10;         // 基础伤害
     public float damageMultiplier = 1f; // 速度倍增因子
     public float playerDecelerationMultiplier = 0.5f;//玩家减速
+    public bool isDead;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Kill();
+        }
+    }
+
+    
+    public void TakeDamage(int dmg)
+    {
+        stoneHP -= dmg;
+
+        if (stoneHP <= 0)
+        {
+            gameObject.layer = 9;
+            isDead = true;
+            Kill();
+        }
+    }
+
+    public void Kill()
+    {
+        EventCenter.Broadcast(EventType.SpaceArtPublishParticle);
+        Destroy(this.gameObject);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

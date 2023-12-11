@@ -17,7 +17,7 @@ MonoBehaviour:
   playerOnWorldSprite: {fileID: 0}
   playerDescription: 
   playerMaxHP: 100
-  playerHP: -2
+  playerHP: 0
   playerBaseSpeed: 2
   playerMaxSpeed: 10
   playerMinSpeed: 0

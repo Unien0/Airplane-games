@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3753532145162701719}
   - component: {fileID: 8888429279390585001}
   - component: {fileID: 4330207647065614991}
-  - component: {fileID: 3795692818502408230}
   - component: {fileID: -7383760622993129925}
+  - component: {fileID: 1551771084012256595}
+  - component: {fileID: 2995202323323289194}
   m_Layer: 0
   m_Name: SpaceArtPublish_0
   m_TagString: Untagged
@@ -103,12 +104,39 @@ Rigidbody2D:
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 9432220c35d1d8f47ad7d66973ab291f, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &3795692818502408230
+--- !u!114 &-7383760622993129925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313818788793486609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 10
+  damageMultiplier: 1
+  playerDecelerationMultiplier: 0.5
+--- !u!114 &1551771084012256595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313818788793486609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c6429d004f611459aa7e5096aa144e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &2995202323323289194
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +153,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.99, y: 0.96}
+    oldSize: {x: 1.98, y: 1.92}
     newSize: {x: 0.99, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,34 +161,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.37942728, y: 0.21894467}
-      - {x: 0.28074503, y: 0.31121358}
-      - {x: 0.12563066, y: 0.36725873}
-      - {x: 0.007831401, y: 0.36159587}
-      - {x: -0.19924709, y: 0.17629348}
-      - {x: -0.20430508, y: 0.07954952}
-      - {x: -0.24896275, y: 0.026608743}
-      - {x: -0.26524046, y: -0.037895624}
-      - {x: -0.34527028, y: -0.11397681}
-      - {x: -0.38093308, y: -0.20406689}
-      - {x: -0.38942727, y: -0.24045047}
-      - {x: -0.3294273, y: -0.3545174}
-      - {x: -0.24499999, y: -0.3615959}
-      - {x: -0.11915701, y: -0.31593308}
-      - {x: 0.123764485, y: -0.20168598}
-      - {x: 0.28147367, y: -0.12238092}
-      - {x: 0.37376446, y: 0.045842994}
---- !u!114 &-7383760622993129925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6313818788793486609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 10
-  damageMultiplier: 1
+    - - {x: 0.7408845, y: 0.52}
+      - {x: 0.37362814, y: 0.7272563}
+      - {x: 0.004777724, y: 0.72344404}
+      - {x: -0.36388856, y: 0.45388862}
+      - {x: -0.41855392, y: 0.17489012}
+      - {x: -0.69255495, y: -0.18611139}
+      - {x: -0.7786664, y: -0.3808891}
+      - {x: -0.79362816, y: -0.58}
+      - {x: -0.6627136, y: -0.7381708}
+      - {x: -0.48999998, y: -0.7381708}
+      - {x: -0.24274367, y: -0.64179903}
+      - {x: -0.10505456, y: -0.51564854}
+      - {x: 0.27362815, y: -0.43817085}
+      - {x: 0.7081709, y: -0.10725631}
+      - {x: 0.7463417, y: 0.15274367}

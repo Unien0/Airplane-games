@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-//オブジェクトプール管理
+//对象池
 public class PoolManager : MonoBehaviour
 {
-    //オブジェクトプール内のオブジェクト
+    //对象池内的物体
     public List<GameObject> poolPrefabs;
     private List<ObjectPool<GameObject>> poolEffectList = new List<ObjectPool<GameObject>>();
-    //サウンドスタック
+    //声音堆栈
     private Queue<GameObject> soundQueue = new Queue<GameObject>();
 
     private void OnEnable()
@@ -22,13 +22,13 @@ public class PoolManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 対応するオブジェクトの生成
+    /// 生成对应物体
     /// </summary>
     private void CreateSoundPool()
     {
         var parent = new GameObject(poolPrefabs[0].name).transform;
         parent.SetParent(transform);
-        //20+個の空のオブジェクトを設定して
+        //设置20个空物体
         for (int i = 0; i < 20; i++)
         {
             GameObject newObj = Instantiate(poolPrefabs[0], parent);
@@ -37,7 +37,7 @@ public class PoolManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// オブジェクトコンポーネントの取得
+    /// 获取音频
     /// </summary>
     /// <returns></returns>
     private GameObject GetPoolObject()
@@ -48,7 +48,7 @@ public class PoolManager : MonoBehaviour
     }
 
     /// <summary>
-    /// サウンド初期化の設定
+    /// 声音初始化
     /// </summary>
     /// <param name="soundDetails"></param>
     private void InitSoundEffect(SoundDetails soundDetails)
@@ -60,7 +60,7 @@ public class PoolManager : MonoBehaviour
     }
 
     /// <summary>
-    /// サウンドをオフにする
+    /// 关闭声音播放
     /// </summary>
     /// <param name="obj"></param>
     /// <param name="duration"></param>
@@ -73,11 +73,10 @@ public class PoolManager : MonoBehaviour
     }
 
     /// <summary>
-    /// サウンドを再生するサブオブジェクトコードは、再生が必要なときに内容を書くことができます
+    /// 如果需要播放声音的话填写以下内容
     /// </summary>
     private void CallMusic()
     {
-        //使用するときは適切なサウンド名に変更してください
         EventHandler.CallPlaySoundEvent(SoundName.none);
     }
 }

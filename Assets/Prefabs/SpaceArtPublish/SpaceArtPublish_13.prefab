@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2008030225122382938}
   - component: {fileID: 8450107153868375170}
   - component: {fileID: 6971732678791172520}
-  - component: {fileID: 3404158618616965771}
-  - component: {fileID: -2408565462970865829}
+  - component: {fileID: -685740067880563607}
+  - component: {fileID: -6056956242711271180}
+  - component: {fileID: 4234325741088224546}
   m_Layer: 0
   m_Name: SpaceArtPublish_13
   m_TagString: Untagged
@@ -103,12 +104,24 @@ Rigidbody2D:
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 9432220c35d1d8f47ad7d66973ab291f, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &3404158618616965771
+--- !u!114 &-685740067880563607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264369260793282410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c6429d004f611459aa7e5096aa144e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &-6056956242711271180
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +138,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.62, y: 0.58}
+    oldSize: {x: 1.24, y: 1.16}
     newSize: {x: 0.62, y: 0.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,21 +146,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.07, y: 0.14}
-      - {x: -0.017134875, y: 0.1810814}
-      - {x: -0.1321628, y: 0.16502795}
-      - {x: -0.20037909, y: 0.079297684}
-      - {x: -0.20573026, y: -0.016432561}
-      - {x: -0.18929768, y: -0.045730248}
-      - {x: -0.14535116, y: -0.11037909}
-      - {x: -0.10675578, y: -0.12897447}
-      - {x: -0.049999997, y: -0.16037908}
-      - {x: 0.038216278, y: -0.17751397}
-      - {x: 0.096811645, y: -0.17929769}
-      - {x: 0.13502793, y: -0.1610814}
-      - {x: 0.17897448, y: -0.118216276}
-      - {x: 0.19859536, y: 0.02037909}
---- !u!114 &-2408565462970865829
+    - - {x: 0.24699235, y: 0.13098654}
+      - {x: 0.14, y: 0.28}
+      - {x: -0.0348759, y: 0.3700827}
+      - {x: -0.24545503, y: 0.3304137}
+      - {x: -0.41520682, y: 0.14528956}
+      - {x: -0.44, y: -0.04}
+      - {x: -0.39999998, y: -0.12}
+      - {x: -0.28, y: -0.26}
+      - {x: -0.15008272, y: -0.31520686}
+      - {x: -0.10495863, y: -0.34016547}
+      - {x: 0.089917265, y: -0.36016548}
+      - {x: 0.22016546, y: -0.3651241}
+      - {x: 0.31504136, y: -0.3251241}
+      - {x: 0.37553775, y: -0.22016548}
+      - {x: 0.40528956, y: 0.015537769}
+--- !u!114 &4234325741088224546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,5 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
+  baseDamage: 6
   damageMultiplier: 1
+  playerDecelerationMultiplier: 0.5
