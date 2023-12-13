@@ -35,7 +35,6 @@ MonoBehaviour:
     - Cinemachine
     - Fungus
     - FungusExamples
-    - Pools
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
