@@ -14,7 +14,7 @@ public class SpaceArtPublishState : MonoBehaviour
 
     private void Update()
     {
-        //Kill();
+        Kill();
     }
 
     public void TakeDamage(int dmg)
@@ -33,15 +33,15 @@ public class SpaceArtPublishState : MonoBehaviour
     {
 
         //测试用脚本
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    Vector3 pos = this.transform.position;
-        //    EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
-        //    Destroy(this.gameObject);
-        //}
-        Vector3 pos = this.transform.position;
-        EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
-        Destroy(this.gameObject);
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Vector3 pos = this.transform.position;
+            EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
+            //Destroy(this.gameObject);
+        }
+        //Vector3 pos = this.transform.position;
+        //EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
+        //Destroy(this.gameObject);
     }
 
 

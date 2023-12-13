@@ -1,20 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Pool;
+﻿using UnityEngine;
 
-public class StoneSplashingPool : MonoBehaviour
+public class StoneSplashingPool : BasePool<SpaceArtPublishParticleEffect>
 {
-    public GameObject Effect;
-    public int BasicQuantity = 10;
-    public int MaxQuantity = 1000;
-
-    ObjectPool<GameObject> pool;
-    private void Awake()
+     void Awake()
     {
-        pool = new ObjectPool<GameObject>(createFunc, actionOnGet, actionOnRelease, actionOnDestroy, true, BasicQuantity, MaxQuantity);
-
+        Initialized();
         EventCenter.AddListener<Vector3>(EventType.SpaceArtPublishParticle, GetObject);
     }
 
@@ -23,32 +13,19 @@ public class StoneSplashingPool : MonoBehaviour
         EventCenter.RemoveListener<Vector3>(EventType.SpaceArtPublishParticle, GetObject);
     }
 
-    private GameObject createFunc()
+    protected override SpaceArtPublishParticleEffect createFunc()
     {
-        var obj = Instantiate(Effect, transform);
-        obj.GetComponent<SpaceArtPublishParticleEffect>().pool = pool;
+        var obj = base.createFunc();
+        obj.SetDeactivateAction(delegate { Release(obj); });
         return obj;
-    }
-
-    private void actionOnGet(GameObject obj)
-    {
-        obj.gameObject.SetActive(true);
-    }
-
-    private void actionOnRelease(GameObject obj)
-    {
-        obj.gameObject.SetActive(false);
-    }
-
-    private void actionOnDestroy(GameObject obj)
-    {
-        Destroy(obj);
     }
 
     void GetObject(Vector3 position)
     {
-        var effect = pool.Get();
-        effect.transform.position = position;
+        //获取到对象池的对象
+        Get();
+        //将对象放置到指定位置
+        gameObject.transform.position = position;
     }
 
 }

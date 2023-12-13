@@ -7,15 +7,19 @@ public class SpaceArtPublishParticleEffect : MonoBehaviour
 {
     public ObjectPool<GameObject> pool;
     private float time;
+    System.Action<SpaceArtPublishParticleEffect> deactivateAction;
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 5)
+        if (time >= 3)
         {
-            time -= 5;
-            pool.Release(gameObject);
+            time -= 3;
+            deactivateAction.Invoke(this);
         }
+    }
+    public void SetDeactivateAction(System.Action<SpaceArtPublishParticleEffect> deactivateAction)
+    {
+        this.deactivateAction = deactivateAction;
     }
 }
