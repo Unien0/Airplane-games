@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class SpaceArtPublishParticleEffect : MonoBehaviour
 {
-    public ObjectPool<GameObject> pool;
     private float time;
-    System.Action<SpaceArtPublishParticleEffect> deactivateAction;
+    private float maxTime = 3.0f;
+    //System.Action<SpaceArtPublishParticleEffect> deactivateAction;
+    private StoneSplashingPool parentPool;
+
+    private void OnEnable()
+    {
+        time = 0f;
+    }
+
+    private void Start()
+    {
+        parentPool = FindObjectOfType<StoneSplashingPool>();
+    }
 
     void Update()
     {
@@ -15,11 +25,12 @@ public class SpaceArtPublishParticleEffect : MonoBehaviour
         if (time >= 3)
         {
             time -= 3;
-            deactivateAction.Invoke(this);
+            parentPool.ReleaseExplosion(this);
+            //deactivateAction.Invoke(this);
         }
     }
-    public void SetDeactivateAction(System.Action<SpaceArtPublishParticleEffect> deactivateAction)
-    {
-        this.deactivateAction = deactivateAction;
-    }
+    //public void SetDeactivateAction(System.Action<SpaceArtPublishParticleEffect> deactivateAction)
+    //{
+    //    this.deactivateAction = deactivateAction;
+    //}
 }

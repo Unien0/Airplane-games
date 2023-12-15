@@ -5,27 +5,22 @@ public class StoneSplashingPool : BasePool<SpaceArtPublishParticleEffect>
      void Awake()
     {
         Initialized();
-        EventCenter.AddListener<Vector3>(EventType.SpaceArtPublishParticle, GetObject);
     }
+    //protected override SpaceArtPublishParticleEffect createFunc()
+    //{
+    //    var obj = base.createFunc();
+    //    obj.SetDeactivateAction(delegate { Release(obj); });
+    //    return obj;
+    //}
 
-    private void OnDestroy()
+    public void GetExplosion(Vector3 pos)
     {
-        EventCenter.RemoveListener<Vector3>(EventType.SpaceArtPublishParticle, GetObject);
+        var temp = Get();
+        temp.transform.position = pos;
     }
 
-    protected override SpaceArtPublishParticleEffect createFunc()
+    public void ReleaseExplosion(SpaceArtPublishParticleEffect obj)
     {
-        var obj = base.createFunc();
-        obj.SetDeactivateAction(delegate { Release(obj); });
-        return obj;
+        Release(obj);
     }
-
-    void GetObject(Vector3 position)
-    {
-        //获取到对象池的对象
-        Get();
-        //将对象放置到指定位置
-        gameObject.transform.position = position;
-    }
-
 }

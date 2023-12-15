@@ -31,12 +31,12 @@ public class SpaceArtPublishState : MonoBehaviour
 
     public void Kill()
     {
-
         //测试用脚本
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Vector3 pos = this.transform.position;
-            EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
+            FindObjectOfType<StoneSplashingPool>().GetExplosion(this.transform.position);
+            //Vector3 pos = this.transform.position;
+            //EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
             //Destroy(this.gameObject);
         }
         //Vector3 pos = this.transform.position;
