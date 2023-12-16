@@ -12,10 +12,11 @@ public class PlayerData_SO : ScriptableObject
     public Sprite playerOnWorldSprite;//游戏内画像
     [Multiline] public string playerDescription;//介绍
     [Space(10)]
+
     [Header("玩家属性")]
     public int playerMaxHP;//最大血量
     public int playerHP;//当前血量
-    [Header("_速度相关")]
+    [Header("_移动速度相关")]
     public float playerBaseSpeed;//基础速度
     public float playerMaxSpeed;//最大移速
     public float playerMinSpeed;//最小移速
@@ -24,8 +25,8 @@ public class PlayerData_SO : ScriptableObject
     public float playerAcceleration;//加速度
     public float playerDeceleration;//减速度
     public float playerReverseDecelerationMultiplier;//反向减速系数
+     [Space(10)]
 
-    [Space(10)]
     [Header("独立开关")]
     public bool isDead;//是否死亡
     public bool moveable;//是否可以移动

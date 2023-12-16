@@ -12,11 +12,6 @@ public class SpaceArtPublishState : MonoBehaviour
     public float playerDecelerationMultiplier = 0.5f;//玩家减速
     public bool isDead;
 
-    private void Update()
-    {
-        Kill();
-    }
-
     public void TakeDamage(int dmg)
     {
         stoneHP -= dmg;
@@ -32,16 +27,13 @@ public class SpaceArtPublishState : MonoBehaviour
     public void Kill()
     {
         //测试用脚本
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            FindObjectOfType<StoneSplashingPool>().GetExplosion(this.transform.position);
-            //Vector3 pos = this.transform.position;
-            //EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
-            //Destroy(this.gameObject);
-        }
-        //Vector3 pos = this.transform.position;
-        //EventCenter.Broadcast(EventType.SpaceArtPublishParticle, pos);
-        //Destroy(this.gameObject);
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    FindObjectOfType<StoneSplashingPool>().GetExplosion(this.transform.position);
+
+        //}
+        FindObjectOfType<StoneSplashingPool>().GetExplosion(this.transform.position);
+        Destroy(this.gameObject);
     }
 
 

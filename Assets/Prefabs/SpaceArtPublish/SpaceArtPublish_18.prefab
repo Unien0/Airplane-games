@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6110100547573615692}
   m_Layer: 0
   m_Name: SpaceArtPublish_18
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,9 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneHP: 0
   baseDamage: 8
   damageMultiplier: 1
   playerDecelerationMultiplier: 0.5
+  isDead: 0
 --- !u!114 &1845439638574812511
 MonoBehaviour:
   m_ObjectHideFlags: 0

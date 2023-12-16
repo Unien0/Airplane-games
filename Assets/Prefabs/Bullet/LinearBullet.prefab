@@ -268,6 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c020cea248e814ab07793628641e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletData: {fileID: 11400000, guid: 05ec617357afbf14e8fd9074b2701a12, type: 2}
+  linerBulletCurrentSpeed: 0
   speed: 10
   damage: 1
   existenceTime: 3

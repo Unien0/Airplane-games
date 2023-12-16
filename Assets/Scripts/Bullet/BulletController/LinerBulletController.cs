@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class LinerBulletController : MonoBehaviour
 {
-    public float timeCD = 1f;
+    public PlayerBullet_SO bulletData;
+    public float linerBulletCoolDownTime
+    {
+        get { if (bulletData != null) return bulletData.linerBulletCoolDownTime; else return 0; }
+    }
+    [SerializeField]
+    [ReadOnly]
     private float time;
 
     private Transform player;
@@ -18,19 +24,10 @@ public class LinerBulletController : MonoBehaviour
     {
         //FollowParentRotation();
         time += Time.deltaTime;
-        if (time>=timeCD)
+        if (time>= linerBulletCoolDownTime)
         {
-            time -= timeCD;
+            time -= linerBulletCoolDownTime;
             FindObjectOfType<BulletPool>().GetExplosion(this.transform.position,this.transform.rotation);
         }
     }
-
-    //void FollowParentRotation()
-    //{
-    //    // 获取父物体的旋转角度
-    //    Quaternion playerRotation = player.rotation;
-
-    //    // 将父物体的旋转应用到子物体
-    //    transform.rotation = playerRotation;
-    //}
 }
