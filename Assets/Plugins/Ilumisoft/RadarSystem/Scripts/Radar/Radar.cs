@@ -1,4 +1,4 @@
-using Ilumisoft.RadarSystem.UI;
+﻿using Ilumisoft.RadarSystem.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -138,22 +138,25 @@ namespace Ilumisoft.RadarSystem
             // Rotate the icon by the players y rotation if enabled
             if(ApplyRotation)
             {
-                // Get the forward vector of the player projected on the xz plane
-                var playerForwardDirectionXZ = Vector3.ProjectOnPlane(Player.transform.forward, Vector3.up);
+                // Get the forward vector of the player projected on the xy plane
+                var playerForwardDirectionXY= Vector3.ProjectOnPlane(Player.transform.forward, Vector3.up);
 
                 // Create a roation from the direction
-                var rotation = Quaternion.LookRotation(playerForwardDirectionXZ);
+                var rotation = Quaternion.LookRotation(playerForwardDirectionXY);
 
                 // Mirror y rotation
-                var euler = rotation.eulerAngles;
-                euler.y = -euler.y;
-                rotation.eulerAngles = euler;
+                //var euler = rotation.eulerAngles;
+                //euler.z = -euler.z;
+                //rotation.eulerAngles = euler;
 
-                // Rotate the icon location in 3D space
-                var rotatedIconLocation = rotation * new Vector3(iconLocation.x, 0.0f, iconLocation.y);
+                //根据玩家方向旋转
+               rotation = Player.transform.rotation;
+
+                // Rotate the icon location in 3D space，Inverse表示反向
+                var rotatedIconLocation = Quaternion.Inverse(rotation) * new Vector3(iconLocation.x, iconLocation.y, 0.0f);
 
                 // Convert from 3D to 2D
-                iconLocation = new Vector2(rotatedIconLocation.x, rotatedIconLocation.z);
+                iconLocation = new Vector2(rotatedIconLocation.x, rotatedIconLocation.y);
             }
 
             if (iconLocation.sqrMagnitude < radarSize*radarSize || locatable.ClampOnRadar)
@@ -177,7 +180,7 @@ namespace Ilumisoft.RadarSystem
         }
 
         /// <summary>
-        /// Returns the distance to the player on the x,z plane
+        /// Returns the distance to the player on the x,y plane
         /// </summary>
         /// <param name="locatable"></param>
         /// <returns></returns>
@@ -185,7 +188,7 @@ namespace Ilumisoft.RadarSystem
         {
             Vector3 distanceToPlayer = locatable.transform.position - Player.transform.position;
 
-            return new Vector2(distanceToPlayer.x, distanceToPlayer.z);
+            return new Vector2(distanceToPlayer.x, distanceToPlayer.y);
         }
     }
 }
