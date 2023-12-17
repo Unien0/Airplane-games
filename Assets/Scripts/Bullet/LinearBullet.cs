@@ -10,9 +10,13 @@ public class LinearBullet : MonoBehaviour
     {
         get { if (bulletData != null) return bulletData.linerBulletSpeed; else return 0; }
     }
-    public int linerBulletDamage
+    public int playerBulletDamage
     {
-        get { if (bulletData != null) return bulletData.linerBulletDamage; else return 0; }
+        get { if (bulletData != null) return bulletData.playerBulletDamage; else return 0; }
+    }
+    public float linerBulletDamageMultipler
+    {
+        get { if (bulletData != null) return bulletData.linerBulletDamageMultipler; else return 0; }
     }
     public float linerBulletExistenceTime
     {
@@ -28,7 +32,9 @@ public class LinearBullet : MonoBehaviour
     [SerializeField][ReadOnly]
     private float linerBulletCurrentSpeed=1;
     [SerializeField][ReadOnly]
-    private int linerBulletCurrentDamage=1;
+    private int playerBulletCurrentDamage = 1;
+    [SerializeField][ReadOnly]
+    private float linerBulletCurrentDamage=1;
     [SerializeField][ReadOnly]
     private int linerBulletCurrentPenetrationCount=1;
     [SerializeField][ReadOnly]
@@ -44,7 +50,8 @@ public class LinearBullet : MonoBehaviour
     private void Awake()
     {
         linerBulletCurrentSpeed = linerBulletSpeed;
-        linerBulletCurrentDamage = linerBulletDamage;
+        playerBulletCurrentDamage = playerBulletDamage;
+        linerBulletCurrentDamage = linerBulletDamageMultipler;
         linerBulletCurrentPenetrationCount = linerBulletPenetrationCount;
     }
 
@@ -82,7 +89,8 @@ public class LinearBullet : MonoBehaviour
         {
             //伤害传输
             SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
-            spaceArtPublishState.TakeDamage(linerBulletCurrentDamage); 
+            int damage = (int)(playerBulletCurrentDamage * linerBulletCurrentDamage);
+            spaceArtPublishState.TakeDamage(damage); 
             //回收
             linerBulletCurrentPenetrationCount--;
             if (linerBulletCurrentPenetrationCount <= 0)

@@ -70,19 +70,19 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        if (verticalInput > 0f)
+        if (verticalInput > 0.1f)
         {
             //玩家按下W后会缓慢加速
             currentMoveSpeed = Mathf.Clamp(rb2D.velocity.magnitude + verticalInput * playerAcceleration * Time.deltaTime, playerBaseSpeed, playerMaxSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
-        else if (verticalInput < 0f)
+        else if (verticalInput < -0.1f)
         {
             //玩家按下S后会加快减速
             currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude + verticalInput * playerDeceleration * playerReverseDecelerationMultiplier * Time.deltaTime, playerMinSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
         }
-        else
+        else if (verticalInput <0.1f && verticalInput>-0.1f)
         {
             currentMoveSpeed = Mathf.Max(rb2D.velocity.magnitude - playerDeceleration * Time.deltaTime, playerBaseSpeed);
             rb2D.velocity = transform.up * currentMoveSpeed;
