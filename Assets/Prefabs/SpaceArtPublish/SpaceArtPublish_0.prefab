@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7383760622993129925}
   - component: {fileID: 1551771084012256595}
   - component: {fileID: 2995202323323289194}
+  - component: {fileID: 148556237}
   m_Layer: 0
   m_Name: SpaceArtPublish_0
   m_TagString: Enemy
@@ -100,15 +101,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0.5
+  m_Mass: 1.4617803
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &-7383760622993129925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720cbb4b22854d642b6773459693084b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneHP: 0
+  stoneHP: 5
   baseDamage: 10
   damageMultiplier: 1
   playerDecelerationMultiplier: 0.5
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c6429d004f611459aa7e5096aa144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneSpeed: 0
 --- !u!60 &2995202323323289194
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +180,17 @@ PolygonCollider2D:
       - {x: 0.27362815, y: -0.43817085}
       - {x: 0.7081709, y: -0.10725631}
       - {x: 0.7463417, y: 0.15274367}
+--- !u!114 &148556237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313818788793486609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35fd54ac079a8b47aa6549789157333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4922837886278913688, guid: bb20153d02dc3e948b619b512feb0836, type: 3}
+  clampOnRadar: 0

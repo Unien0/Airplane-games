@@ -6,43 +6,68 @@ public class EnemyMovement : MonoBehaviour
 {
     Transform player;
     public float followRadius = 6f;
-    public float smoothTime = 0.5f;
-    private Vector2 currentVelocity;
+    public float escapeRadius = 3f;
+    public float moveSpeed = 2f;
+    public float randomMoveDuration = 3f;
+    public float stopDuration = 2f; // 时间间隔，停顿一段时间后再次判定左移还是右移
+    private bool isRandomMoving = false;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerState>().transform;
+        rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(RandomMoveCoroutine());
     }
+
 
     void Update()
     {
         if (player != null)
         {
-            // 计算敌人和玩家之间的距离
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // 如果距离大于半径+允许的误差，向玩家移动
-            if (distanceToPlayer > followRadius + 0.1f)
+            // 如果距离大于追逐半径，向玩家施加推力
+            if (distanceToPlayer > followRadius)
             {
-                // 计算朝向玩家的方向
-                Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
+                Vector2 direction = (player.position - transform.position).normalized;
 
-                // 使用 SmoothDamp 平滑地移动敌人
-                Vector2 targetPosition = (Vector2)player.position - direction * followRadius;
-                transform.position = Vector2.SmoothDamp((Vector2)transform.position, targetPosition, ref currentVelocity, smoothTime);
+                // 使用推力移动
+                rb.AddForce(direction * moveSpeed);
             }
-            // 如果距离小于半径-允许的误差，向相反方向移动
-            else if (distanceToPlayer < followRadius - 0.1f)
+            // 如果距离小于逃离半径，向相反方向施加推力
+            else if (distanceToPlayer < escapeRadius)
             {
-                // 计算朝向相反方向的方向
-                Vector2 direction = ((Vector2)transform.position - (Vector2)player.position).normalized;
+                Vector2 direction = (transform.position - player.position).normalized;
 
-                // 使用 SmoothDamp 平滑地移动敌人
-                Vector2 targetPosition = (Vector2)player.position + direction * followRadius;
-                transform.position = Vector2.SmoothDamp((Vector2)transform.position, targetPosition, ref currentVelocity, smoothTime);
+                // 使用推力移动
+                rb.AddForce(direction * moveSpeed);
             }
+        }
+    }
 
-            // 在这里可以添加其他处理，比如播放动画等
+    IEnumerator RandomMoveCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(stopDuration);
+
+            // 随机选择左移还是右移
+            int randomDirection = Random.Range(0, 2) == 0 ? -1 : 1;
+            Vector2 randomMoveDirection = new Vector2(randomDirection, 0f);
+
+            // 缓慢持续移动
+            float timer = 0f;
+            while (timer < randomMoveDuration)
+            {
+                // 如果不在追逐状态，进行随机移动
+                if (!isRandomMoving)
+                {
+                    rb.AddForce(randomMoveDirection * moveSpeed);
+                }
+                timer += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 }

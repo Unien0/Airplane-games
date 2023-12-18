@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7593384861884421765}
   - component: {fileID: 4903984208238573025}
   - component: {fileID: 5309763678593434550}
+  - component: {fileID: 7560043075961214375}
   m_Layer: 0
   m_Name: SpaceArtPublish_11
   m_TagString: Enemy
@@ -102,14 +103,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 0.8
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &7215456229735406170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c6429d004f611459aa7e5096aa144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneSpeed: 0
 --- !u!60 &7593384861884421765
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -189,3 +191,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c6429d004f611459aa7e5096aa144e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneSpeed: 0
+--- !u!114 &7560043075961214375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581882180473069756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35fd54ac079a8b47aa6549789157333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4922837886278913688, guid: bb20153d02dc3e948b619b512feb0836, type: 3}
+  clampOnRadar: 0

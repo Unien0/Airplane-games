@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 269260988980863533}
   - component: {fileID: 4039769169165120760}
   - component: {fileID: 1111742994552527740}
+  - component: {fileID: -6686265763850380687}
   m_Layer: 0
   m_Name: Enemy_Robber_Hammer
   m_TagString: Untagged
@@ -202,3 +203,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d4129b3e3e277499f060bd10d49b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followRadius: 6
+  escapeRadius: 3
+  moveSpeed: 2
+  randomMoveDuration: 3
+  stopDuration: 2
+--- !u!114 &-6686265763850380687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039769169165120709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35fd54ac079a8b47aa6549789157333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconPrefab: {fileID: 4922837886278913688, guid: 64491c38b1af452409456a53259a0f43, type: 3}
+  clampOnRadar: 1
