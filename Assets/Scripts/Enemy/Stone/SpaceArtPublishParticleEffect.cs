@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpaceArtPublishParticleEffect : MonoBehaviour
 {
     private float time;
-    private float maxTime = 3.0f;
     //System.Action<SpaceArtPublishParticleEffect> deactivateAction;
     private StoneSplashingPool parentPool;
 
