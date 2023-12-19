@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    public float followRadius = 6f;
+    public float followRadius = 4.5f;
     public float escapeRadius = 3f;
     public float moveSpeed = 2f;
+    public float maxSpeed = 4f;
     public float randomMoveDuration = 3f;
     public float stopDuration = 2f; // 时间间隔，停顿一段时间后再次判定左移还是右移
     private bool isRandomMoving = false;
@@ -17,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
     {
         player = FindObjectOfType<PlayerState>().transform;
         rb = GetComponent<Rigidbody2D>();
+        //环绕移动
         StartCoroutine(RandomMoveCoroutine());
     }
 
@@ -31,18 +33,29 @@ public class EnemyMovement : MonoBehaviour
             if (distanceToPlayer > followRadius)
             {
                 Vector2 direction = (player.position - transform.position).normalized;
+                Vector2 force = direction * moveSpeed;
 
-                // 使用推力移动
-                rb.AddForce(direction * moveSpeed);
+                // 检查当前速度是否超过最大速度
+                if (rb.velocity.magnitude < maxSpeed)
+                {
+                    // 使用推力移动
+                    rb.AddForce(force);
+                }
             }
             // 如果距离小于逃离半径，向相反方向施加推力
             else if (distanceToPlayer < escapeRadius)
             {
                 Vector2 direction = (transform.position - player.position).normalized;
+                Vector2 force = direction * moveSpeed;
 
-                // 使用推力移动
-                rb.AddForce(direction * moveSpeed);
+                // 检查当前速度是否超过最大速度
+                if (rb.velocity.magnitude < maxSpeed)
+                {
+                    // 使用推力移动
+                    rb.AddForce(force);
+                }
             }
+
         }
     }
 
@@ -61,7 +74,7 @@ public class EnemyMovement : MonoBehaviour
             while (timer < randomMoveDuration)
             {
                 // 如果不在追逐状态，进行随机移动
-                if (!isRandomMoving)
+                if (!isRandomMoving && rb.velocity.magnitude < maxSpeed)
                 {
                     rb.AddForce(randomMoveDirection * moveSpeed);
                 }

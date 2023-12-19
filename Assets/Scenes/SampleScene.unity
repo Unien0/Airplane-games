@@ -2142,7 +2142,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!1 &911652477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,7 +5284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120711, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_RootOrder
@@ -5292,11 +5292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120711, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.97
+      value: -9.96
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120711, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.99
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120711, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5336,7 +5336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120762, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_LinearDrag
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4039769169165120762, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       propertyPath: m_Constraints
