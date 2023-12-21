@@ -222,6 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8730ba5db2bb503418a09ba273b219a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5473025743393824524, guid: bd70e49b45e769549aa7f2d5e7a1738b, type: 3}
+  bulletSpawnPoint: {fileID: 4039769169165120711}
+  bulletForce: 10
+  shootInterval: 2
+  detectionDistance: 5
 --- !u!114 &-6686265763850380687
 MonoBehaviour:
   m_ObjectHideFlags: 0

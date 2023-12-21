@@ -16,9 +16,9 @@ public class EnemyBulletPool : BasePool<EnemyBullet>
 
     }
 
-    public void GetExplosion(Vector3 pos, Quaternion rotation)
+    public void GetExplosion()
     {
-        var temp = Get();
+        Get();
         //temp.transform.position = pos;
         //temp.transform.rotation = rotation;
     }

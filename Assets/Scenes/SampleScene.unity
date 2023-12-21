@@ -1696,6 +1696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceArtPublish_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313818788793486609, guid: 70c48f708e58cc94db71f20840a9507b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70c48f708e58cc94db71f20840a9507b, type: 3}
 --- !u!1 &587914618
