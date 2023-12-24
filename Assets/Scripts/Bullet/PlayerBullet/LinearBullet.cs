@@ -88,9 +88,11 @@ public class LinearBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //伤害传输
-            SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
+            //SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
+            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
             int damage = (int)(playerBulletCurrentDamage * linerBulletCurrentDamage);
-            spaceArtPublishState.TakeDamage(damage); 
+            //spaceArtPublishState.TakeDamage(damage);
+            enemyStats.TakeDamage(damage);
             //回收
             linerBulletCurrentPenetrationCount--;
             if (linerBulletCurrentPenetrationCount <= 0)

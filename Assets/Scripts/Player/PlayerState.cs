@@ -56,6 +56,7 @@ public class PlayerState : MonoBehaviour
         // 处理玩家死亡的逻辑，例如显示游戏结束画面、重新开始游戏等
         // 在这里你可以根据游戏需要添加其他逻辑
         Debug.Log("Player has died!");
+        Destroy(this.gameObject);
         //isDead = true;
         // 例如，你可以在这里重新加载场景
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);

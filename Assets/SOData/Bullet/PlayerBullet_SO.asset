@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114ed8ac87c4a724aae3a158e6583bf0, type: 3}
   m_Name: PlayerBullet_SO
   m_EditorClassIdentifier: 
-  linerBulletSpeed: 10
-  linerBulletDamage: 1
-  linerBulletCoolDownTime: 0.3
+  playerBulletDamage: 5
+  linerBulletCoolDownTime: 0.2
   linerBulletExistenceTime: 3
+  linerBulletSpeed: 20
+  linerBulletDamageMultipler: 1
   linerBulletPenetrationCount: 1
   trackingBulletSpeed: 0

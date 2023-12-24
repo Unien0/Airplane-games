@@ -30,8 +30,8 @@ public class EnemyBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //伤害传输
-            //PlayerState player = gameObject.GetComponent<PlayerState>();
-            //player.TakeDamage(damage);
+            PlayerState player = collision.gameObject.GetComponent<PlayerState>();
+            player.TakeDamage(damage);
             //回收
             parentPool.ReleaseExplosion(this);
         }

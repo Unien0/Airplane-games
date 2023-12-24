@@ -9,8 +9,8 @@ public class LinerBulletController : MonoBehaviour
     {
         get { if (bulletData != null) return bulletData.linerBulletCoolDownTime; else return 0; }
     }
-    [SerializeField]
-    [ReadOnly]
+
+    [SerializeField][ReadOnly]
     private float time;
 
     private Transform player;
