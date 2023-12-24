@@ -44,29 +44,35 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> relativeSpawnPoints;
 
     Transform player;
+    private EnemyPool enemyPool;
 
     void Start()
     {
         player = FindObjectOfType<PlayerState>().transform;
-        CalculateWaveQuota();
+        enemyPool = FindObjectOfType<EnemyPool>();//绑定对象池
+        CalculateWaveQuota();//游戏开始时候运行，用于生成第一波敌人
     }
 
     void Update()
     {
+        //当前波次数量小于设定的波次， 且可生成量=0，且未出于生成状态时
         if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
         {
-            StartCoroutine(BeginNextWave());
+            StartCoroutine(BeginNextWave());//利用协成开始下一波
         }
 
+        //设置计时器，如果时间=0时生成敌人
         spawnTimer += Time.deltaTime;
-
         if (spawnTimer >= waves[currentWaveCount].spawnInterval)
         {
             spawnTimer = 0f;
             SpawnEnemies();
         }
     }
-
+    /// <summary>
+    /// 开始下一波
+    /// </summary>
+    /// <returns></returns>
     IEnumerator BeginNextWave()
     {
         isWaveActive = true;
@@ -93,17 +99,30 @@ public class EnemySpawner : MonoBehaviour
         waves[currentWaveCount].waveQuota = currentWaveQuota;
 
     }
+
+    /// <summary>
+    /// 敌人生成
+    /// </summary>
     void SpawnEnemies()
     {
-
+        //如果敌人数量小于额定数量，且未到达最大数量时
         if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
         {
+            //循环敌人类型
             foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)
             {
                 if (enemyGroup.spawnCount < enemyGroup.enemyCount)//如果当前生成数量小于设定的敌人数量，则让其生成
                 {
+                    int PointsCount = relativeSpawnPoints.Count;//敌人生成点列表的数量
+
                     //生成敌人，之后可以把他们改成使用对象池
-                    Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
+                    //Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, PointsCount)].position, Quaternion.identity);
+
+                    //对象池方法
+                    var enemyP = enemyPool.Get();//取出敌人
+                    enemyP.transform.position = player.position + relativeSpawnPoints[Random.Range(0, PointsCount)].position;
+                    enemyP.transform.rotation = Quaternion.identity;
+
                     //Vector2 spawnPosition = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
                     //Instantiate(enemyGroup.enemyPrefab, spawnPosition, Quaternion.identity);
                     enemyGroup.enemyCount++;//增加出怪计时，用于增加波次

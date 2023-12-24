@@ -19,7 +19,7 @@ public class EnemyStats : MonoBehaviour
     public bool isDead;
 
     Transform player;
-
+    EnemyPool parentPool;
     Animator anim;
 
     void Awake()
@@ -34,6 +34,7 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerState>().transform;
+        parentPool = FindObjectOfType<EnemyPool>();
     }
 
     void Update()
@@ -52,10 +53,10 @@ public class EnemyStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             //改变个体Layer至敌人尸体栏
-            //gameObject.layer = 9;
+            gameObject.layer = 9;
             isDead = true;
             //anim.SetBool("Dead", true);
-            //Kill();
+            Kill();
         }
     }
 
@@ -64,6 +65,7 @@ public class EnemyStats : MonoBehaviour
     /// </summary>
     public void Kill()
     {
-        Destroy(this.gameObject);
+        FindObjectOfType<ExplosionEffectPool>().GetExplosion(this.transform.position);
+        parentPool.ReleaseExplosion(this);
     }
 }
