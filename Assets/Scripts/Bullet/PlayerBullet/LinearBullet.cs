@@ -83,16 +83,26 @@ public class LinearBullet : MonoBehaviour
         }
     }
 
+    void DealDamage(GameObject enemy)
+    {
+        //伤害传输
+        //SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
+        EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
+        int damage = (int)(playerBulletCurrentDamage * linerBulletCurrentDamage);
+        Debug.Log(damage);
+        //spaceArtPublishState.TakeDamage(damage);
+        if (enemyStats != null)
+        {
+            enemyStats.TakeDamage(damage);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
-            //伤害传输
-            //SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
-            EnemyStats enemyStats = collision.gameObject.GetComponent<EnemyStats>();
-            int damage = (int)(playerBulletCurrentDamage * linerBulletCurrentDamage);
-            //spaceArtPublishState.TakeDamage(damage);
-            enemyStats.TakeDamage(damage);
+            DealDamage(collision.gameObject);
+            
             //回收
             linerBulletCurrentPenetrationCount--;
             if (linerBulletCurrentPenetrationCount <= 0)

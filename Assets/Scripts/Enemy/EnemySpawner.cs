@@ -13,9 +13,9 @@ public class EnemySpawner : MonoBehaviour
         //public List<int> enemyCount;
         [Header("敌人类型")]
         public List<EnemyGroup> enemyGroups;
-        [Tooltip("当前波额定值，不能为0")] public int waveQuota;//当前波额定值
+        [Tooltip("在波次中生成的敌人总数，不能为0")] public int waveQuota;
         [Tooltip("生成间隔")] public float spawnInterval;//生成间隔
-        [Tooltip("第几波，默认为0")] public int spawnCount;//第几波
+        [Tooltip("已生成敌人数，默认为0")] public int spawnCount;
 
     }
 
@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         public string enemyName;
         [Tooltip("敌人数")] public int enemyCount;//敌人数
-        [Tooltip("生成数，默认为0")] public int spawnCount;//生成数
+        [Tooltip("波数")] public int spawnCount;//生成数
         public GameObject enemyPrefab;
 
     }
@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     public List<Wave> waves;
 
     [Header("参数")]
-    [Tooltip("当前波次")] public int currentWaveCount;//当前波次
+    [Tooltip("当前波次，默认为0")] public int currentWaveCount;//当前波次
     float spawnTimer;
     [Tooltip("波次间隔")] public float waveInterval;
     [Tooltip("敌人存活数")]public int enemiesAlive;//敌人存活数
@@ -113,6 +113,11 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (enemyGroup.spawnCount < enemyGroup.enemyCount)//如果当前生成数量小于设定的敌人数量，则让其生成
                 {
+                    if (enemiesAlive >= maxEnemiesAllowed)//如果怪物存活数大于设定量，则返回
+                    {
+                        maxEnemiesReached = true;
+                        return;
+                    }
                     int PointsCount = relativeSpawnPoints.Count;//敌人生成点列表的数量
 
                     //生成敌人，之后可以把他们改成使用对象池
@@ -125,18 +130,23 @@ public class EnemySpawner : MonoBehaviour
 
                     //Vector2 spawnPosition = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
                     //Instantiate(enemyGroup.enemyPrefab, spawnPosition, Quaternion.identity);
-                    enemyGroup.enemyCount++;//增加出怪计时，用于增加波次
+                    enemyGroup.spawnCount++;//增加出怪计时，用于增加波次
                     waves[currentWaveCount].spawnCount++;
                     enemiesAlive++;//增加怪物存活计时器，用于刷新怪物
-
-                    if (enemiesAlive >= maxEnemiesAllowed)//如果怪物存活数大于设定量，则返回
-                    {
-                        maxEnemiesReached = true;
-                        return;
-                    }
-
                 }
             }
         }
+        //重新生成
+        if (enemiesAlive < maxEnemiesAllowed)
+        {
+            maxEnemiesReached = false;
+        }
+    }
+    /// <summary>
+    /// 敌人死亡时候调用
+    /// </summary>
+    public void OnEnemyKilled()
+    {
+        enemiesAlive--;
     }
 }

@@ -6,13 +6,17 @@ public class EnemyStats : MonoBehaviour
 {
     //敌人状态
     public EnemyData_SO enemyData;
-
+    public int maxHealth
+    {
+        get { if (enemyData != null) return enemyData.maxHealth; else return 0; }
+    }
 
     //敌人基本属性
     [HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
-    public int currentHealth;
+    [SerializeField]
+    [ReadOnly]
+    private int currentHealth = 1;
     [HideInInspector]
     public int currentDamage;
 
@@ -25,12 +29,11 @@ public class EnemyStats : MonoBehaviour
     void Awake()
     {
         //Assign the vaiables
-        currentMoveSpeed = enemyData.MoveSpeed;
-        currentHealth = enemyData.MaxHealth;
-        currentDamage = enemyData.Damage;
+        currentHealth = maxHealth;
 
         anim = GetComponent<Animator>();
     }
+
     void Start()
     {
         player = FindObjectOfType<PlayerState>().transform;
@@ -65,7 +68,20 @@ public class EnemyStats : MonoBehaviour
     /// </summary>
     public void Kill()
     {
+        //在对象池中调用敌人爆炸动画
         FindObjectOfType<ExplosionEffectPool>().GetExplosion(this.transform.position);
+        //死亡时候调用敌人生成器里的数量检测
+        EnemySpawner enemyKill = FindObjectOfType<EnemySpawner>();
+        enemyKill.OnEnemyKilled();
+        //回收敌人至对象池
         parentPool.ReleaseExplosion(this);
     }
+    //回收后初始化敌人
+    private void OnDisable()
+    {
+        currentHealth = maxHealth;
+        isDead = false;
+        gameObject.layer = 7;
+    }
+
 }
