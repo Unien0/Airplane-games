@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58dd5098ea99954999ee24add63266f, type: 3}
+  m_Name: Medium End Settings
+  m_EditorClassIdentifier: 
+  GroupName: Medium
+  settings:
+    qualityLevel: 2
+    resolution: -1
+    fullScreenMode: 1
+    masterTextureLimit: 1
+    antialiasing: 1
+    anisotropicFiltering: 1
+    shadowQuality: 1
+    shadowResolution: 1
+    shadowProjection: 1
+    shadowCascade: 1
+    softParticles: 0
+    realTimeReflections: 0
+    blendWeights: 2
+    vSync: 0
+    textureStreaming: 0
+    showFPS: 0
+    audioEnable: 1
+    shadowDistance: 50
+    lodBias: 1
+    brightness: 1
+    hudScale: 1
+    volume: 1
