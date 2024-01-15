@@ -13,6 +13,8 @@ public class PlayerBullet_SO : ScriptableObject
     public float linerBulletCoolDownTime;//基础
     [Header("_存在时间")]
     public float linerBulletExistenceTime;//存在时间
+    [Header("_存在距离")]
+    public float linerBulletExistenceDistance;
 
 
     [Header("直线子弹")]

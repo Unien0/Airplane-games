@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "PlayerData_SO", menuName = "Data/Player")]
 public class PlayerData_SO : ScriptableObject
 {
-    [Header("PlayerData")]
-    [Header("基本资料")]
+    [Title("玩家ID与名称")]
+    [BoxGroup("基本资料")]
+    public int PlayerID;
+    [BoxGroup("基本资料")]
     public string playerName;//名称
+
     public Sprite playerIcon;//图标
+
     public Sprite playerOnWorldSprite;//游戏内画像
-    [Multiline] public string playerDescription;//介绍
+    [LabelWidth(100)]
+    [TextArea] public string playerDescription;//介绍
     [Space(10)]
 
     [Header("玩家属性")]
     public int playerMaxHP;//最大血量
     public int playerHP;//当前血量
+    public int playerBaseDamege;
     public int playerLucky;
     [Header("_移动速度相关")]
     public float playerBaseSpeed;//基础速度
