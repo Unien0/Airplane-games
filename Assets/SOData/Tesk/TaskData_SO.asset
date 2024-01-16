@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b68d0d672046d4493aff61f178d767, type: 3}
+  m_Name: TaskData_SO
+  m_EditorClassIdentifier: 
+  TaskDetailsList:
+  - taskID: 0001
+    taskName: "\u65B0\u624B\u4EFB\u52A1"
+    taskType: 0
+    taskDescription: "\u4E39\u5C3C\u7684\u65B0\u624B\u4EFB\u52A1\uFF0C\u89E3\u51B3\u638910\u4E2A\u6D77\u76D7\u65E0\u4EBA\u673A"
+    waves: []
+    onTask: 0
+    taskCompleted: 0

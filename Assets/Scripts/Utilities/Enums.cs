@@ -5,7 +5,12 @@ public enum PersonaType
 
 }
 
-public enum ItemType
+public enum EnemyType
 {
    
+}
+
+public enum TaskType
+{
+    exterminate, collect
 }
