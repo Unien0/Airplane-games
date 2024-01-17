@@ -13,10 +13,20 @@ MonoBehaviour:
   m_Name: TaskData_SO
   m_EditorClassIdentifier: 
   TaskDetailsList:
-  - taskID: 0001
+  - taskID: 1
     taskName: "\u65B0\u624B\u4EFB\u52A1"
     taskType: 0
     taskDescription: "\u4E39\u5C3C\u7684\u65B0\u624B\u4EFB\u52A1\uFF0C\u89E3\u51B3\u638910\u4E2A\u6D77\u76D7\u65E0\u4EBA\u673A"
-    waves: []
+    waves:
+    - waveName: "\u65B0\u4EFB\u52A1"
+      enemyGroups:
+      - enemyID: 002
+        enemyName: "\u6D77\u5E26\u65E0\u4EBA\u673A"
+        enemyCount: 0
+        spawnCount: 0
+        enemyPrefab: {fileID: 0}
+      waveQuota: 80
+      spawnInterval: 0
+      spawnCount: 0
     onTask: 0
     taskCompleted: 0

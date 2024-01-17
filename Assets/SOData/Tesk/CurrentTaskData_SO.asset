@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c5749ba1acad94e985b92407ce57b3, type: 3}
+  m_Name: CurrentTaskData_SO
+  m_EditorClassIdentifier: 
+  taskID: 1
+  taskName: "\u65B0\u624B\u4EFB\u52A1"
+  taskType: 0
+  taskDescription: "\u4E39\u5C3C\u7684\u65B0\u624B\u4EFB\u52A1\uFF0C\u89E3\u51B3\u638910\u4E2A\u6D77\u76D7\u65E0\u4EBA\u673A"
+  waves:
+  - waveName: "\u65B0\u4EFB\u52A1"
+    enemyGroups:
+    - enemyID: 002
+      enemyName: "\u6D77\u5E26\u65E0\u4EBA\u673A"
+      enemyCount: 0
+      spawnCount: 0
+      enemyPrefab: {fileID: 0}
+    waveQuota: 0
+    spawnInterval: 0
+    spawnCount: 0
+  currentWaveCount: 0
+  waveInterval: 0
+  enemiesAlive: 0
+  maxEnemiesAllowed: 0
+  maxEnemiesReached: 0
+  onTask: 0
+  taskCompleted: 0

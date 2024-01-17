@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     [System.Serializable]
     public class EnemyGroup
     {
+        public int enemyID;
         public string enemyName;
         [Tooltip("敌人数")] public int enemyCount;//敌人数
         [Tooltip("波数")] public int spawnCount;//生成数

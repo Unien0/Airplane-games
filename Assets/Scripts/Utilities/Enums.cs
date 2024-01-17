@@ -12,5 +12,6 @@ public enum EnemyType
 
 public enum TaskType
 {
-    exterminate, collect
+    //歼灭、搜集、存活、
+    exterminate, collect, survival
 }

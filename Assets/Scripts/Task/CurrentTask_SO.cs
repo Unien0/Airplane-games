@@ -3,20 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "TaskData_SO", menuName = "Data/Task")]
+[CreateAssetMenu(fileName = "TaskData_SO", menuName = "Data/CurrentTask")]
 [InlineEditor]
-public class TaskData_SO : ScriptableObject
+public class CurrentTask_SO : ScriptableObject
 {
-    [Title("任务列表")]
-    public List<TaskDetails> TaskDetailsList;
-}
-
-[System.Serializable]
-public class TaskDetails
-{
-    [Header("任务数据，ID以1开头")]
-    [Header("ID与头像")]
-    public int taskID;
+    [Header("任务数据")]
+    public string taskID;
     public string taskName;
     public TaskType taskType;
     [LabelWidth(100)]
@@ -24,10 +16,11 @@ public class TaskDetails
     public string taskDescription;//任务简介
 
     [Header("任务目标")]
-    
+
 
     [Header("敌人数量与类型")]
     public List<Wave> waves;
+
     [System.Serializable]
     public class Wave
     {
@@ -51,9 +44,16 @@ public class TaskDetails
 
     }
 
+    [Header("参数")]
+    [Tooltip("当前波次，默认为0")] public int currentWaveCount;//当前波次
+    float spawnTimer;
+    [Tooltip("波次间隔")] public float waveInterval;
+    [Tooltip("敌人存活数")] public int enemiesAlive;//敌人存活数
+    [Tooltip("允许的最大敌人数")] public int maxEnemiesAllowed;//允许的最大敌人数
+    [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
+    [Tooltip("是否启动出怪")] private bool isWaveActive = false;//是否启动出怪
+
     [Header("任务状态")]
     public bool onTask;
     public bool taskCompleted;
 }
-
-

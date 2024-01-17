@@ -3444,7 +3444,8 @@ MonoBehaviour:
   waves:
   - waveName: "\u654C\u4EBA"
     enemyGroups:
-    - enemyName: "\u98DE\u673A"
+    - enemyID: 
+      enemyName: "\u98DE\u673A"
       enemyCount: 1000
       spawnCount: 0
       enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
@@ -6421,7 +6422,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4087
 --- !u!114 &2041271961
 MonoBehaviour:
   m_ObjectHideFlags: 0
