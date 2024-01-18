@@ -51,7 +51,7 @@ public class TaskManager : Singleton<TaskManager>//单例模式
                         spawnCount = sourceEnemyGroup.spawnCount,
                         enemyPrefab = sourceEnemyGroup.enemyPrefab
                     };
-
+                    //添加复制的列表
                     destinationWave.enemyGroups.Add(destinationEnemyGroup);
                 }
 
@@ -59,7 +59,11 @@ public class TaskManager : Singleton<TaskManager>//单例模式
             }
 
             // 其他参数的复制...
-            
+           
+            destination.waveInterval = taskDetailsToCopy.waveInterval;
+            destination.maxEnemiesAllowed = taskDetailsToCopy.maxEnemiesAllowed;
+
+
         }
         else
         {

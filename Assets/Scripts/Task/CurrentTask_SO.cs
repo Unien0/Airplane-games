@@ -51,7 +51,7 @@ public class CurrentTask_SO : ScriptableObject
     [Tooltip("敌人存活数")] public int enemiesAlive;//敌人存活数
     [Tooltip("允许的最大敌人数")] public int maxEnemiesAllowed;//允许的最大敌人数
     [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
-    [Tooltip("是否启动出怪")] private bool isWaveActive = false;//是否启动出怪
+    [Tooltip("是否启动出怪")] public bool isWaveActive = false;//是否启动出怪
 
     [Header("任务状态")]
     public bool onTask;
