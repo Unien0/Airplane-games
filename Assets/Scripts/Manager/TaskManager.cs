@@ -1,11 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TaskManager : Singleton<TaskManager>//单例模式
 {
     public TaskData_SO taskListData;
     public CurrentTask_SO currentTaskData;
+
+    public TMP_Text taskName;
+    public TMP_Text taskDescription;
+    public TMP_Text taskTarget;
+    public TMP_Text taskRemuneration;
+
+    private void Update()
+    {
+        TaskDataDisplay();
+    }
+
 
     public TaskDetails GetTaskDetails(int ID)
     {
@@ -17,6 +29,12 @@ public class TaskManager : Singleton<TaskManager>//单例模式
         CopyTaskDataToCurrentTask(taskListData, currentTaskData,ID);
     }
 
+    /// <summary>
+    /// 复制任务从任务总表至当前任务SO
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="destination"></param>
+    /// <param name="ID"></param>
     void CopyTaskDataToCurrentTask(TaskData_SO source, CurrentTask_SO destination,int ID)
     {
         // 寻找TaskData_SO中taskID为1的项
@@ -62,6 +80,7 @@ public class TaskManager : Singleton<TaskManager>//单例模式
            
             destination.waveInterval = taskDetailsToCopy.waveInterval;
             destination.maxEnemiesAllowed = taskDetailsToCopy.maxEnemiesAllowed;
+            destination.remuneration = taskDetailsToCopy.remuneration;
 
 
         }
@@ -70,4 +89,16 @@ public class TaskManager : Singleton<TaskManager>//单例模式
             Debug.LogWarning("未找到相应ID的任务");
         }
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void TaskDataDisplay()
+    {
+        taskName.text = currentTaskData.taskName;
+        taskDescription.text = "内容："+currentTaskData.taskDescription;
+
+        taskRemuneration.text = "$" + currentTaskData.remuneration ;
+    }
+
 }

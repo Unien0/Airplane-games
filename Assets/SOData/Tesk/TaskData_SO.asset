@@ -25,8 +25,15 @@ MonoBehaviour:
         enemyCount: 0
         spawnCount: 0
         enemyPrefab: {fileID: 0}
-      waveQuota: 80
+      waveQuota: 0
       spawnInterval: 0
       spawnCount: 0
+    currentWaveCount: 0
+    waveInterval: 0.5
+    enemiesAlive: 0
+    maxEnemiesAllowed: 20
+    maxEnemiesReached: 0
+    isWaveActive: 0
+    remuneration: 2000
     onTask: 0
     taskCompleted: 0

@@ -60,6 +60,9 @@ public class TaskDetails
     [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
     [Tooltip("是否启动出怪")] public bool isWaveActive = false;//是否启动出怪
 
+    [Header("任务报酬")]
+    public int remuneration;
+
     [Header("任务状态")]
     public bool onTask;
     public bool taskCompleted;
