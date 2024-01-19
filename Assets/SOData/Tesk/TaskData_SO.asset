@@ -22,7 +22,7 @@ MonoBehaviour:
       enemyGroups:
       - enemyID: 002
         enemyName: "\u6D77\u5E26\u65E0\u4EBA\u673A"
-        enemyCount: 0
+        enemyCount: 10
         spawnCount: 0
         enemyPrefab: {fileID: 0}
       waveQuota: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     currentWaveCount: 0
     waveInterval: 0.5
     enemiesAlive: 0
-    maxEnemiesAllowed: 20
+    maxEnemiesAllowed: 3
     maxEnemiesReached: 0
     isWaveActive: 0
     remuneration: 2000

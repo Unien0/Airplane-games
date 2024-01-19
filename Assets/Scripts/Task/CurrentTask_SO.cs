@@ -59,4 +59,30 @@ public class CurrentTask_SO : ScriptableObject
     [Header("任务状态")]
     public bool onTask;
     public bool taskCompleted;
+
+    public void ResetTaskData()
+    {
+        taskID = string.Empty;
+        taskName = string.Empty;
+        taskType = TaskType.Default; // 你需要根据实际情况设置默认值
+        taskDescription = string.Empty;
+
+        // 清空波次和敌人组
+        waves.Clear();
+
+        // 重新初始化参数字段
+        currentWaveCount = 0;
+        spawnTimer = 0f;
+        waveInterval = 0f;
+        enemiesAlive = 0;
+        maxEnemiesAllowed = 0;
+        maxEnemiesReached = false;
+        isWaveActive = false;
+
+        // 清空任务报酬和状态字段
+        remuneration = 0;
+        onTask = false;
+        taskCompleted = false;
+    }
+
 }

@@ -8,6 +8,9 @@ public class TaskManager : Singleton<TaskManager>//单例模式
     public TaskData_SO taskListData;
     public CurrentTask_SO currentTaskData;
 
+    private string taskInfo;
+    private bool isClear;
+
     public TMP_Text taskName;
     public TMP_Text taskDescription;
     public TMP_Text taskTarget;
@@ -37,6 +40,7 @@ public class TaskManager : Singleton<TaskManager>//单例模式
     /// <param name="ID"></param>
     void CopyTaskDataToCurrentTask(TaskData_SO source, CurrentTask_SO destination,int ID)
     {
+        isClear = false;
         // 寻找TaskData_SO中taskID为1的项
         TaskDetails taskDetailsToCopy = source.TaskDetailsList.Find(task => task.taskID == ID);
 
@@ -91,14 +95,41 @@ public class TaskManager : Singleton<TaskManager>//单例模式
     }
 
     /// <summary>
-    /// 
+    /// 当前任务内容显示
     /// </summary>
     void TaskDataDisplay()
     {
         taskName.text = currentTaskData.taskName;
         taskDescription.text = "内容："+currentTaskData.taskDescription;
 
+        if (!isClear)
+        {
+            if (taskInfo == null && currentTaskData != null)
+            {
+                foreach (var wave in currentTaskData.waves)
+                {
+                    foreach (var enemyGroup in wave.enemyGroups)
+                    {
+                        taskInfo += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                    }
+                }
+            }
+            taskTarget.text = taskInfo;
+        }
+        
         taskRemuneration.text = "$" + currentTaskData.remuneration ;
     }
 
+    /// <summary>
+    /// 清空当前任务内容,按钮控制
+    /// </summary>
+    public void ClearCurrentTask()
+    {
+        isClear = true;
+        currentTaskData.ResetTaskData();
+        taskName.text = "";
+        taskDescription.text = "内容：" + "";
+        taskTarget.text = "";
+        taskRemuneration.text = "";
+    }
 }
