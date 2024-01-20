@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public CurrentTask_SO currentTaskData;
+
     [System.Serializable]
     public class Wave
     {
@@ -22,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     [System.Serializable]
     public class EnemyGroup
     {
-        public int enemyID;
+        public string enemyID;
         public string enemyName;
         [Tooltip("敌人数")] public int enemyCount;//敌人数
         [Tooltip("波数")] public int spawnCount;//生成数
@@ -49,6 +52,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        VariableBinding();
         player = FindObjectOfType<PlayerState>().transform;
         enemyPool = FindObjectOfType<EnemyPool>();//绑定对象池
         CalculateWaveQuota();//游戏开始时候运行，用于生成第一波敌人
@@ -70,6 +74,45 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemies();
         }
     }
+
+    /// <summary>
+    /// 变量绑定
+    /// </summary>
+    void VariableBinding()
+    {
+        waves.Clear(); // 清空当前波次列表
+
+        foreach (var currentWave in currentTaskData.waves)
+        {
+            Wave newWave = new Wave
+            {
+                waveName = currentWave.waveName,
+                waveQuota = currentWave.waveQuota,
+                spawnInterval = currentWave.spawnInterval,
+                spawnCount = currentWave.spawnCount,
+                enemyGroups = new List<EnemyGroup>()
+            };
+
+            foreach (var currentEnemyGroup in currentWave.enemyGroups)
+            {
+                EnemyGroup newEnemyGroup = new EnemyGroup
+                {
+                    enemyID = currentEnemyGroup.enemyID,
+                    enemyName = currentEnemyGroup.enemyName,
+                    enemyCount = currentEnemyGroup.enemyCount,
+                    spawnCount = currentEnemyGroup.spawnCount,
+                    enemyPrefab = currentEnemyGroup.enemyPrefab
+                };
+
+                newWave.enemyGroups.Add(newEnemyGroup);
+            }
+            waves.Add(newWave);
+        }
+        waveInterval = currentTaskData.waveInterval;
+        maxEnemiesAllowed = currentTaskData.maxEnemiesAllowed;
+    }
+
+
     /// <summary>
     /// 开始下一波
     /// </summary>

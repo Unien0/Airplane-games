@@ -3441,6 +3441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e6b82e68bceb64cb245e55e27b62d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTaskData: {fileID: 11400000, guid: f7988551f9e8aa7438ac9025b1c01929, type: 2}
   waves:
   - waveName: "\u654C\u4EBA"
     enemyGroups:

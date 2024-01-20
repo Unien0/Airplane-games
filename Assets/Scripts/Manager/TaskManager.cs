@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TaskManager : Singleton<TaskManager>//单例模式
+public class TaskManager : MonoBehaviour//单例模式
 {
     public TaskData_SO taskListData;
     public CurrentTask_SO currentTaskData;
