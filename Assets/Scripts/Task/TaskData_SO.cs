@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 public class TaskData_SO : ScriptableObject
 {
     [Title("任务列表")]
+    
     public List<TaskDetails> TaskDetailsList;
 }
 

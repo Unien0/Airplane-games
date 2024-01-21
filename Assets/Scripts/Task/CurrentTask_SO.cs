@@ -19,6 +19,7 @@ public class CurrentTask_SO : ScriptableObject
 
 
     [Header("敌人数量与类型")]
+    [ReadOnly]
     public List<Wave> waves;
 
     [System.Serializable]
