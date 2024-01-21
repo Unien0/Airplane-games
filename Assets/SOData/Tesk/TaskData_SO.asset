@@ -37,3 +37,17 @@ MonoBehaviour:
     remuneration: 2000
     onTask: 0
     taskCompleted: 0
+  - taskID: 0
+    taskName: 
+    taskType: 0
+    taskDescription: 
+    waves: []
+    currentWaveCount: 0
+    waveInterval: 0
+    enemiesAlive: 0
+    maxEnemiesAllowed: 0
+    maxEnemiesReached: 0
+    isWaveActive: 0
+    remuneration: 0
+    onTask: 0
+    taskCompleted: 0

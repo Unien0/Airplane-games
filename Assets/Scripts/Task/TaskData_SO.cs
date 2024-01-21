@@ -8,18 +8,22 @@ using Sirenix.OdinInspector;
 public class TaskData_SO : ScriptableObject
 {
     [Title("任务列表")]
-    
     public List<TaskDetails> TaskDetailsList;
 }
+
 
 [System.Serializable]
 public class TaskDetails
 {
+    [FoldoutGroup("$taskName", expanded: true)]
     [Header("任务数据，ID以1开头")]
     [Header("ID与头像")]
     public int taskID;
+    [FoldoutGroup("$taskName", expanded: true)]
     public string taskName;
+    [FoldoutGroup("$taskName", expanded: true)]
     public TaskType taskType;
+    [FoldoutGroup("$taskName", expanded: true)]
     [LabelWidth(100)]
     [TextArea]
     public string taskDescription;//任务简介
@@ -28,7 +32,9 @@ public class TaskDetails
     
 
     [Header("敌人数量与类型")]
+    [FoldoutGroup("$taskName", expanded: true)]
     public List<Wave> waves;
+
     [System.Serializable]
     public class Wave
     {
@@ -52,20 +58,27 @@ public class TaskDetails
 
     }
 
+    [FoldoutGroup("$taskName", expanded: true)]
     [Header("参数")]
     [Tooltip("当前波次，默认为0")] public int currentWaveCount;//当前波次
     float spawnTimer;
+    [FoldoutGroup("$taskName", expanded: true)]
     [Tooltip("波次间隔")] public float waveInterval;
+    [FoldoutGroup("$taskName", expanded: true)]
     [Tooltip("敌人存活数")] public int enemiesAlive;//敌人存活数
+    [FoldoutGroup("$taskName", expanded: true)]
     [Tooltip("允许的最大敌人数")] public int maxEnemiesAllowed;//允许的最大敌人数
+    [FoldoutGroup("$taskName", expanded: true)]
     [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
+    [FoldoutGroup("$taskName", expanded: true)]
     [Tooltip("是否启动出怪")] public bool isWaveActive = false;//是否启动出怪
-
+    [FoldoutGroup("$taskName", expanded: true)]
     [Header("任务报酬")]
     public int remuneration;
-
+    [FoldoutGroup("$taskName", expanded: true)]
     [Header("任务状态")]
     public bool onTask;
+    [FoldoutGroup("$taskName", expanded: true)]
     public bool taskCompleted;
 }
 
