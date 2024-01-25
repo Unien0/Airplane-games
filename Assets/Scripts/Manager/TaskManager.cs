@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class TaskManager : MonoBehaviour//单例模式
@@ -15,6 +16,15 @@ public class TaskManager : MonoBehaviour//单例模式
     public TMP_Text taskDescription;
     public TMP_Text taskTarget;
     public TMP_Text taskRemuneration;
+
+    public Button myButton;
+    private Color originalColor;
+
+    private void Start()
+    {
+        // 记录按钮原始颜色
+        originalColor = myButton.colors.normalColor;
+    }
 
     private void Update()
     {
@@ -85,8 +95,8 @@ public class TaskManager : MonoBehaviour//单例模式
             destination.waveInterval = taskDetailsToCopy.waveInterval;
             destination.maxEnemiesAllowed = taskDetailsToCopy.maxEnemiesAllowed;
             destination.remuneration = taskDetailsToCopy.remuneration;
-
-
+            destination.taskCompleted = taskDetailsToCopy.taskCompleted;
+            destination.isMandatoryTask = taskDetailsToCopy.isMandatoryTask;
         }
         else
         {
@@ -125,11 +135,35 @@ public class TaskManager : MonoBehaviour//单例模式
     /// </summary>
     public void ClearCurrentTask()
     {
-        isClear = true;
-        currentTaskData.ResetTaskData();
-        taskName.text = "";
-        taskDescription.text = "内容：" + "";
-        taskTarget.text = "";
-        taskRemuneration.text = "";
+        if (!currentTaskData.isMandatoryTask)
+        {
+            isClear = true;
+            currentTaskData.ResetTaskData();
+            taskName.text = "";
+            taskDescription.text = "内容：" + "";
+            taskTarget.text = "";
+            taskRemuneration.text = "";
+        }
+        else
+        {
+            // 将按钮颜色更改为红色
+            ColorBlock colors = myButton.colors;
+            colors.normalColor = Color.red;
+            myButton.colors = colors;
+
+            // 启动协程，在两秒后将颜色还原
+            StartCoroutine(RestoreColorAfterDelay(2f));
+        }
+
+        IEnumerator RestoreColorAfterDelay(float delay)
+        {
+            // 等待指定的时间
+            yield return new WaitForSeconds(delay);
+
+            // 将按钮颜色还原为原始颜色
+            ColorBlock colors = myButton.colors;
+            colors.normalColor = originalColor;
+            myButton.colors = colors;
+        }
     }
 }

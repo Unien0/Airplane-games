@@ -60,6 +60,7 @@ public class CurrentTask_SO : ScriptableObject
     [Header("任务状态")]
     public bool onTask;
     public bool taskCompleted;
+    public bool isMandatoryTask;
 
     public void ResetTaskData()
     {
@@ -84,6 +85,7 @@ public class CurrentTask_SO : ScriptableObject
         remuneration = 0;
         onTask = false;
         taskCompleted = false;
+        isMandatoryTask = false;
     }
 
 }

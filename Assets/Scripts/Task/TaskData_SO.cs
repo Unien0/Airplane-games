@@ -79,7 +79,11 @@ public class TaskDetails
     [Header("任务状态")]
     public bool onTask;
     [FoldoutGroup("$taskName", expanded: true)]
+    [Header("任务是否完成（是否重复出现）")]
     public bool taskCompleted;
+    [FoldoutGroup("$taskName", expanded: true)]
+    [Header("是否是强制任务")]
+    public bool isMandatoryTask;
 }
 
 
