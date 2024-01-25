@@ -17,6 +17,8 @@ public class PlayerData_SO : ScriptableObject
     public Sprite playerOnWorldSprite;//游戏内画像
     [LabelWidth(100)]
     [TextArea] public string playerDescription;//介绍
+    [Header("持有金")]
+    public int playerMoney;
     [Space(10)]
 
     [Header("玩家属性")]
