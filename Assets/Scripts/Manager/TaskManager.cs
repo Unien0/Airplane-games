@@ -126,8 +126,15 @@ public class TaskManager : MonoBehaviour//单例模式
             }
             taskTarget.text = taskInfo;
         }
-        
         taskRemuneration.text = "$" + currentTaskData.remuneration ;
+        if (!currentTaskData.isMandatoryTask)
+        {
+            myButton.interactable = true;
+        }
+        else
+        {
+            myButton.interactable = false;
+        }
     }
 
     /// <summary>
@@ -137,6 +144,7 @@ public class TaskManager : MonoBehaviour//单例模式
     {
         if (!currentTaskData.isMandatoryTask)
         {
+            myButton.interactable = true;
             isClear = true;
             currentTaskData.ResetTaskData();
             taskName.text = "";
@@ -146,6 +154,7 @@ public class TaskManager : MonoBehaviour//单例模式
         }
         else
         {
+            myButton.interactable = false;
             // 将按钮颜色更改为红色
             ColorBlock colors = myButton.colors;
             colors.normalColor = Color.red;

@@ -6,9 +6,9 @@ using Sirenix.OdinInspector;
 
 public class GameManager : MonoBehaviour
 {
-    [Title("ŠpFSO")]
+    [Title("SOˆø—p")]
     public PlayerData_SO playerData;
-
+    [Title("TMP•¶–{")]
     public TMP_Text money;
 
     // Start is called before the first frame update

@@ -37,6 +37,7 @@ MonoBehaviour:
     remuneration: 2000
     onTask: 0
     taskCompleted: 0
+    isMandatoryTask: 1
   - taskID: 0
     taskName: 
     taskType: 0
@@ -51,3 +52,4 @@ MonoBehaviour:
     remuneration: 0
     onTask: 0
     taskCompleted: 0
+    isMandatoryTask: 0
