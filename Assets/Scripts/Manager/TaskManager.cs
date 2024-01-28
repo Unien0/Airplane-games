@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +11,7 @@ public class TaskManager : MonoBehaviour//单例模式
 
     private string taskInfo;
     private bool isClear;
+    private bool missID;
 
     public TMP_Text taskName;
     public TMP_Text taskDescription;
@@ -18,13 +19,6 @@ public class TaskManager : MonoBehaviour//单例模式
     public TMP_Text taskRemuneration;
 
     public Button myButton;
-    private Color originalColor;
-
-    private void Start()
-    {
-        // 记录按钮原始颜色
-        originalColor = myButton.colors.normalColor;
-    }
 
     private void Update()
     {
@@ -51,6 +45,7 @@ public class TaskManager : MonoBehaviour//单例模式
     void CopyTaskDataToCurrentTask(TaskData_SO source, CurrentTask_SO destination,int ID)
     {
         isClear = false;
+        missID = false;
         // 寻找TaskData_SO中taskID为1的项
         TaskDetails taskDetailsToCopy = source.TaskDetailsList.Find(task => task.taskID == ID);
 
@@ -86,7 +81,7 @@ public class TaskManager : MonoBehaviour//单例模式
                     //添加复制的列表
                     destinationWave.enemyGroups.Add(destinationEnemyGroup);
                 }
-
+                
                 destination.waves.Add(destinationWave);
             }
 
@@ -100,6 +95,7 @@ public class TaskManager : MonoBehaviour//单例模式
         }
         else
         {
+            missID = true;
             Debug.LogWarning("未找到相应ID的任务");
         }
     }
@@ -112,8 +108,9 @@ public class TaskManager : MonoBehaviour//单例模式
         taskName.text = currentTaskData.taskName;
         taskDescription.text = "内容："+currentTaskData.taskDescription;
 
-        if (!isClear)
+        if (!isClear&& !missID)
         {
+            taskInfo = null;//先清空后再复制
             if (taskInfo == null && currentTaskData != null)
             {
                 foreach (var wave in currentTaskData.waves)
@@ -126,7 +123,13 @@ public class TaskManager : MonoBehaviour//单例模式
             }
             taskTarget.text = taskInfo;
         }
+        else
+        {
+            taskInfo = null;//如果没有找到对应ID的话内容显示为空
+        }
+
         taskRemuneration.text = "$" + currentTaskData.remuneration ;
+
         if (!currentTaskData.isMandatoryTask)
         {
             myButton.interactable = true;
@@ -151,28 +154,6 @@ public class TaskManager : MonoBehaviour//单例模式
             taskDescription.text = "内容：" + "";
             taskTarget.text = "";
             taskRemuneration.text = "";
-        }
-        else
-        {
-            myButton.interactable = false;
-            // 将按钮颜色更改为红色
-            ColorBlock colors = myButton.colors;
-            colors.normalColor = Color.red;
-            myButton.colors = colors;
-
-            // 启动协程，在两秒后将颜色还原
-            StartCoroutine(RestoreColorAfterDelay(2f));
-        }
-
-        IEnumerator RestoreColorAfterDelay(float delay)
-        {
-            // 等待指定的时间
-            yield return new WaitForSeconds(delay);
-
-            // 将按钮颜色还原为原始颜色
-            ColorBlock colors = myButton.colors;
-            colors.normalColor = originalColor;
-            myButton.colors = colors;
         }
     }
 }
