@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -13,6 +13,8 @@ public class ShopData_SO : ScriptableObject
     [System.Serializable]
     public class ShopDetails
     {
+        [FoldoutGroup("$shopType", expanded: true)]
+        public int itemCode;
         [FoldoutGroup("$shopType", expanded: true)]
         public ShopType shopType;
         [FoldoutGroup("$shopType", expanded: true)]

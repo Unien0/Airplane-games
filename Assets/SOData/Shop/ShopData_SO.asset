@@ -13,37 +13,50 @@ MonoBehaviour:
   m_Name: ShopData_SO
   m_EditorClassIdentifier: 
   ShopDetailsList:
-  - shopType: 0
+  - itemCode: 1
+    shopType: 0
+    experience: 0
+    level: 1
+    experienceCap: 100
+    levelRanges:
+    - startLevel: 1
+      endLevel: 3
+      experienceCapIncrease: 100
+    - startLevel: 4
+      endLevel: 6
+      experienceCapIncrease: 300
+  - itemCode: 2
+    shopType: 1
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
-  - shopType: 1
+  - itemCode: 3
+    shopType: 2
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
-  - shopType: 2
+  - itemCode: 4
+    shopType: 3
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
-  - shopType: 3
+  - itemCode: 5
+    shopType: 4
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
-  - shopType: 4
+  - itemCode: 6
+    shopType: 5
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
-  - shopType: 5
-    experience: 0
-    level: 1
-    experienceCap: 0
-    levelRanges: []
-  - shopType: 6
+  - itemCode: 7
+    shopType: 6
     experience: 0
     level: 1
     experienceCap: 0
