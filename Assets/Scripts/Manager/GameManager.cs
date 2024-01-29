@@ -8,16 +8,16 @@ public class GameManager : MonoBehaviour
 {
     [Title("SOˆø—p")]
     public PlayerData_SO playerData;
+    public PlayerBullet_SO bulletData;
     [Title("TMP•¶–{")]
     public TMP_Text money;
-
-    // Start is called before the first frame update
+    public TMP_Text HPDisplay,AttackDisplay, BassSpeedDisplay, MaxSpeedDisplay, TurningSpeedDisplay, CoolDownTimeDisplay, BulletExistenceTimeDisplay;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerDataDisplay();
@@ -26,5 +26,12 @@ public class GameManager : MonoBehaviour
     void PlayerDataDisplay()
     {
         money.text = "$"+playerData.playerMoney.ToString();
+        HPDisplay.text =playerData.playerMaxHP.ToString("F1");
+        AttackDisplay.text =bulletData.playerBulletDamage.ToString("F1");
+        BassSpeedDisplay.text =playerData.playerBaseSpeed.ToString("F1");
+        MaxSpeedDisplay.text =playerData.playerMaxSpeed.ToString("F1");
+        TurningSpeedDisplay.text =playerData.playerTurningSpeed.ToString("F1");
+        CoolDownTimeDisplay.text =bulletData.linerBulletCoolDownTime.ToString("F1");
+        BulletExistenceTimeDisplay.text =bulletData.linerBulletExistenceTime.ToString("F1");
     }
 }
