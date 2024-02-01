@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "ShopData_SO", menuName = "Data/Shop")]
@@ -16,7 +17,15 @@ public class ShopData_SO : ScriptableObject
         [FoldoutGroup("$shopType", expanded: true)]
         public int itemCode;
         [FoldoutGroup("$shopType", expanded: true)]
+        public string shopName;
+        [FoldoutGroup("$shopType", expanded: true)]
         public ShopType shopType;
+        [FoldoutGroup("$shopType", expanded: true)]
+        [LabelWidth(100)]
+        [TextArea]
+        public string shopDescription;//商店简介
+        [FoldoutGroup("$shopType", expanded: true)]
+        public Sprite shopImage;
         [FoldoutGroup("$shopType", expanded: true)]
         public int experience = 0;
         [FoldoutGroup("$shopType", expanded: true)]

@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopDetailsList:
   - itemCode: 1
+    shopName: "\u8F85\u52A9\u88C5\u7532"
     shopType: 0
+    shopDescription: "\u7B80\u5355\u7684\u88C5\u7532\uFF0C\u9AD8\u6548\u7684\u9632\u5FA1"
+    shopImage: {fileID: 21300000, guid: 216c53aef79eaaf40a1800cc5e542dc3, type: 3}
     experience: 0
     level: 1
     experienceCap: 100
@@ -26,37 +29,55 @@ MonoBehaviour:
       endLevel: 6
       experienceCapIncrease: 300
   - itemCode: 2
+    shopName: 
     shopType: 1
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
   - itemCode: 3
+    shopName: 
     shopType: 2
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
   - itemCode: 4
+    shopName: 
     shopType: 3
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
   - itemCode: 5
+    shopName: 
     shopType: 4
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
   - itemCode: 6
+    shopName: 
     shopType: 5
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
     levelRanges: []
   - itemCode: 7
+    shopName: 
     shopType: 6
+    shopDescription: 
+    shopImage: {fileID: 0}
     experience: 0
     level: 1
     experienceCap: 0
