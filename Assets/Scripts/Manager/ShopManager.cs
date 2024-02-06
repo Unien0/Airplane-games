@@ -28,21 +28,6 @@ public class ShopManager : MonoBehaviour
     public TMP_Text coolDownTimePriceDisplay;
     [FoldoutGroup("价格")]
     public TMP_Text bulletExistenceTimePriceDisplay;
-    //图片显示
-    [FoldoutGroup("显示图片")]
-    public Image hpImage;
-    [FoldoutGroup("显示图片")]
-    public Image damageImage;
-    [FoldoutGroup("显示图片")]
-    public Image baseSpeedImage;
-    [FoldoutGroup("显示图片")]
-    public Image maxSpeedImage;
-    [FoldoutGroup("显示图片")]
-    public Image turningSpeedImage;
-    [FoldoutGroup("显示图片")]
-    public Image coolDownTimeImage;
-    [FoldoutGroup("显示图片")]
-    public Image bulletExistenceTimeImage;
     //当前数值
     [FoldoutGroup("当前数值")]
     public TMP_Text hpValue;
@@ -128,7 +113,7 @@ public class ShopManager : MonoBehaviour
             commodityName.text = shopDetails.shopName;
             commodityType.text = shopDetails.shopType.ToString();
             commodityDescription.text = shopDetails.shopDescription;
-            commodityImage = shopDetails.shopImage;
+            commodityImage.sprite = shopDetails.shopImage;
             commodityPrice.text = shopDetails.experienceCap.ToString();
             purchasePrice.text = shopDetails.experienceCap.ToString();
             commodityLevel.text =shopDetails.level.ToString();
@@ -143,25 +128,25 @@ public class ShopManager : MonoBehaviour
         switch (shopDetails.shopType)
         {
             case ShopType.hp:
-                commodityValue.text = playerData.playerMaxHP.ToString();
+                commodityValue.text = playerData.playerMaxHP.ToString() + "wJ";
                 break;
             case ShopType.damage:
-                commodityValue.text = bulletData.playerBulletDamage.ToString();
+                commodityValue.text = bulletData.playerBulletDamage.ToString()+"wJ";
                 break;
             case ShopType.baseSpeed:
-                commodityValue.text = playerData.playerBaseSpeed.ToString();
+                commodityValue.text = playerData.playerBaseSpeed.ToString("F1")+"wkm/h";
                 break;
             case ShopType.maxSpeed:
-                commodityValue.text = playerData.playerMaxSpeed.ToString();
+                commodityValue.text = playerData.playerMaxSpeed.ToString("F1") + "wkm/h";
                 break;
             case ShopType.coolDownTime:
-                commodityValue.text = bulletData.linerBulletCoolDownTime.ToString();
+                commodityValue.text = bulletData.linerBulletCoolDownTime.ToString("F1") + "s/B";
                 break;
             case ShopType.turningSpeed:
-                commodityValue.text = playerData.playerTurningSpeed.ToString();
+                commodityValue.text = playerData.playerTurningSpeed.ToString("F1") + "r/s";
                 break;
             case ShopType.bulletExistenceTime:
-                commodityValue.text = bulletData.linerBulletExistenceTime.ToString();
+                commodityValue.text = bulletData.linerBulletExistenceTime.ToString("F1") + "/s";
                 break;
         }
     }
@@ -186,7 +171,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             HpPriceDisplay.text = "$" + hpShopDetails.experienceCap.ToString();
-            hpImage = hpShopDetails.shopImage;
         }
         else
         {
@@ -200,7 +184,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             damagePriceDisplay.text = "$" + damageShopDetails.experienceCap.ToString();
-            damageImage = damageShopDetails.shopImage;
         }
         else
         {
@@ -214,7 +197,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             baseSpeedPriceDisplay.text = "$" + baseSpeedShopDetails.experienceCap.ToString();
-            baseSpeedImage = baseSpeedShopDetails.shopImage;
         }
         else
         {
@@ -228,7 +210,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             maxSpeedPriceDisplay.text = "$" + maxSpeedShopDetails.experienceCap.ToString();
-            maxSpeedImage = maxSpeedShopDetails.shopImage;
         }
         else
         {
@@ -242,7 +223,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             turningSpeedPriceDisplay.text = "$" + turningSpeedShopDetails.experienceCap.ToString();
-            turningSpeedImage = turningSpeedShopDetails.shopImage;
         }
         else
         {
@@ -256,7 +236,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             coolDownTimePriceDisplay.text = "$" + coolDownTimeShopDetails.experienceCap.ToString();
-            coolDownTimeImage = coolDownTimeShopDetails.shopImage;
         }
         else
         {
@@ -270,7 +249,6 @@ public class ShopManager : MonoBehaviour
         {
             // 获取类型的经验值增加并显示在 TMP_Text 上
             bulletExistenceTimePriceDisplay.text = "$" + bulletExistenceTimeShopDetails.experienceCap.ToString();
-            bulletExistenceTimeImage = bulletExistenceTimeShopDetails.shopImage;
         }
         else
         {

@@ -26,7 +26,7 @@ public class ShopData_SO : ScriptableObject
         [TextArea]
         public string shopDescription;//商店简介
         [FoldoutGroup("$shopType", expanded: true)]
-        public Image shopImage;
+        public Sprite shopImage;
         [FoldoutGroup("$shopType", expanded: true)]
         public int experience = 0;
         [FoldoutGroup("$shopType", expanded: true)]
