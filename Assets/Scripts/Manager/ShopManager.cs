@@ -54,7 +54,15 @@ public class ShopManager : MonoBehaviour
     public TMP_Text commodityValue;//人物数值对应
     public TMP_Text purchasePrice;//购买价格
 
+    [Title ("相关按钮")]
+    public Button levelUpButton;
+
     private int currentCode;//当前编号
+
+    private void Start()
+    {
+        levelUpButton.interactable = true;
+    }
 
     private void Update()
     {
@@ -75,7 +83,7 @@ public class ShopManager : MonoBehaviour
         if (shopDetails != null)
         {
             // 使用商店类型的数据进行升级判定
-            if (playerData.playerMoney >= shopDetails.experienceCap)
+            if (playerData.playerMoney >= shopDetails.experienceCap && shopDetails.level <6)
             {
                 shopDetails.level++;
                 playerData.playerMoney -= shopDetails.experienceCap;
@@ -91,6 +99,15 @@ public class ShopManager : MonoBehaviour
                 }
                 shopDetails.experienceCap += experienceCapIncrease;
                 // 可以在这里添加其他的逻辑，例如更新 UI 或者触发升级事件
+            }
+            // 如果等级达到5级，禁用升级按钮
+            if (shopDetails.level >= 5)
+            {
+                levelUpButton.interactable = false;
+            }
+            else
+            {
+                levelUpButton.interactable = true;
             }
 
             OpenStorePage(currentCode);

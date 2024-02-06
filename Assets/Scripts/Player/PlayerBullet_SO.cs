@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,10 +9,14 @@ public class PlayerBullet_SO : ScriptableObject
     [Header("基础属性")]
     [Header("_伤害")]
     public int playerBulletDamage;//基础力量
+    public List<playerVolumeLevelRange> bulletDamageLevel;
+
     [Header("_子弹冷却时间")]
     public float linerBulletCoolDownTime;//基础
+    public List<playerVolumeLevelRange> coolDownTimeLevel;
     [Header("_存在时间")]
     public float linerBulletExistenceTime;//存在时间
+    public List<playerVolumeLevelRange> bulletExistenceTimeLevel;
     [Header("_存在距离")]
     public float linerBulletExistenceDistance;
 

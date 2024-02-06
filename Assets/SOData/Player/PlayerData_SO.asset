@@ -19,14 +19,58 @@ MonoBehaviour:
   playerDescription: 
   playerMoney: 66666666
   playerMaxHP: 100
+  playerMaxHPLevel: 0
+  hpLevel:
+  - Level: 1
+    levelIncrease: 0
+  - Level: 2
+    levelIncrease: 0
+  - Level: 3
+    levelIncrease: 0
+  - Level: 4
+    levelIncrease: 0
+  - Level: 5
+    levelIncrease: 0
   playerHP: 100
-  playerBaseDamege: 2
   playerLucky: 0
   playerBaseSpeed: 2
+  baseSpeedLevel:
+  - Level: 1
+    levelIncrease: 0
+  - Level: 2
+    levelIncrease: 0
+  - Level: 3
+    levelIncrease: 0
+  - Level: 4
+    levelIncrease: 0
+  - Level: 5
+    levelIncrease: 0
   playerMaxSpeed: 5
+  maxSpeedLevel:
+  - Level: 1
+    levelIncrease: 0
+  - Level: 2
+    levelIncrease: 0
+  - Level: 3
+    levelIncrease: 0
+  - Level: 4
+    levelIncrease: 0
+  - Level: 5
+    levelIncrease: 0
   playerMinSpeed: 0
   playerCurrentSpeed: 2
   playerTurningSpeed: 30
+  turningSpeedLevel:
+  - Level: 1
+    levelIncrease: 0
+  - Level: 2
+    levelIncrease: 0
+  - Level: 3
+    levelIncrease: 0
+  - Level: 4
+    levelIncrease: 0
+  - Level: 5
+    levelIncrease: 0
   playerAcceleration: 5
   playerDeceleration: 5
   playerReverseDecelerationMultiplier: 1

@@ -33,6 +33,8 @@ public class ShopData_SO : ScriptableObject
         public int level = 1;
         [FoldoutGroup("$shopType", expanded: true)]
         public int experienceCap;
+        [FoldoutGroup("$shopType", expanded: true)]
+        public bool levelMax;
         [Title("等级范围内所需经验")]
         [FoldoutGroup("$shopType", expanded: true)]
         public List<LevelRange> levelRanges;//等级列表

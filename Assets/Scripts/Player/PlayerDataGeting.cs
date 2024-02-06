@@ -18,7 +18,7 @@ public class PlayerDataGeting : MonoBehaviour
     void Update()
     {
         hp.text = playerData.playerMaxHP.ToString();
-        damage.text = playerData.playerBaseDamege.ToString("F1");
+        damage.text = bulletData.playerBulletDamage.ToString("F1");
         baseSpeed.text = playerData.playerBaseSpeed.ToString("F1");
         maxSpeed.text = playerData.playerMaxSpeed.ToString("F1");
         turningSpeed.text = playerData.playerTurningSpeed.ToString("F1");

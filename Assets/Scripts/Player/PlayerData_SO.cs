@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -23,15 +23,21 @@ public class PlayerData_SO : ScriptableObject
 
     [Header("玩家属性")]
     public int playerMaxHP;//最大血量
+    public int playerMaxHPLevel;
+    public List<playerVolumeLevelRange> hpLevel;
+
     public int playerHP;//当前血量
-    public int playerBaseDamege;
     public int playerLucky;
     [Header("_移动速度相关")]
     public float playerBaseSpeed;//基础速度
+    public List<playerVolumeLevelRange> baseSpeedLevel;
+
     public float playerMaxSpeed;//最大移速
+    public List<playerVolumeLevelRange> maxSpeedLevel;
     public float playerMinSpeed;//最小移速
     public float playerCurrentSpeed;//当前速度
     public float playerTurningSpeed;//转弯速度
+    public List<playerVolumeLevelRange> turningSpeedLevel;
     public float playerAcceleration;//加速度
     public float playerDeceleration;//减速度
     public float playerReverseDecelerationMultiplier;//反向减速系数
@@ -42,4 +48,12 @@ public class PlayerData_SO : ScriptableObject
     public bool moveable;//是否可以移动
     public bool controllable;//是否可以控制
 
+}
+[System.Serializable]
+public class playerVolumeLevelRange
+{
+    [FoldoutGroup("$Level", expanded: true)]
+    public int Level;//对应等级
+    [FoldoutGroup("$Level", expanded: true)]
+    public int levelIncrease;//等级成长值
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -47,7 +47,7 @@ public class CurrentTask_SO : ScriptableObject
 
     [Header("参数")]
     [Tooltip("当前波次，默认为0")] public int currentWaveCount;//当前波次
-    float spawnTimer;
+    public float spawnTimer;
     [Tooltip("波次间隔")] public float waveInterval;
     [Tooltip("敌人存活数")] public int enemiesAlive;//敌人存活数
     [Tooltip("允许的最大敌人数")] public int maxEnemiesAllowed;//允许的最大敌人数
