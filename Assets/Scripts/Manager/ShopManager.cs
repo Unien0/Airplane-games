@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using System.Linq;
 
 public class ShopManager : MonoBehaviour
 {
@@ -11,8 +12,54 @@ public class ShopManager : MonoBehaviour
     public PlayerData_SO playerData;
     public PlayerBullet_SO bulletData;
     public ShopData_SO shopData;
+    [Title("商店页面显示")]
+    //价格显示
+    [FoldoutGroup("价格")]
+    public TMP_Text HpPriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text damagePriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text baseSpeedPriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text maxSpeedPriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text turningSpeedPriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text coolDownTimePriceDisplay;
+    [FoldoutGroup("价格")]
+    public TMP_Text bulletExistenceTimePriceDisplay;
+    //图片显示
+    [FoldoutGroup("显示图片")]
+    public Image hpImage;
+    [FoldoutGroup("显示图片")]
+    public Image damageImage;
+    [FoldoutGroup("显示图片")]
+    public Image baseSpeedImage;
+    [FoldoutGroup("显示图片")]
+    public Image maxSpeedImage;
+    [FoldoutGroup("显示图片")]
+    public Image turningSpeedImage;
+    [FoldoutGroup("显示图片")]
+    public Image coolDownTimeImage;
+    [FoldoutGroup("显示图片")]
+    public Image bulletExistenceTimeImage;
+    //当前数值
+    [FoldoutGroup("当前数值")]
+    public TMP_Text hpValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text damageValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text baseSpeedValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text maxSpeedValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text turningSpeedValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text coolDownTimeValue;
+    [FoldoutGroup("当前数值")]
+    public TMP_Text bulletExistenceTimeValue;
 
-    [Title("商店内显示")]
+    [Title("购买页面显示")]
     public TMP_Text commodityName;//商品名称
     public TMP_Text commodityType;
     public Image commodityImage;
@@ -23,6 +70,11 @@ public class ShopManager : MonoBehaviour
     public TMP_Text purchasePrice;//购买价格
 
     private int currentCode;//当前编号
+
+    private void Update()
+    {
+        StorePageDisplay();
+    }
 
     /// <summary>
     /// 按键升级
@@ -76,7 +128,7 @@ public class ShopManager : MonoBehaviour
             commodityName.text = shopDetails.shopName;
             commodityType.text = shopDetails.shopType.ToString();
             commodityDescription.text = shopDetails.shopDescription;
-            commodityImage.sprite = shopDetails.shopImage;
+            commodityImage = shopDetails.shopImage;
             commodityPrice.text = shopDetails.experienceCap.ToString();
             purchasePrice.text = shopDetails.experienceCap.ToString();
             commodityLevel.text =shopDetails.level.ToString();
@@ -122,4 +174,119 @@ public class ShopManager : MonoBehaviour
         LevelUpChecker();
     }
 
+    /// <summary>
+    /// 商店页面显示
+    /// </summary>
+    public void StorePageDisplay()
+    {
+        #region 价格同步显示
+        var hpShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.hp);
+        // 检查是否找到了ShopDetails
+        if (hpShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            HpPriceDisplay.text = "$" + hpShopDetails.experienceCap.ToString();
+            hpImage = hpShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var damageShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.damage);
+        // 检查是否找到了ShopDetails
+        if (damageShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            damagePriceDisplay.text = "$" + damageShopDetails.experienceCap.ToString();
+            damageImage = damageShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var baseSpeedShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.baseSpeed);
+        // 检查是否找到了ShopDetails
+        if (baseSpeedShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            baseSpeedPriceDisplay.text = "$" + baseSpeedShopDetails.experienceCap.ToString();
+            baseSpeedImage = baseSpeedShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var maxSpeedShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.maxSpeed);
+        // 检查是否找到了ShopDetails
+        if (maxSpeedShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            maxSpeedPriceDisplay.text = "$" + maxSpeedShopDetails.experienceCap.ToString();
+            maxSpeedImage = maxSpeedShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var turningSpeedShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.turningSpeed);
+        // 检查是否找到了ShopDetails
+        if (turningSpeedShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            turningSpeedPriceDisplay.text = "$" + turningSpeedShopDetails.experienceCap.ToString();
+            turningSpeedImage = turningSpeedShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var coolDownTimeShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.coolDownTime);
+        // 检查是否找到了ShopDetails
+        if (coolDownTimeShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            coolDownTimePriceDisplay.text = "$" + coolDownTimeShopDetails.experienceCap.ToString();
+            coolDownTimeImage = coolDownTimeShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+
+        var bulletExistenceTimeShopDetails = shopData.ShopDetailsList.FirstOrDefault(shop => shop.shopType == ShopType.bulletExistenceTime);
+        // 检查是否找到了ShopDetails
+        if (bulletExistenceTimeShopDetails != null)
+        {
+            // 获取类型的经验值增加并显示在 TMP_Text 上
+            bulletExistenceTimePriceDisplay.text = "$" + bulletExistenceTimeShopDetails.experienceCap.ToString();
+            bulletExistenceTimeImage = bulletExistenceTimeShopDetails.shopImage;
+        }
+        else
+        {
+            // 如果找不到ShopDetails，给出一个错误提示
+            Debug.LogError("如果找不到ShopDetails");
+        }
+        #endregion
+
+        #region 数据显示
+        hpValue.text = playerData.playerMaxHP.ToString();
+        damageValue.text = bulletData.playerBulletDamage.ToString();
+        baseSpeedValue.text = playerData.playerBaseSpeed.ToString("F1");
+        maxSpeedValue.text = playerData.playerMaxSpeed.ToString("F1");
+        turningSpeedValue.text = playerData.playerTurningSpeed.ToString("F1");
+        coolDownTimeValue.text = bulletData.linerBulletCoolDownTime.ToString("F1");
+        bulletExistenceTimeValue.text = bulletData.linerBulletExistenceTime.ToString("F1");
+        #endregion
+    }
 }

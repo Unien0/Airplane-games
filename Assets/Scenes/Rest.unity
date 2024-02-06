@@ -3319,8 +3319,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ef4eaecd7b26af0469d15c23cdd4b4f0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5830,6 +5830,27 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 12deba11ded515c4f9674f3cb6c0aa78, type: 2}
   bulletData: {fileID: 11400000, guid: 05ec617357afbf14e8fd9074b2701a12, type: 2}
   shopData: {fileID: 11400000, guid: d0dce46e0c59db9439d8c24ec30f9186, type: 2}
+  HpPriceDisplay: {fileID: 2017673697}
+  damagePriceDisplay: {fileID: 2122519571}
+  baseSpeedPriceDisplay: {fileID: 2111158508}
+  maxSpeedPriceDisplay: {fileID: 56979347}
+  turningSpeedPriceDisplay: {fileID: 2010292992}
+  coolDownTimePriceDisplay: {fileID: 499493959}
+  bulletExistenceTimePriceDisplay: {fileID: 25562526}
+  hpImage: {fileID: 587490719}
+  damageImage: {fileID: 684158999}
+  baseSpeedImage: {fileID: 1651774434}
+  maxSpeedImage: {fileID: 809030380}
+  turningSpeedImage: {fileID: 1154187389}
+  coolDownTimeImage: {fileID: 470539310}
+  bulletExistenceTimeImage: {fileID: 1394109040}
+  hpValue: {fileID: 1586218468}
+  damageValue: {fileID: 971307170}
+  baseSpeedValue: {fileID: 1512615406}
+  maxSpeedValue: {fileID: 1560789183}
+  turningSpeedValue: {fileID: 2122197116}
+  coolDownTimeValue: {fileID: 563130769}
+  bulletExistenceTimeValue: {fileID: 2116962156}
   commodityName: {fileID: 1402176331}
   commodityType: {fileID: 1322957851}
   commodityImage: {fileID: 1053895059}
@@ -8665,8 +8686,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4b8108b2a67f05b46ac2555e385adeb4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14740,8 +14761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -370.5838, y: 90}
-  m_SizeDelta: {x: 676.8323, y: 474.3823}
+  m_AnchoredPosition: {x: -370.5838, y: 89.821}
+  m_SizeDelta: {x: 676.8323, y: 474.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842707198
 MonoBehaviour:
@@ -15656,7 +15677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 8, y: 9}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902229343
@@ -18794,8 +18815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -370.5838, y: 89.99994}
-  m_SizeDelta: {x: 676.8323, y: 474.3823}
+  m_AnchoredPosition: {x: -370.58, y: 61}
+  m_SizeDelta: {x: 365, y: 365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053895059
 MonoBehaviour:
@@ -18902,7 +18923,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 6
+  m_PixelsPerUnitMultiplier: 20
 --- !u!222 &1067779896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29686,7 +29707,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 6
+  m_PixelsPerUnitMultiplier: 20
 --- !u!222 &1572622073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33336,7 +33357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.588928, y: -13.3007}
+  m_AnchoredPosition: {x: -9.588928, y: -13.301}
   m_SizeDelta: {x: 1498.2218, y: 770.8192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821494501
@@ -35191,8 +35212,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: bd3d954705da1b246b2c57bfe3fc9502, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -35856,8 +35877,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8259beac023bbe34e83a00428052c4d6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

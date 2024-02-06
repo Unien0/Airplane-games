@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
+
 [CreateAssetMenu(fileName = "ShopData_SO", menuName = "Data/Shop")]
 [InlineEditor]
 public class ShopData_SO : ScriptableObject
@@ -25,7 +26,7 @@ public class ShopData_SO : ScriptableObject
         [TextArea]
         public string shopDescription;//商店简介
         [FoldoutGroup("$shopType", expanded: true)]
-        public Sprite shopImage;
+        public Image shopImage;
         [FoldoutGroup("$shopType", expanded: true)]
         public int experience = 0;
         [FoldoutGroup("$shopType", expanded: true)]
