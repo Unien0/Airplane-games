@@ -30,13 +30,16 @@ public class PlayerData_SO : ScriptableObject
     public int playerLucky;
     [Header("_移动速度相关")]
     public float playerBaseSpeed;//基础速度
+    public int playerBaseSpeedLevel;
     public List<playerVolumeLevelRange> baseSpeedLevel;
 
     public float playerMaxSpeed;//最大移速
+    public int playerMaxSpeedLevel;
     public List<playerVolumeLevelRange> maxSpeedLevel;
     public float playerMinSpeed;//最小移速
     public float playerCurrentSpeed;//当前速度
     public float playerTurningSpeed;//转弯速度
+    public int playerTurningSpeedLevel;
     public List<playerVolumeLevelRange> turningSpeedLevel;
     public float playerAcceleration;//加速度
     public float playerDeceleration;//减速度

@@ -99,6 +99,8 @@ public class ShopManager : MonoBehaviour
                 }
                 shopDetails.experienceCap += experienceCapIncrease;
                 // 可以在这里添加其他的逻辑，例如更新 UI 或者触发升级事件
+
+                UpdatePlayerLevel(shopDetails);
             }
             // 如果等级达到5级，禁用升级按钮
             if (shopDetails.level >= 5)
@@ -113,6 +115,89 @@ public class ShopManager : MonoBehaviour
             OpenStorePage(currentCode);
         }
     }
+
+    /// <summary>
+    /// 更新玩家属性等级，并增加等级成长值
+    /// </summary>
+    /// <param name="shopDetails"></param>
+    private void UpdatePlayerLevel(ShopData_SO.ShopDetails shopDetails)
+    {
+        switch (shopDetails.shopType)
+        {
+            case ShopType.hp:
+                playerData.playerMaxHPLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var hpLevelRange = playerData.hpLevel.FirstOrDefault(levelRange => levelRange.Level == playerData.playerMaxHPLevel);
+                if (hpLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    playerData.playerMaxHP += hpLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.damage:
+                bulletData.playerBulletDamageLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var damageLevelRange = bulletData.bulletDamageLevel.FirstOrDefault(levelRange => levelRange.Level == bulletData.playerBulletDamageLevel);
+                if (damageLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    bulletData.playerBulletDamage += damageLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.baseSpeed:
+                playerData.playerBaseSpeedLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var baseSpeedLevelRange = playerData.baseSpeedLevel.FirstOrDefault(levelRange => levelRange.Level == playerData.playerBaseSpeedLevel);
+                if (baseSpeedLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    playerData.playerBaseSpeed += baseSpeedLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.maxSpeed:
+                playerData.playerMaxSpeedLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var maxSpeedLevelRange = playerData.maxSpeedLevel.FirstOrDefault(levelRange => levelRange.Level == playerData.playerMaxSpeedLevel);
+                if (maxSpeedLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    playerData.playerMaxSpeed += maxSpeedLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.turningSpeed:
+                playerData.playerTurningSpeedLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var turningSpeedLevelRange = playerData.turningSpeedLevel.FirstOrDefault(levelRange => levelRange.Level == playerData.playerTurningSpeedLevel);
+                if (turningSpeedLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    playerData.playerTurningSpeed += turningSpeedLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.coolDownTime:
+                bulletData.linerBulletCoolDownTimeLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var coolDownTimeLevelRange = bulletData.coolDownTimeLevel.FirstOrDefault(levelRange => levelRange.Level == bulletData.linerBulletCoolDownTimeLevel);
+                if (coolDownTimeLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    bulletData.linerBulletCoolDownTime -= coolDownTimeLevelRange.levelIncrease;
+                }
+                break;
+            case ShopType.bulletExistenceTime:
+                bulletData.linerBulletExistenceTimeLevel++;
+                // 根据当前等级，获取对应的属性成长值列表
+                var bulletExistenceTimeLevelRange = bulletData.bulletExistenceTimeLevel.FirstOrDefault(levelRange => levelRange.Level == bulletData.linerBulletExistenceTimeLevel);
+                if (bulletExistenceTimeLevelRange != null)
+                {
+                    // 将属性成长值列表中的值累加到玩家的属性上
+                    bulletData.linerBulletExistenceTime += bulletExistenceTimeLevelRange.levelIncrease;
+                }
+                break;
+
+        }
+    }
+
 
     /// <summary>
     /// 打开商店页面和升级时，刷新数据
@@ -139,6 +224,10 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 购买页面玩家数值显示
+    /// </summary>
+    /// <param name="shopDetails"></param>
     private void UpdateCommodityValue(ShopData_SO.ShopDetails shopDetails)
     {
         // 根据商品类型更新商品对应的玩家数值

@@ -6,10 +6,11 @@ using Sirenix.OdinInspector;
 
 public class GameManager : MonoBehaviour
 {
-    [Title("SOˆø—p")]
+    [Title("SOå¼•ç”¨")]
     public PlayerData_SO playerData;
     public PlayerBullet_SO bulletData;
-    [Title("TMP•¶–{")]
+    public ShopData_SO shopData;
+    [Title("TMPæ–‡æœ¬")]
     public TMP_Text money;
     public TMP_Text HPDisplay,AttackDisplay, BassSpeedDisplay, MaxSpeedDisplay, TurningSpeedDisplay, CoolDownTimeDisplay, BulletExistenceTimeDisplay;
     
