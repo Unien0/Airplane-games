@@ -19,10 +19,11 @@ MonoBehaviour:
     shopDescription: "\u7B80\u5355\u7684\u88C5\u7532\uFF0C\u9AD8\u6548\u7684\u9632\u5FA1"
     shopImage: {fileID: 21300000, guid: f488d70a1b0a30a47bfb31faeeaa42cd, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -34,10 +35,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: 7df4e95dffa8aa949b281975be107542, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -49,10 +51,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: 9edc1a09850ecfd4c9692555775a23fa, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -64,10 +67,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: 8220d9b9d8f44794db5eab480fcbc844, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -79,10 +83,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: 6af0a19c16b11cc40bfd6f06f780f601, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -94,10 +99,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: fdfdbf076906f514d895148183f2610e, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4
@@ -109,10 +115,11 @@ MonoBehaviour:
     shopDescription: 
     shopImage: {fileID: 21300000, guid: 0d4116a4f2973cf47982a19b59c9c9e8, type: 3}
     experience: 0
-    level: 1
+    level: 0
     experienceCap: 100
+    levelMax: 0
     levelRanges:
-    - startLevel: 1
+    - startLevel: 0
       endLevel: 3
       experienceCapIncrease: 100
     - startLevel: 4

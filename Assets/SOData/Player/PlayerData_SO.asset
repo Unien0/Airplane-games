@@ -17,14 +17,14 @@ MonoBehaviour:
   playerIcon: {fileID: 21300000, guid: cf781d02961a4024cac279852319ce89, type: 3}
   playerOnWorldSprite: {fileID: 21300000, guid: cf781d02961a4024cac279852319ce89, type: 3}
   playerDescription: 
-  playerMoney: 66666666
+  playerMoney: 66666366
   playerMaxHP: 100
   playerMaxHPLevel: 0
   hpLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 20
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 30
   - Level: 3
     levelIncrease: 0
   - Level: 4
@@ -34,6 +34,7 @@ MonoBehaviour:
   playerHP: 100
   playerLucky: 0
   playerBaseSpeed: 2
+  playerBaseSpeedLevel: 0
   baseSpeedLevel:
   - Level: 1
     levelIncrease: 0
@@ -46,6 +47,7 @@ MonoBehaviour:
   - Level: 5
     levelIncrease: 0
   playerMaxSpeed: 5
+  playerMaxSpeedLevel: 0
   maxSpeedLevel:
   - Level: 1
     levelIncrease: 0
@@ -60,6 +62,7 @@ MonoBehaviour:
   playerMinSpeed: 0
   playerCurrentSpeed: 2
   playerTurningSpeed: 30
+  playerTurningSpeedLevel: 0
   turningSpeedLevel:
   - Level: 1
     levelIncrease: 0
