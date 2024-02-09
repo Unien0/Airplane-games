@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -81,6 +81,9 @@ public class TaskDetails
     [FoldoutGroup("$taskName", expanded: true)]
     [Header("任务是否完成（是否重复出现）")]
     public bool taskCompleted;
+    [FoldoutGroup("$taskName", expanded: true)]
+    [Header("任务启用，主线任务使用")]
+    public bool taskOpened;
     [FoldoutGroup("$taskName", expanded: true)]
     [Header("是否是强制任务")]
     public bool isMandatoryTask;
