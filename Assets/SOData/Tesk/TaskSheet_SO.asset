@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TaskSheetList:
   - taskSheetNamber: 1
-    taskID: 0
+    taskID: 1
     hasTakenOver: 0
   - taskSheetNamber: 2
-    taskID: 0
+    taskID: 1
     hasTakenOver: 0
   - taskSheetNamber: 3
-    taskID: 0
+    taskID: 2
     hasTakenOver: 0

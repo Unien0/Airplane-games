@@ -85,23 +85,150 @@ public class TaskManager : MonoBehaviour//单例模式
     {
         //获取总表中任务的数量
         taskListCount = taskListData.TaskDetailsList.Count;
+        SheetFilling();
     }
 
     private void Update()
     {
         //机库里当前任务显示
         TaskDataDisplay();
+        //任务列表中任务显示
+        DisplayTaskSheet();
+        DisplaySheet1();
+        DisplaySheet2();
+        DisplaySheet3();
     }
 
     //任务单回根据对应的ID显示任务
 
-    //1、在任务榜中没有任务的话，往里面填充任务
+    //1、在任务榜中没有任务的话，往里面填充任务【】
     //2、在承接了任务后替换那个任务榜单中任务
     //3、按下替换键后替换那个任务单中的任务
 
+    /// <summary>
+    /// 任务单填充
+    /// 在调出的时候启动
+    /// </summary>
+    void SheetFilling()
+    {
+        if (taskSheet != null && taskSheet.TaskSheetList != null)
+        {
+            foreach (var taskSheetEntry in taskSheet.TaskSheetList)
+            {
+                if (taskSheetEntry.taskID <= 0)
+                {
+                    taskSheetEntry.taskID = Random.Range(1, taskListCount+1);
+                }
+            }
+        }
+    }
 
+    /// <summary>
+    /// 替换任务（按钮
+    /// </summary>
+    public void ReplaceTask(TaskSheet_SO source,int sheetNumber)
+    {
+        //找到对应的数
+        TaskSheet taskSheetNumberID = source.TaskSheetList.Find(task => task.taskSheetNamber == sheetNumber);
+        if (taskSheetNumberID != null)
+        {
+            //实现替换
+            taskSheetNumberID.taskID = Random.Range(1, taskListCount + 1);
+        }
+    }
 
+    /// <summary>
+    /// 显示任务单中的信息
+    /// </summary>
+    void DisplayTaskSheet()
+    {
+        
+    }
 
+    void DisplaySheet1()
+    {
+        foreach (var taskSheetEntry in taskSheet.TaskSheetList)
+        {
+            if (taskSheetEntry.taskSheetNamber == 1)
+            {
+                // 在TaskDetailsList中查找匹配的任务细节
+                TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
+                if (taskDetails != null)
+                {
+                    taskSheetName1.text = taskDetails.taskName;
+                    taskSheetType1.text = taskDetails.taskType.ToString();
+                    taskSheetDescription1.text = taskDetails.taskDescription;
+                    taskSheetRemuneration1.text = taskDetails.remuneration.ToString();
+
+                    string taskInfo1 = null;
+                    foreach (var wave in taskDetails.waves)
+                    {
+                        foreach (var enemyGroup in wave.enemyGroups)
+                        {
+                            taskInfo1 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                        }
+                    }
+                    taskSheetTarget1.text = taskInfo1;
+                }
+            }
+        }
+    }
+    void DisplaySheet2()
+    {
+        foreach (var taskSheetEntry in taskSheet.TaskSheetList)
+        {
+            if (taskSheetEntry.taskSheetNamber == 2)
+            {
+                // 在TaskDetailsList中查找匹配的任务细节
+                TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
+                if (taskDetails != null)
+                {
+                    taskSheetName2.text = taskDetails.taskName;
+                    taskSheetType2.text = taskDetails.taskType.ToString();
+                    taskSheetDescription2.text = taskDetails.taskDescription;
+                    taskSheetRemuneration2.text = taskDetails.remuneration.ToString();
+
+                    string taskInfo2 = null;
+                    foreach (var wave in taskDetails.waves)
+                    {
+                        foreach (var enemyGroup in wave.enemyGroups)
+                        {
+                            taskInfo2 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                        }
+                    }
+                    taskSheetTarget2.text = taskInfo2;
+                }
+            }
+        }
+    }
+    void DisplaySheet3()
+    {
+        foreach (var taskSheetEntry in taskSheet.TaskSheetList)
+        {
+            if (taskSheetEntry.taskSheetNamber == 3)
+            {
+                // 在TaskDetailsList中查找匹配的任务细节
+                TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
+                if (taskDetails != null)
+                {
+                    taskSheetName3.text = taskDetails.taskName;
+                    taskSheetType3.text = taskDetails.taskType.ToString();
+                    taskSheetDescription3.text = taskDetails.taskDescription;
+                    taskSheetRemuneration3.text = taskDetails.remuneration.ToString();
+
+                    string taskInfo3 = null;
+                    foreach (var wave in taskDetails.waves)
+                    {
+                        foreach (var enemyGroup in wave.enemyGroups)
+                        {
+                            taskInfo3 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                        }
+                    }
+                    taskSheetTarget3.text = taskInfo3;
+                }
+            }
+        }
+    }
 
 
 
@@ -138,8 +265,8 @@ public class TaskManager : MonoBehaviour//单例模式
         // 如果找到了符合条件的项，则复制数据到CurrentTask_SO
         if (taskDetailsToCopy != null)
         {
-            //如果不是已完成的任务，那么就出现//错误！！！！！！！！
-            if (!taskDetailsToCopy.taskCompleted && taskDetailsToCopy.taskOpened)
+            //如果不是已完成的任务，那么就出现
+            if (!taskDetailsToCopy.taskCompleted)
             {
                 destination.taskID = taskDetailsToCopy.taskID.ToString();
                 destination.taskName = taskDetailsToCopy.taskName;
@@ -185,7 +312,7 @@ public class TaskManager : MonoBehaviour//单例模式
             else
             {
                 //不然再次随机一次
-                //防止新手任务反复出现//错误！！！！！！！！
+                //防止新手任务反复出现
                 CopyTaskButton();
             }
         }

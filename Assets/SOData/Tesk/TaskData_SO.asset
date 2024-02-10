@@ -37,9 +37,10 @@ MonoBehaviour:
     remuneration: 2000
     onTask: 0
     taskCompleted: 0
+    taskOpened: 0
     isMandatoryTask: 1
-  - taskID: 0
-    taskName: 
+  - taskID: 2
+    taskName: "\u9AD8\u624B\u4EFB\u52A1"
     taskType: 0
     taskDescription: 
     waves: []
@@ -49,7 +50,8 @@ MonoBehaviour:
     maxEnemiesAllowed: 0
     maxEnemiesReached: 0
     isWaveActive: 0
-    remuneration: 0
+    remuneration: 2000
     onTask: 0
     taskCompleted: 0
+    taskOpened: 0
     isMandatoryTask: 0
