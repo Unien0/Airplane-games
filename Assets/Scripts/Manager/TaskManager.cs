@@ -93,7 +93,6 @@ public class TaskManager : MonoBehaviour//单例模式
         //机库里当前任务显示
         TaskDataDisplay();
         //任务列表中任务显示
-        DisplayTaskSheet();
         DisplaySheet1();
         DisplaySheet2();
         DisplaySheet3();
@@ -126,10 +125,10 @@ public class TaskManager : MonoBehaviour//单例模式
     /// <summary>
     /// 替换任务（按钮
     /// </summary>
-    public void ReplaceTask(TaskSheet_SO source,int sheetNumber)
+    public void ReplaceTask(int sheetNumber)
     {
         //找到对应的数
-        TaskSheet taskSheetNumberID = source.TaskSheetList.Find(task => task.taskSheetNamber == sheetNumber);
+        TaskSheet taskSheetNumberID = taskSheet.TaskSheetList.Find(task => task.taskSheetNamber == sheetNumber);
         if (taskSheetNumberID != null)
         {
             //实现替换
@@ -140,11 +139,6 @@ public class TaskManager : MonoBehaviour//单例模式
     /// <summary>
     /// 显示任务单中的信息
     /// </summary>
-    void DisplayTaskSheet()
-    {
-        
-    }
-
     void DisplaySheet1()
     {
         foreach (var taskSheetEntry in taskSheet.TaskSheetList)
@@ -230,8 +224,6 @@ public class TaskManager : MonoBehaviour//单例模式
         }
     }
 
-
-
     public TaskDetails GetTaskDetails(int ID)
     {
         return taskListData.TaskDetailsList.Find(i => i.taskID == ID);
@@ -242,11 +234,11 @@ public class TaskManager : MonoBehaviour//单例模式
     /// 需要修改成随机ID
     /// </summary>
     /// <param name="ID"></param>
-    public void CopyTaskButton()
+    public void CopyTaskButton(int sheetNumber)
     {
-        //随机一个1到列表总数的值作为任务
-        int ID = Random.Range(1, taskListCount+1);
-        CopyTaskDataToCurrentTask(taskListData, currentTaskData,ID);//错误！！！！！！！！
+        TaskSheet taskSheetNumberID = taskSheet.TaskSheetList.Find(task => task.taskSheetNamber == sheetNumber);
+        int ID = taskSheetNumberID.taskID;
+        CopyTaskDataToCurrentTask(taskListData, currentTaskData,ID);
     }
 
     /// <summary>
@@ -308,12 +300,6 @@ public class TaskManager : MonoBehaviour//单例模式
                 destination.remuneration = taskDetailsToCopy.remuneration;
                 destination.taskCompleted = taskDetailsToCopy.taskCompleted;
                 destination.isMandatoryTask = taskDetailsToCopy.isMandatoryTask;
-            }
-            else
-            {
-                //不然再次随机一次
-                //防止新手任务反复出现
-                CopyTaskButton();
             }
         }
         else

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +12,8 @@ public class EnemyStats : MonoBehaviour
     }
 
     //敌人基本属性
+    public string enemyID;
+
     [HideInInspector]
     public float currentMoveSpeed;
     [SerializeField]
@@ -72,7 +74,7 @@ public class EnemyStats : MonoBehaviour
         FindObjectOfType<ExplosionEffectPool>().GetExplosion(this.transform.position);
         //死亡时候调用敌人生成器里的数量检测
         EnemySpawner enemyKill = FindObjectOfType<EnemySpawner>();
-        enemyKill.OnEnemyKilled();
+        enemyKill.OnEnemyKilled(enemyID);
         //回收敌人至对象池
         parentPool.ReleaseExplosion(this);
     }

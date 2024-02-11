@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 public class EnemySpawner : MonoBehaviour
 {
     public CurrentTask_SO currentTaskData;
+    public CurrentTask_SO currentTaskTarget;
 
     [System.Serializable]
     public class Wave
@@ -32,6 +33,13 @@ public class EnemySpawner : MonoBehaviour
         public GameObject enemyPrefab;
 
     }
+    [System.Serializable]
+    public class TargetGroup
+    {
+        public string targetEnemyID;
+        public int targetEnemyCount;
+    }
+
     [Header("波次")]
     public List<Wave> waves;
 
@@ -44,11 +52,20 @@ public class EnemySpawner : MonoBehaviour
     [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
     [Tooltip("是否启动出怪")] private bool isWaveActive = false;//是否启动出怪
 
+    [Header("目标达成数")]
+    public List<TargetGroup> targetWaves = new List<TargetGroup>();
+
     [Header("敌人生成点")]
     public List<Transform> relativeSpawnPoints;
 
     Transform player;
     private EnemyPool enemyPool;
+
+    private void Awake()
+    {
+        //在最开始的时候确认目标数量
+        StatisticalTargetQuantity();
+    }
 
     void Start()
     {
@@ -189,8 +206,99 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// 敌人死亡时候调用
     /// </summary>
-    public void OnEnemyKilled()
+    public void OnEnemyKilled(string enemyID)
     {
         enemiesAlive--;
+
+        // 遍历目标列表，找到对应的敌人 ID，并将数量减一
+        for (int i = 0; i < targetWaves.Count; i++)
+        {
+            if (targetWaves[i].targetEnemyID == enemyID)
+            {
+                targetWaves[i].targetEnemyCount--;
+                // 如果数量小于等于 0，可以选择移除该目标或者执行其他操作
+                // 这里假设数量小于等于 0 时从列表中移除该目标
+                if (targetWaves[i].targetEnemyCount <= 0)
+                {
+                    targetWaves.RemoveAt(i);
+                }
+                break;
+            }
+        }
+
+        // 检查是否所有 EnemyID 对应的 targetEnemyCount 都为 0
+        bool allClear = true; // 假设全部为 0
+        foreach (var id in GetDistinctEnemyIDs())
+        {
+            bool found = false;
+            foreach (var target in targetWaves)
+            {
+                if (target.targetEnemyID == id && target.targetEnemyCount > 0)
+                {
+                    found = true;
+                    break;
+                }
+            }
+            if (found)
+            {
+                allClear = false;
+                break;
+            }
+        }
+
+        // 如果所有 EnemyID 对应的 targetEnemyCount 都为 0，则发送命令
+        if (allClear && currentTaskData.taskType == TaskType.exterminate)
+        {
+            EventCenter.Broadcast(EventType.ExterminateTaskClear);
+        }
+    }
+
+    // 获取目标列表中出现的所有 EnemyID
+    private IEnumerable<string> GetDistinctEnemyIDs()
+    {
+        HashSet<string> enemyIDs = new HashSet<string>();
+        foreach (var target in targetWaves)
+        {
+            enemyIDs.Add(target.targetEnemyID);
+        }
+        return enemyIDs;
+    
+}
+
+    /// <summary>
+    /// 统计目标数量
+    /// </summary>
+    public void StatisticalTargetQuantity()
+    {
+        // 清空目标达成数列表
+        targetWaves.Clear();
+
+        // 创建一个字典来存储每个敌人类型的总生成数
+        Dictionary<string, int> enemyCounts = new Dictionary<string, int>();
+
+        // 计算每个敌人类型的总生成数
+        foreach (var wave in waves)
+        {
+            foreach (var enemyGroup in wave.enemyGroups)
+            {
+                if (enemyCounts.ContainsKey(enemyGroup.enemyID))
+                {
+                    enemyCounts[enemyGroup.enemyID] += enemyGroup.enemyCount;
+                }
+                else
+                {
+                    enemyCounts.Add(enemyGroup.enemyID, enemyGroup.enemyCount);
+                }
+            }
+        }
+
+        // 将结果添加到目标达成数列表中
+        foreach (var kvp in enemyCounts)
+        {
+            TargetGroup targetGroup = new TargetGroup();
+            targetGroup.targetEnemyID = kvp.Key;
+            targetGroup.targetEnemyCount = kvp.Value;
+            targetWaves.Add(targetGroup);
+        }
     }
 }

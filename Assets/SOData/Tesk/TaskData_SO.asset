@@ -24,7 +24,7 @@ MonoBehaviour:
         enemyName: "\u6D77\u5E26\u65E0\u4EBA\u673A"
         enemyCount: 10
         spawnCount: 0
-        enemyPrefab: {fileID: 0}
+        enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
       spawnInterval: 0
       spawnCount: 0

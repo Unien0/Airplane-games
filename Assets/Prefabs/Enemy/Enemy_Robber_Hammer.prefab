@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 29dc6ba53944f0549951a0b3a3e1d28d, type: 2}
+  enemyID: 002
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0

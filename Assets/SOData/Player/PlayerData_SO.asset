@@ -17,7 +17,7 @@ MonoBehaviour:
   playerIcon: {fileID: 21300000, guid: cf781d02961a4024cac279852319ce89, type: 3}
   playerOnWorldSprite: {fileID: 21300000, guid: cf781d02961a4024cac279852319ce89, type: 3}
   playerDescription: 
-  playerMoney: 66666366
+  playerMoney: 6000
   playerMaxHP: 100
   playerMaxHPLevel: 0
   hpLevel:
@@ -31,7 +31,7 @@ MonoBehaviour:
     levelIncrease: 0
   - Level: 5
     levelIncrease: 0
-  playerHP: 100
+  playerHP: 98
   playerLucky: 0
   playerBaseSpeed: 2
   playerBaseSpeedLevel: 0
