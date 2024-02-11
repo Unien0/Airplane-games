@@ -15,7 +15,7 @@ MonoBehaviour:
   TaskDetailsList:
   - taskID: 1
     taskName: "\u65B0\u624B\u4EFB\u52A1"
-    taskType: 0
+    taskType: 1
     taskDescription: "\u4E39\u5C3C\u7684\u65B0\u624B\u4EFB\u52A1\uFF0C\u89E3\u51B3\u638910\u4E2A\u6D77\u76D7\u65E0\u4EBA\u673A"
     waves:
     - waveName: "\u65B0\u4EFB\u52A1"

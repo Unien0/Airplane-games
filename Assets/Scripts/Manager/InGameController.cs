@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 用于结算任务
@@ -25,11 +26,6 @@ public class InGameController : MonoBehaviour
         EventCenter.RemoveListener(EventType.SurvivalTaskClear, TaskClear);
     }
 
-    private void Start()
-    {
-        
-    }
-
     /// <summary>
     /// 任务结算
     /// </summary>
@@ -37,18 +33,10 @@ public class InGameController : MonoBehaviour
     {
         //添加报酬金
         playerData.playerMoney += currentTask.remuneration;
-        //返回场景
 
         //清空当前任务
-
+        currentTask.ResetTaskData();
+        //返回场景
+        SceneManager.LoadScene("Rest");
     }
-
-    /// <summary>
-    /// 复制任务目标
-    /// </summary>
-    private void CopyTaskTarget()
-    {
-
-    }
-
 }
