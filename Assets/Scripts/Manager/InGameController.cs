@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class InGameController : MonoBehaviour
 {
+    public TaskData_SO taskData;
     public CurrentTask_SO currentTask;
-    public CurrentTask_SO currentTaskTarget;
     public PlayerData_SO playerData;
 
     public void Awake()
@@ -33,6 +33,13 @@ public class InGameController : MonoBehaviour
     {
         //添加报酬金
         playerData.playerMoney += currentTask.remuneration;
+        //不重复任务情况下将任务总表的对应id项目确认，防止再次出现（比如新手任务
+        if (currentTask.isMandatoryTask)
+        {
+            int ID = currentTask.taskID;
+            TaskDetails taskDetailsToCopy = taskData.TaskDetailsList.Find(task => task.taskID == ID);
+            taskDetailsToCopy.taskCompleted = true;
+        }
 
         //清空当前任务
         currentTask.ResetTaskData();

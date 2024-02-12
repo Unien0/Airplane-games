@@ -17,7 +17,11 @@ public class TaskManager : MonoBehaviour//单例模式
     private string taskInfo;
     private bool isClear;
     private bool missID;
-    
+
+    [Header("UI")]
+    public GameObject TaskTalk;
+    public GameObject TaskSheet;
+
     #region 任务单显示
     [FoldoutGroup("任务清单1", expanded: true)]
     public TMP_Text taskSheetName1;//名称
@@ -98,12 +102,6 @@ public class TaskManager : MonoBehaviour//单例模式
         DisplaySheet3();
     }
 
-    //任务单回根据对应的ID显示任务
-
-    //1、在任务榜中没有任务的话，往里面填充任务【】
-    //2、在承接了任务后替换那个任务榜单中任务
-    //3、按下替换键后替换那个任务单中的任务
-
     /// <summary>
     /// 任务单填充
     /// 在调出的时候启动
@@ -149,20 +147,27 @@ public class TaskManager : MonoBehaviour//单例模式
                 TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
                 if (taskDetails != null)
                 {
-                    taskSheetName1.text = taskDetails.taskName;
-                    taskSheetType1.text = taskDetails.taskType.ToString();
-                    taskSheetDescription1.text = taskDetails.taskDescription;
-                    taskSheetRemuneration1.text = taskDetails.remuneration.ToString();
-
-                    string taskInfo1 = null;
-                    foreach (var wave in taskDetails.waves)
+                    if ( !taskDetails.taskCompleted && !taskDetails.isMandatoryTask)
                     {
-                        foreach (var enemyGroup in wave.enemyGroups)
+                        taskSheetName1.text = taskDetails.taskName;
+                        taskSheetType1.text = taskDetails.taskType.ToString();
+                        taskSheetDescription1.text = taskDetails.taskDescription;
+                        taskSheetRemuneration1.text = taskDetails.remuneration.ToString();
+
+                        string taskInfo1 = null;
+                        foreach (var wave in taskDetails.waves)
                         {
-                            taskInfo1 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            foreach (var enemyGroup in wave.enemyGroups)
+                            {
+                                taskInfo1 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            }
                         }
+                        taskSheetTarget1.text = taskInfo1;
                     }
-                    taskSheetTarget1.text = taskInfo1;
+                    else
+                    {
+                        ReplaceTask(1);
+                    }
                 }
             }
         }
@@ -177,20 +182,27 @@ public class TaskManager : MonoBehaviour//单例模式
                 TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
                 if (taskDetails != null)
                 {
-                    taskSheetName2.text = taskDetails.taskName;
-                    taskSheetType2.text = taskDetails.taskType.ToString();
-                    taskSheetDescription2.text = taskDetails.taskDescription;
-                    taskSheetRemuneration2.text = taskDetails.remuneration.ToString();
-
-                    string taskInfo2 = null;
-                    foreach (var wave in taskDetails.waves)
+                    if (!taskDetails.taskCompleted && !taskDetails.isMandatoryTask)
                     {
-                        foreach (var enemyGroup in wave.enemyGroups)
+                        taskSheetName2.text = taskDetails.taskName;
+                        taskSheetType2.text = taskDetails.taskType.ToString();
+                        taskSheetDescription2.text = taskDetails.taskDescription;
+                        taskSheetRemuneration2.text = taskDetails.remuneration.ToString();
+
+                        string taskInfo2 = null;
+                        foreach (var wave in taskDetails.waves)
                         {
-                            taskInfo2 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            foreach (var enemyGroup in wave.enemyGroups)
+                            {
+                                taskInfo2 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            }
                         }
+                        taskSheetTarget2.text = taskInfo2;
                     }
-                    taskSheetTarget2.text = taskInfo2;
+                    else
+                    {
+                        ReplaceTask(2);
+                    }
                 }
             }
         }
@@ -205,20 +217,27 @@ public class TaskManager : MonoBehaviour//单例模式
                 TaskDetails taskDetails = taskListData.TaskDetailsList.Find(t => t.taskID == taskSheetEntry.taskID);
                 if (taskDetails != null)
                 {
-                    taskSheetName3.text = taskDetails.taskName;
-                    taskSheetType3.text = taskDetails.taskType.ToString();
-                    taskSheetDescription3.text = taskDetails.taskDescription;
-                    taskSheetRemuneration3.text = taskDetails.remuneration.ToString();
-
-                    string taskInfo3 = null;
-                    foreach (var wave in taskDetails.waves)
+                    if (!taskDetails.taskCompleted && !taskDetails.isMandatoryTask)
                     {
-                        foreach (var enemyGroup in wave.enemyGroups)
+                        taskSheetName3.text = taskDetails.taskName;
+                        taskSheetType3.text = taskDetails.taskType.ToString();
+                        taskSheetDescription3.text = taskDetails.taskDescription;
+                        taskSheetRemuneration3.text = taskDetails.remuneration.ToString();
+
+                        string taskInfo3 = null;
+                        foreach (var wave in taskDetails.waves)
                         {
-                            taskInfo3 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            foreach (var enemyGroup in wave.enemyGroups)
+                            {
+                                taskInfo3 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            }
                         }
+                        taskSheetTarget3.text = taskInfo3;
                     }
-                    taskSheetTarget3.text = taskInfo3;
+                    else
+                    {
+                        ReplaceTask(3);
+                    }
                 }
             }
         }
@@ -260,7 +279,7 @@ public class TaskManager : MonoBehaviour//单例模式
             //如果不是已完成的任务，那么就出现
             if (!taskDetailsToCopy.taskCompleted)
             {
-                destination.taskID = taskDetailsToCopy.taskID.ToString();
+                destination.taskID = taskDetailsToCopy.taskID;
                 destination.taskName = taskDetailsToCopy.taskName;
                 destination.taskType = taskDetailsToCopy.taskType;
                 destination.taskDescription = taskDetailsToCopy.taskDescription;
@@ -300,6 +319,7 @@ public class TaskManager : MonoBehaviour//单例模式
                 destination.remuneration = taskDetailsToCopy.remuneration;
                 destination.taskCompleted = taskDetailsToCopy.taskCompleted;
                 destination.isMandatoryTask = taskDetailsToCopy.isMandatoryTask;
+                currentTaskData.onTask = true;
             }
         }
         else
@@ -363,6 +383,22 @@ public class TaskManager : MonoBehaviour//单例模式
             taskDescription.text = "内容：" + "";
             taskTarget.text = "";
             taskRemuneration.text = "";
+        }
+    }
+
+    /// <summary>
+    /// 按钮打开任务单
+    /// </summary>
+    public void ButtonOpenTaskSheet()
+    {
+        if (currentTaskData.onTask)
+        {
+            //显示对话
+        }
+        else
+        {
+            TaskTalk.SetActive(false);
+            TaskSheet.SetActive(true);
         }
     }
 }

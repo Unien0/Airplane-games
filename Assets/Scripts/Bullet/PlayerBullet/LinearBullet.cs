@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -89,7 +89,7 @@ public class LinearBullet : MonoBehaviour
         //SpaceArtPublishState spaceArtPublishState = collision.gameObject.GetComponent<SpaceArtPublishState>();
         EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
         int damage = (int)(playerBulletCurrentDamage * linerBulletCurrentDamage);
-        Debug.Log(damage);
+        //Debug.Log(damage);
         //spaceArtPublishState.TakeDamage(damage);
         if (enemyStats != null)
         {

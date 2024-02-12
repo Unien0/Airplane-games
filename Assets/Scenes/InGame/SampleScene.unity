@@ -4952,8 +4952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4399cb5001f9aa438011e6b548042fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskData: {fileID: 11400000, guid: f297140eb64e6b84e88919c2fab8eb82, type: 2}
   currentTask: {fileID: 11400000, guid: f7988551f9e8aa7438ac9025b1c01929, type: 2}
-  currentTaskTarget: {fileID: 11400000, guid: b910b538de5cb1c48ab78388ac729997, type: 2}
   playerData: {fileID: 11400000, guid: 12deba11ded515c4f9674f3cb6c0aa78, type: 2}
 --- !u!1 &1633030970
 GameObject:

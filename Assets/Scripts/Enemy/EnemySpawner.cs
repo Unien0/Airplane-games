@@ -33,12 +33,7 @@ public class EnemySpawner : MonoBehaviour
         public GameObject enemyPrefab;
 
     }
-    [System.Serializable]
-    public class TargetGroup
-    {
-        public string targetEnemyID;
-        public int targetEnemyCount;
-    }
+
 
     [Header("波次")]
     public List<Wave> waves;
@@ -52,8 +47,15 @@ public class EnemySpawner : MonoBehaviour
     [Tooltip("是否达到最大敌人数")] public bool maxEnemiesReached = false;//是否达到最大敌人数
     [Tooltip("是否启动出怪")] private bool isWaveActive = false;//是否启动出怪
 
+
+    [System.Serializable]
+    public class TargetGroup
+    {
+        public string targetEnemyID;
+        public int targetEnemyCount;
+    }
     [Header("目标达成数")]
-    public List<TargetGroup> targetWaves = new List<TargetGroup>();
+    public List<TargetGroup> targetWaves;
 
     [Header("敌人生成点")]
     public List<Transform> relativeSpawnPoints;
@@ -63,13 +65,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
+        VariableBinding();
         //在最开始的时候确认目标数量
         StatisticalTargetQuantity();
     }
 
     void Start()
     {
-        VariableBinding();
+        
         player = FindObjectOfType<PlayerState>().transform;
         enemyPool = FindObjectOfType<EnemyPool>();//绑定对象池
         CalculateWaveQuota();//游戏开始时候运行，用于生成第一波敌人

@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 public class CurrentTask_SO : ScriptableObject
 {
     [Header("任务数据")]
-    public string taskID;
+    public int taskID;
     public string taskName;
     public TaskType taskType;
     [LabelWidth(100)]
@@ -64,7 +64,7 @@ public class CurrentTask_SO : ScriptableObject
 
     public void ResetTaskData()
     {
-        taskID = string.Empty;
+        taskID =0;
         taskName = string.Empty;
         taskType = TaskType.Default; // 你需要根据实际情况设置默认值
         taskDescription = string.Empty;
