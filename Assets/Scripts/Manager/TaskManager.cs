@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Sirenix.OdinInspector;
+using Fungus;
 
 public class TaskManager : MonoBehaviour//单例模式
 {
@@ -21,6 +22,7 @@ public class TaskManager : MonoBehaviour//单例模式
     [Header("UI")]
     public GameObject TaskTalk;
     public GameObject TaskSheet;
+    public Flowchart flowchart;
 
     #region 任务单显示
     [FoldoutGroup("任务清单1", expanded: true)]
@@ -100,6 +102,15 @@ public class TaskManager : MonoBehaviour//单例模式
         DisplaySheet1();
         DisplaySheet2();
         DisplaySheet3();
+
+        if (currentTaskData.onTask)
+        {
+            flowchart.SetBooleanVariable("OnTask", true);
+        }
+        else
+        {
+            flowchart.SetBooleanVariable("OnTask", false);
+        }
     }
 
     /// <summary>
