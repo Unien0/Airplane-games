@@ -16871,7 +16871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 12deba11ded515c4f9674f3cb6c0aa78, type: 2}
   bulletData: {fileID: 11400000, guid: 05ec617357afbf14e8fd9074b2701a12, type: 2}
-  shopData: {fileID: 0}
+  shopData: {fileID: 11400000, guid: d0dce46e0c59db9439d8c24ec30f9186, type: 2}
   money: {fileID: 906486342}
   HPDisplay: {fileID: 1586218468}
   AttackDisplay: {fileID: 971307170}
