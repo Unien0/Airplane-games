@@ -355,6 +355,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 342132014}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1634074953}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -616,6 +628,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56842024}
   m_CullTransparentMesh: 1
+--- !u!1 &88033790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88033792}
+  - component: {fileID: 88033791}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &88033791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88033790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641c9d1f35064704e8d279dbd5c64563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDetailsData: {fileID: 11400000, guid: 9b3172f8b17039b4598eaf80014287ec, type: 2}
+  sceneSoundData: {fileID: 11400000, guid: 2fb8d16df512be24f915e95ae54b74d2, type: 2}
+  ambientSource: {fileID: 1707326966}
+  gameSource: {fileID: 1237296775}
+  audioMixer: {fileID: 24100000, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+  normalSnapShot: {fileID: 24500006, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+  muteSnapShot: {fileID: 439744501770242855, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+--- !u!4 &88033792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88033790}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1707326965}
+  - {fileID: 1237296774}
+  m_Father: {fileID: 1842056444}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &225421338
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +816,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225421338}
   m_CullTransparentMesh: 1
+--- !u!1 &342132013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342132015}
+  - component: {fileID: 342132014}
+  m_Layer: 0
+  m_Name: SoundButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &342132014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342132013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acd8cc787f8bb446ad6688f2fd1178a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &342132015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342132013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1842056444}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &380082616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +1376,7 @@ MonoBehaviour:
   openPrefabs: 0
   prefabs: []
   idRef:
-    _Keys: 69dd263c8032606862484f39a032152afaaab7c5e157fe04a2cd0f5988c9cd0ca6f9018e3d81ad3e477b0ce30d3433713d073ae5299c96313736bb2f2a76642beba36d59cf79137ba80af2a39c1eed2a21778e147a4fe638ec13c34b6d0431019792d94b2c0f61038eb001242b4aea6914b4e72cc8e579294a90f39ce7ad49605e9e5f78d0f7f03587eda01e0971336192c550342f3bb56e581f38514d997f1dd79f9eeed7b4341ea48bdb66b32ff3288adb95aabadf316f3d44f82ce7b61223ff7ee37f71171c4370cca9f83982ec2e17e0ceb1a18c413c0b4072cc70c63119b86ecf536c1b4502404f16fc30e5be2af6218cbb4f3c8872c4598cce5bb02c35013cbe354d673e3226d0705276440c268148d64e3a75c90cf84290138e76a60f85b3050cd87623701da66a8034ca030767b250a3867b70738e4ed36f08ae3e62898028d5b6e7000895b8941f1fb5bf2d3f88addc2603880844917e8aa2b3686d6808f7b4a12d507e4eb7f03219afab287159ce80fe9dc37a08df6dda97899a1f5127b716bd0a8b10c8d1d5220c45dd0c3da7fbfc82e86b05cd72bc819b2b153b1cd1824067c1e67c1b2047d3375e923dff9fe9c17a695e68ff04f895844d547619b803bcbe513c747674b5797abf7019bcb24a4b4e0a740ce710053bc29da5018e77e161a098cd6ee17f83fc4254c179d01404e5f3cd351054c445b89c32006445eb330288fdc7221b2394307987363bd17e0bd7a28bf54043d0b565dd860a12801847a8df410e2debf26d85255400554ee10117626689338e09e61d2728c12fe173bfb74761445ed259509fbf72a36f70dd25838c0da223b97d0b1892d7c6585617895301c67514635db9f7e9158c01ad56ad49033ea311e91c8e3a92a20e5720a8f5d7fbf6715598efdfd0ab55c65cf10a6b3b2a7c54188c88961bc8c57d3fb29ee96df49c025cc702e0f21d73bd3ee2ea488737d22d6302f1b38c9faa732d729f1f0d6b5867720dc774279c61fb00ba2a024cf2fa897b2750aacf104fe51b33b38f19b070031d8fb264bd93caaa3aae45868fa1f9385f0a4d2e8a58d8c46c2a9b401ee78122623da9681602c2920f7fc7f93781191d2debee23fd9f8e75688a2f19d1f436dd2c232353f791215c47bb1e0a1fd2fbed427632527724fb71104791f5295be0fd3520d08dd3a8c01a49a4255aa56c15be0d4b6ab8bd98943b7242d719862c068703de77273f6b766105fc3f3c07aa6d5132d2e8def1273f9c4b0c0091d0a6941d5453a2390a12805e2a09b2c1585833c851294c5914e4782a612624b493f8ce536f5d915a4ca65c4553b9f7188a81bc0c3f371c58a5c4f68f2578d7e5edcbca32280531fbc7d97bab7a92ac5ced60a0df69e88a34ead907cb660134c47d41321e12c5f090b3b7d4184371dd3771537d8628f87cd556ff1d01016594c6a4b72d383bcc6f2970102cb2435d87860430a5ec7cae9b75be087511581171e7b465420544a4fb3cc2a7f63834356e068869022e0a80bd09e44885cc407e7d7e7eec9956608dcba82be2af23476340889a6e89ef0f42dc33224be98c293982bcd68845b76317a51534aa59ec2f9ac148880e66af0a7290c4f09acbea7658d2f35ff24cbf5608137c378b459b16ef03bc0d3115382ed4b164f781c7c91d70747382b2b3dd4d02f181fae9777e2cf6addf9e88f8a86c0b218b40e7c8d5404b5fc717d119645c1ff6f1dc69cde75b343801d3e72b9576cc067891289c6538e4bf4f755099a5244a827f9107cb033d3a2f0dafc601581e35afb3355e2ccb7e6e473fd7e3a2543322da759b54fc9000043a57f88fb5711ae891bf5e1a903a76b102ffb1f425df237cbe2d5f890b8d381eb3399984c40d2447a6408a9e4cb14cec1416ae0220f429ab1f8c60f2509b3be0d4f8bbdb14f02ae5848bb11c2f5c0c20f87dcdc9d4fa120c25086499953d36707a4a9d223b3b3f599d4b00c7a3f875034c6ba5cfe38316e5fc5d22e770707ba2349d02d3aad81b47e94e9930fc53465e25bdc82cb0d5773e3dbf5e1b41165a34bd752b88f94b68d36c9eb3d5679854fe60b725de195837f1383c761b66a53e371071116d578d2047c54f7ad1bda55ad7135c7bf93b394dea52e23eca3d7b6cc75feae5d9a9c255eed8de18c9dd653392e14d2fc221370428db043fc533150a49e2b372d3c0817f2a4d962ee5aee90c145154170fb3555ad81a42015a7d6f453d2b3118d60c9f2d60cd05748b091f7a0f08ade977d3e602c8f1b611fd7d2558432495ee20fe1c074ed9872346351a1f3abdf351d085cd69462e50e4568d30210ea2485061f2640f1359c8afa4f6b602f32a28c0752b7742572ba8f1ad37b023f756cf1682947f4759e3652a4d7d0d3ce653d881b6f09738e67505cab58d9d4bf6145a0439327a77aa6f195891a190261e6c0c595e2f6d064169020866b6031a7f4fcbc6ddf7fd4c269ed4daf60f3544e4dee82299f6a93aa75446a23582dd0c940126be2935b61495a67f02fbb70331cd41db78311f7f775b6f93cec25f7d567ce06ef736f46d196c02730d8858c15e5877d6f3a765da7482af63baa2e7520a24d5851a490cfa3fb0f50d2fab71ee01fa261c82a60a3a68ae35764b898aaf1ebbe279e65828bc7cb169325ededca7649d89f80570711b64721544b158abc810768e6e78b43bc07cf8cb002ef473362270259cc407931940c1620c6d7106815184a45f669314e7284e7681bdc06fdc2e72ed268cba023966ab89a7ba3429ed55181e1c7dc4f2087afd6dffce2c86d1303f3bdf5f2c0d0b7d6af9ba096c2df324882ba5a2535e6a7fe5ab8928010893325bd8f870084d8225d665ec34c801f22a9edba8a7d38c7b625aa0bb2768cc80616588ae9434831c3b57808846b460b719624c76d9a014a1315c951567915abd5e19b165af5078a11b429202abeb3de9445cb7294ad2bf7e258a5fb7532f00ae3d58d488b5425a0279cfbd854acfca0d1c29df389e6db5a94ec2199f9a39989626ee92980d12f64566fcdb393e3f03a42f775fc92c59da005182a5f1432ef8e440aeeb85704002ad093d506d05dd837e3f3e62a2d4f20f8b1fdb61dfec59128245fee0eb4d1225e610c05d2e3e77bf770227b282909ab93361f977bda94d75d36255650625b221417c1b09e5cda20e171ea199b45e1e659c2932d7fc419033ae197c921494e04da765d9e2c5a790f1aa48144cedacd9442e2506a7f35f3dca8d5a9f63f2d23137bd12f93df2bce5b8332d02446f2401f5dc21297db1ce4fd64460ec94d12c2457be32ddadafb0338e2a78772cdc720532e708986b3ab233d5437f5511e2af4970f831cade9bd1c04be6376631f16f6e43c2228ed969dcffbaae4a83bf3ca0d2854646ec8df204c4aec021a67e1374a9921c26a154a65558735b4ac9850caff5966e3de82c407bbd35252c83666f1ce7d3b82fc035e6a5d59dac4f85b4df9738f2c62be23b1394ae23f85ed27d0545d8caff16b66944683e51731dc83915a4703e5b2f6852500c78709252805dd44cd46ce7042324aedc38425a36068037749c2fff37dc131ceda25805470bde1ebe79c26c601aeaf6cc10a40962de4bf899b4de1128c467df6304e82f0d7c580dd1809c0a79bf9625a3912d645660a504dd6881e8082b771cf3d196062a1936bd157b494248903f2e084ad8873d448b1438bb0ef640ae9105390dc8cd0954d13bcd3c2c73407037e32de8cb72531121c9a354c01a09407dc30c4f7c5538ff54a8f3f124291d1eb24a2e92705d1515bbf2460f8070138c1bbcc217fab5352359a4001826171b396172a754b8607e1b6a7ff21f14cb24fc1450eb155e2d12915b5642175db45cf235e2c43947cd58aefe956f27c39a45effc464cf347e47635ee8414224be03254c83143ea4d360e72b8dec8a12d9204
+    _Keys: 69dd263c8032606862484f39a032152afaaab7c5e157fe04a2cd0f5988c9cd0ca6f9018e3d81ad3e477b0ce30d3433713d073ae5299c96313736bb2f2a76642beba36d59cf79137ba80af2a39c1eed2a21778e147a4fe638ec13c34b6d0431019792d94b2c0f61038eb001242b4aea6914b4e72cc8e579294a90f39ce7ad49605e9e5f78d0f7f03587eda01e0971336192c550342f3bb56e581f38514d997f1dd79f9eeed7b4341ea48bdb66b32ff3288adb95aabadf316f3d44f82ce7b61223ff7ee37f71171c4370cca9f83982ec2e17e0ceb1a18c413c0b4072cc70c63119b86ecf536c1b4502404f16fc30e5be2af6218cbb4f3c8872c4598cce5bb02c35013cbe354d673e3226d0705276440c268148d64e3a75c90cf84290138e76a60f85b3050cd87623701da66a8034ca030767b250a3867b70738e4ed36f08ae3e62898028d5b6e7000895b8941f1fb5bf2d3f88addc2603880844917e8aa2b3686d6808f7b4a12d507e4eb7f03219afab287159ce80fe9dc37a08df6dda97899a1f5127b716bd0a8b10c8d1d5220c45dd0c3da7fbfc82e86b05cd72bc819b2b153b1cd1824067c1e67c1b2047d3375e923dff9fe9c17a695e68ff04f895844d547619b803bcbe513c747674b5797abf7019bcb24a4b4e0a740ce710053bc29da5018e77e161a098cd6ee17f83fc4254c179d01404e5f3cd351054c445b89c32006445eb330288fdc7221b2394307987363bd17e0bd7a28bf54043d0b565dd860a12801847a8df410e2debf26d85255400554ee10117626689338e09e61d2728c12fe173bfb74761445ed259509fbf72a36f70dd25838c0da223b97d0b1892d7c6585617895301c67514635db9f7e9158c01ad56ad49033ea311e91c8e3a92a20e5720a8f5d7fbf6715598efdfd0ab55c65cf10a6b3b2a7c54188c88961bc8c57d3fb29ee96df49c025cc702e0f21d73bd3ee2ea488737d22d6302f1b38c9faa732d729f1f0d6b5867720dc774279c61fb00ba2a024cf2fa897b2750aacf104fe51b33b38f19b070031d8fb264bd93caaa3aae45868fa1f9385f0a4d2e8a58d8c46c2a9b401ee78122623da9681602c2920f7fc7f93781191d2debee23fd9f8e75688a2f19d1f436dd2c232353f791215c47bb1e0a1fd2fbed427632527724fb71104791f5295be0fd3520d08dd3a8c01a49a4255aa56c15be0d4b6ab8bd98943b7242d719862c068703de77273f6b766105fc3f3c07aa6d5132d2e8def1273f9c4b0c0091d0a6941d5453a2390a12805e2a09b2c1585833c851294c5914e4782a612624b493f8ce536f5d915a4ca65c4553b9f7188a81bc0c3f371c58a5c4f68f2578d7e5edcbca32280531fbc7d97bab7a92ac5ced60a0df69e88a34ead907cb660134c47d41321e12c5f090b3b7d4184371dd3771537d8628f87cd556ff1d01016594c6a4b72d383bcc6f2970102cb2435d87860430a5ec7cae9b75be087511581171e7b465420544a4fb3cc2a7f63834356e068869022e0a80bd09e44885cc407e7d7e7eec9956608dcba82be2af23476340889a6e89ef0f42dc33224be98c293982bcd68845b76317a51534aa59ec2f9ac148880e66af0a7290c4f09acbea7658d2f35ff24cbf5608137c378b459b16ef03bc0d3115382ed4b164f781c7c91d70747382b2b3dd4d02f181fae9777e2cf6addf9e88f8a86c0b218b40e7c8d5404b5fc717d119645c1ff6f1dc69cde75b343801d3e72b9576cc067891289c6538e4bf4f755099a5244a827f9107cb033d3a2f0dafc601581e35afb3355e2ccb7e6e473fd7e3a2543322da759b54fc9000043a57f88fb5711ae891bf5e1a903a76b102ffb1f425df237cbe2d5f890b8d381eb3399984c40d2447a6408a9e4cb14cec1416ae0220f429ab1f8c60f2509b3be0d4f8bbdb14f02ae5848bb11c2f5c0c20f87dcdc9d4fa120c25086499953d36707a4a9d223b3b3f599d4b00c7a3f875034c6ba5cfe38316e5fc5d22e770707ba2349d02d3aad81b47e94e9930fc53465e25bdc82cb0d5773e3dbf5e1b41165a34bd752b88f94b68d36c9eb3d5679854fe60b725de195837f1383c761b66a53e371071116d578d2047c54f7ad1bda55ad7135c7bf93b394dea52e23eca3d7b6cc75feae5d9a9c255eed8de18c9dd653392e14d2fc221370428db043fc533150a49e2b372d3c0817f2a4d962ee5aee90c145154170fb3555ad81a42015a7d6f453d2b3118d60c9f2d60cd05748b091f7a0f08ade977d3e602c8f1b611fd7d2558432495ee20fe1c074ed9872346351a1f3abdf351d085cd69462e50e4568d30210ea2485061f2640f1359c8afa4f6b602f32a28c0752b7742572ba8f1ad37b023f756cf1682947f4759e3652a4d7d0d3ce653d881b6f09738e67505cab58d9d4bf6145a0439327a77aa6f195891a190261e6c0c595e2f6d064169020866b6031a7f4fcbc6ddf7fd4c269ed4daf60f3544e4dee82299f6a93aa75446a23582dd0c940126be2935b61495a67f02fbb70331cd41db78311f7f775b6f93cec25f7d567ce06ef736f46d196c02730d8858c15e5877d6f3a765da7482af63baa2e7520a24d5851a490cfa3fb0f50d2fab71ee01fa261c82a60a3a68ae35764b898aaf1ebbe279e65828bc7cb169325ededca7649d89f80570711b64721544b158abc810768e6e78b43bc07cf8cb002ef473362270259cc407931940c1620c6d7106815184a45f669314e7284e7681bdc06fdc2e72ed268cba023966ab89a7ba3429ed55181e1c7dc4f2087afd6dffce2c86d1303f3bdf5f2c0d0b7d6af9ba096c2df324882ba5a2535e6a7fe5ab8928010893325bd8f870084d8225d665ec34c801f22a9edba8a7d38c7b625aa0bb2768cc80616588ae9434831c3b57808846b460b719624c76d9a014a1315c951567915abd5e19b165af5078a11b429202abeb3de9445cb7294ad2bf7e258a5fb7532f00ae3d58d488b5425a0279cfbd854acfca0d1c29df389e6db5a94ec2199f9a39989626ee92980d12f64566fcdb393e3f03a42f775fc92c59da005182a5f1432ef8e440aeeb85704002ad093d506d05dd837e3f3e62a2d4f20f8b1fdb61dfec59128245fee0eb4d1225e610c05d2e3e77bf770227b282909ab93361f977bda94d75d36255650625b221417c1b09e5cda20e171ea199b45e1e659c2932d7fc419033ae197c921494e04da765d9e2c5a790f1aa48144cedacd9442e2506a7f35f3dca8d5a9f63f2d23137bd12f93df2bce5b8332d02446f2401f5dc21297db1ce4fd64460ec94d12c2457be32ddadafb0338e2a78772cdc720532e708986b3ab233d5437f5511e2af4970f831cade9bd1c04be6376631f16f6e43c2228ed969dcffbaae4a83bf3ca0d2854646ec8df204c4aec021a67e1374a9921c26a154a65558735b4ac9850caff5966e3de82c407bbd35252c83666f1ce7d3b82fc035e6a5d59dac4f85b4df9738f2c62be23b1394ae23f85ed27d0545d8caff16b66944683e51731dc83915a4703e5b2f6852500c78709252805dd44cd46ce7042324aedc38425a36068037749c2fff37dc131ceda25805470bde1ebe79c26c601aeaf6cc10a40962de4bf899b4de1128c467df6304e82f0d7c580dd1809c0a79bf9625a3912d645660a504dd6881e8082b771cf3d196062a1936bd157b494248903f2e084ad8873d448b1438bb0ef640ae9105390dc8cd0954d13bcd3c2c73407037e32de8cb72531121c9a354c01a09407dc30c4f7c5538ff54a8f3f124291d1eb24a2e92705d1515bbf2460f8070138c1bbcc217fab5352359a4001826171b396172a754b8607e1b6a7ff21f14cb24fc1450eb155e2d12915b5642175db45cf235e2c43947cd58aefe956f27c39a45effc464cf347e47635ee8414224be03254c83143ea4d360e72b8dec8a12d920444b278dabf78985604b3b2c0621f521aff1d5c0afc10f428c72eaf60586c5a327b0f69bf42e2a2321fa8c471d933c07372ec9834a6a3fc22cc86b1da5fb82054c6ea0f8e38567a31754cd7f89b2ee6286f762da8c2f84e5468d9fc18850c2b23e57ab495e617625ab5323dfcda211e44fed96a2739c286045e4c3f196dd2e76ee14cdece6345fb1ef1a2918b2c1e743a8c637100d727233fb5e4cfbce8b99f6a8704ce436e50fa3336cf86a82acb2b23a0dac5bf0f0fd65653a918b36535771aa97e950814ab224857123f04dbef1f692be2637675ada777d287103ac8b9326b47a151a96034370a6f2fd57dbe48dd18e1fc2df3c4feca5eea02643de515ab09f07154a4625ce937148c076b225aff3f8ebe790b7a5e75262c3bbaab70416d4e798c94c5c6adf239ef60927c88071837ee0b0546bb1f027685e20ffcb480db6c2aee1b05b710d36396dfa04437e04f0f4ba43bb62d194f1ab77d67fdcfd17a64e571e2f73f7b3655
     _Values:
     - {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
     - {fileID: 700773842}
@@ -1618,6 +1727,51 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a78ecac5aa8557249a9b1d871c6263c8, type: 2}
     - {fileID: 11500000, guid: 967e9304149b8aa4791de56bf1b8ae71, type: 3}
     - {fileID: 11400000, guid: 242b104e0eabfd94594ed5f3c0d7b4a2, type: 2}
+    - {fileID: 342132015}
+    - {fileID: 342132013}
+    - {fileID: 1815128386}
+    - {fileID: 1815128388}
+    - {fileID: 1815128387}
+    - {fileID: 24300002, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 4697944394151349107, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: -1887707350933747967, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: -7431375367351091912, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 11500000, guid: 576158c6179637c438299872666f522c, type: 3}
+    - {fileID: -1366411266917210455, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 11500000, guid: 3b682a40a40b86f429d716ecce410984, type: 3}
+    - {fileID: -7033578358106920427, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+    - {fileID: 24500006, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 24100000, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 439744501770242855, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+    - {fileID: 3562209604821533406, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+    - {fileID: 1087431357676248013, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+    - {fileID: 2512205301234551390, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+    - {fileID: 1707326966}
+    - {fileID: 1237296775}
+    - {fileID: 1707326965}
+    - {fileID: 1237296773}
+    - {fileID: 88033792}
+    - {fileID: 88033790}
+    - {fileID: 88033791}
+    - {fileID: 1237296774}
+    - {fileID: 1707326964}
+    - {fileID: 11500000, guid: 8c8c8b606b526ea459c266e16587ae3f, type: 3}
+    - {fileID: 11500000, guid: 641c9d1f35064704e8d279dbd5c64563, type: 3}
+    - {fileID: 11500000, guid: 7511dbfccc36d0a4d8f235b9053b9068, type: 3}
+    - {fileID: 11400000, guid: 9b3172f8b17039b4598eaf80014287ec, type: 2}
+    - {fileID: 11400000, guid: 2fb8d16df512be24f915e95ae54b74d2, type: 2}
+    - {fileID: 8300000, guid: ec47c83cf3a7d8d45a1ed16675dd0a90, type: 3}
+    - {fileID: 8300000, guid: 5bc7927f28e1052488dde6b6702239d7, type: 3}
+    - {fileID: 8300000, guid: 481cfc1ac95141243ad102346907deb9, type: 3}
+    - {fileID: 8300000, guid: 32552b1b5af7acb4ca60d3d3fbba6b98, type: 3}
+    - {fileID: 8300000, guid: 47176a48b89193a4983752783e2972ec, type: 3}
+    - {fileID: 8300000, guid: e714593df3cd6f84c941c8a7c2981e33, type: 3}
+    - {fileID: 8300000, guid: 74a3be7b0a31e8b409975669c72261a3, type: 3}
+    - {fileID: 8300000, guid: a11e989ade34aa14caf85354f4c16105, type: 3}
+    - {fileID: 8300000, guid: 33d3c4c566254de4792b4c80400f14b5, type: 3}
+    - {fileID: 342132014}
+    - {fileID: 11500000, guid: 9acd8cc787f8bb446ad6688f2fd1178a, type: 3}
 --- !u!4 &493246063
 Transform:
   m_ObjectHideFlags: 0
@@ -3658,6 +3812,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caedf86d6997a1d4288fd18e15ab25a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1237296773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237296774}
+  - component: {fileID: 1237296775}
+  m_Layer: 0
+  m_Name: Music Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1237296774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237296773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 88033792}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1237296775
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237296773}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1366411266917210455, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1290677720
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +4040,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 342132014}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4203,6 +4497,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: OP1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 342132014}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1345206552
@@ -5464,6 +5770,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 342132014}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 458599931}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5978,6 +6296,134 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1707326964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707326965}
+  - component: {fileID: 1707326966}
+  m_Layer: 0
+  m_Name: Ambient Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1707326965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707326964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 88033792}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1707326966
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707326964}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1887707350933747967, guid: 7dbccb633a4df2948afeaa4aa30772e3, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1729396909
 GameObject:
   m_ObjectHideFlags: 0
@@ -6711,6 +7157,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806255575}
   m_CullTransparentMesh: 1
+--- !u!1 &1815128386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815128387}
+  - component: {fileID: 1815128388}
+  m_Layer: 0
+  m_Name: SoundPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815128387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815128386}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1842056444}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815128388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815128386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b682a40a40b86f429d716ecce410984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolPrefabs:
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
 --- !u!1 &1828578316
 GameObject:
   m_ObjectHideFlags: 0
@@ -6910,6 +7402,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 744349109}
+  - {fileID: 1815128387}
+  - {fileID: 88033792}
+  - {fileID: 342132015}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7270,6 +7765,18 @@ MonoBehaviour:
       - m_Target: {fileID: 599274383}
         m_TargetAssemblyTypeName: Title, Assembly-CSharp
         m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 342132014}
+        m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

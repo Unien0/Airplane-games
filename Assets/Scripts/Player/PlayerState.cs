@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,10 +27,18 @@ public class PlayerState : MonoBehaviour
 
     #endregion
 
+    [Header("摄像机")]
+    public FollowCamera followCamera;
+
     // Start is called before the first frame update
     void Start()
     {
         playerHP = playerMaxHP;
+
+        if (followCamera == null)
+        {
+            followCamera = GameObject.Find("CM vcam1").GetComponent<FollowCamera>();
+        }
     }
 
     // Update is called once per frame
@@ -43,7 +51,8 @@ public class PlayerState : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerHP -= damage;
-
+        EventHandler.CallPlaySoundEvent(SoundName.Hit);
+        followCamera.ShakeCamera();
         // 处理玩家死亡或其他逻辑
         if (playerHP <= 0)
         {
