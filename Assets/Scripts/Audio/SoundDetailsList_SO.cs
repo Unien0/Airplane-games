@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,6 @@ public class SoundDetailsList_SO : ScriptableObject
     public List<SoundDetails> soundDetailsList;
     public SoundDetails GetSoundDetails(SoundName name)
     {
-        //名前で検査
         return soundDetailsList.Find(s => s.soundName == name);
     }
 }
@@ -26,17 +25,13 @@ public class SoundDetails
     public float soundVolume;
 }
 
-//SoundNameの種類（ただ名前を入力しないのもの
 public enum SoundName
 {
     none,
-    Slash,Shoot,
-    //チョップ，しゃげき
-    MusicCalm,
-    //BGM1
-    Square, Triangle, Rhombus, Star,
-    //魔法SE
-    EnemyAttack1, EnemyAttack2, EnemyAttack3,
-    //敵の行動
-    Explosion1, Explosion12,
+    BGMRest,BGMInGame,
+    Button,
+    Shot1,Shot2,Shot3,
+    Hit,
+    ShopBuy,
+    EnemyDie1, EnemyDie2, EnemyDie3
 }

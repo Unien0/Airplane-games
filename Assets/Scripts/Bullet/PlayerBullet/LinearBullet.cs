@@ -60,6 +60,7 @@ public class LinearBullet : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         col2d = GetComponent<Collider2D>();
         parentPool = FindObjectOfType<BulletPool>();
+        EventHandler.CallPlaySoundEvent(SoundName.Shot1);
     }
 
     void Update()

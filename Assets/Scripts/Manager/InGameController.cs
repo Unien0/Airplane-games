@@ -25,6 +25,10 @@ public class InGameController : MonoBehaviour
         EventCenter.RemoveListener(EventType.CollectTaskClear, TaskClear);
         EventCenter.RemoveListener(EventType.SurvivalTaskClear, TaskClear);
     }
+    private void Start()
+    {
+        EventHandler.CallAfterSceneLoadedEvent();
+    }
 
     /// <summary>
     /// 任务结算

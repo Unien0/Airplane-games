@@ -13,48 +13,53 @@ MonoBehaviour:
   m_Name: SoundDetailsList_SO
   m_EditorClassIdentifier: 
   soundDetailsList:
-  - soundName: 4
+  - soundName: 0
     soundClip: {fileID: 8300000, guid: 68a7396aae0dc1343b62a7169008b2ef, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
+  - soundName: 1
+    soundClip: {fileID: 8300000, guid: ec47c83cf3a7d8d45a1ed16675dd0a90, type: 3}
+    soundPitchMin: 1
+    soundPitchMax: 1
+    soundVolume: 0.75
+  - soundName: 2
+    soundClip: {fileID: 8300000, guid: 5bc7927f28e1052488dde6b6702239d7, type: 3}
+    soundPitchMin: 1
+    soundPitchMax: 1
+    soundVolume: 0.7
+  - soundName: 3
+    soundClip: {fileID: 8300000, guid: 481cfc1ac95141243ad102346907deb9, type: 3}
+    soundPitchMin: 1
+    soundPitchMax: 1
+    soundVolume: 0.5
+  - soundName: 4
+    soundClip: {fileID: 8300000, guid: 32552b1b5af7acb4ca60d3d3fbba6b98, type: 3}
+    soundPitchMin: 1
+    soundPitchMax: 1
+    soundVolume: 0.2
   - soundName: 5
-    soundClip: {fileID: 8300000, guid: ede775649be6be446a15fe4d2e418818, type: 3}
+    soundClip: {fileID: 8300000, guid: 47176a48b89193a4983752783e2972ec, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
   - soundName: 6
-    soundClip: {fileID: 8300000, guid: 8f7771124a67596458e1557da4a5116c, type: 3}
+    soundClip: {fileID: 8300000, guid: e714593df3cd6f84c941c8a7c2981e33, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
   - soundName: 7
-    soundClip: {fileID: 8300000, guid: 5a9d01ff2fa2c0d4aa976890448a10e4, type: 3}
+    soundClip: {fileID: 8300000, guid: 74a3be7b0a31e8b409975669c72261a3, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
   - soundName: 8
-    soundClip: {fileID: 8300000, guid: 5e562007d7bf3c843944fec48b3160b7, type: 3}
+    soundClip: {fileID: 8300000, guid: a11e989ade34aa14caf85354f4c16105, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
   - soundName: 9
-    soundClip: {fileID: 8300000, guid: f8e1964ee2410ad449d18cddbe7c309e, type: 3}
+    soundClip: {fileID: 8300000, guid: 33d3c4c566254de4792b4c80400f14b5, type: 3}
     soundPitchMin: 1
     soundPitchMax: 1
     soundVolume: 0.5
-  - soundName: 10
-    soundClip: {fileID: 8300000, guid: 9edb9f5730fd8ca48b162b75e692dcee, type: 3}
-    soundPitchMin: 1
-    soundPitchMax: 1
-    soundVolume: 0.5
-  - soundName: 11
-    soundClip: {fileID: 8300000, guid: c667b6a8184bc8c4e8b513ee351aafa7, type: 3}
-    soundPitchMin: 1
-    soundPitchMax: 1
-    soundVolume: 0.85
-  - soundName: 12
-    soundClip: {fileID: 8300000, guid: cda57bcf77ccd6f45aa2ec92e8f82bd8, type: 3}
-    soundPitchMin: 1
-    soundPitchMax: 1
-    soundVolume: 0.89

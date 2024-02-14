@@ -424,6 +424,8 @@ public class TaskManager : MonoBehaviour//单例模式
         }
     }
 
+
+
     public void ButtonGoTask()
     {
         if (currentTaskData.onTask)

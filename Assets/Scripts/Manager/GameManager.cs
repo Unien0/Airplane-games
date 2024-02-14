@@ -14,9 +14,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text money;
     public TMP_Text HPDisplay,AttackDisplay, BassSpeedDisplay, MaxSpeedDisplay, TurningSpeedDisplay, CoolDownTimeDisplay, BulletExistenceTimeDisplay;
     
+    /// <summary>
+    /// 进入场景后呼叫相关
+    /// </summary>
     void Start()
     {
-        
+        EventHandler.CallAfterSceneLoadedEvent();
     }
 
     void Update()
@@ -35,4 +38,5 @@ public class GameManager : MonoBehaviour
         CoolDownTimeDisplay.text =bulletData.linerBulletCoolDownTime.ToString("F1");
         BulletExistenceTimeDisplay.text =bulletData.linerBulletExistenceTime.ToString("F1");
     }
+
 }

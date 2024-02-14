@@ -72,6 +72,7 @@ public class EnemyStats : MonoBehaviour
     {
         //在对象池中调用敌人爆炸动画
         FindObjectOfType<ExplosionEffectPool>().GetExplosion(this.transform.position);
+        EventHandler.CallPlaySoundEvent(SoundName.EnemyDie1);
         //死亡时候调用敌人生成器里的数量检测
         EnemySpawner enemyKill = FindObjectOfType<EnemySpawner>();
         enemyKill.OnEnemyKilled(enemyID);

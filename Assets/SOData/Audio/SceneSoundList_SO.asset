@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: SceneSoundList_SO
   m_EditorClassIdentifier: 
   sceneSoundList:
-  - sceneName: Game
+  - sceneName: Rest
     ambient: 0
-    music: 3
+    music: 1
+  - sceneName: SampleScene
+    ambient: 0
+    music: 2

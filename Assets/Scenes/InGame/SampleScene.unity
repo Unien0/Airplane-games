@@ -1138,6 +1138,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolPrefabs:
   - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
+  - {fileID: 3330409478332027312, guid: 0d6de2a2e5c86a448a258548d3d85a07, type: 3}
 --- !u!1 &404533554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &418875486
 RectTransform:
   m_ObjectHideFlags: 0

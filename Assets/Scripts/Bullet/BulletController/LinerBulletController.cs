@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,7 @@ public class LinerBulletController : MonoBehaviour
         {
             time -= linerBulletCoolDownTime;
             FindObjectOfType<BulletPool>().GetExplosion(this.transform.position,this.transform.rotation);
+            EventHandler.CallPlaySoundEvent(SoundName.Shot1);
         }
     }
 }
