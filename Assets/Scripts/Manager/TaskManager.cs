@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Sirenix.OdinInspector;
 using Fungus;
+using UnityEngine.SceneManagement;
 
 public class TaskManager : MonoBehaviour//单例模式
 {
@@ -23,6 +24,7 @@ public class TaskManager : MonoBehaviour//单例模式
     public GameObject TaskTalk;
     public GameObject TaskSheet;
     public Flowchart flowchart;
+    public Button GoButton;
 
     #region 任务单显示
     [FoldoutGroup("任务清单1", expanded: true)]
@@ -110,6 +112,15 @@ public class TaskManager : MonoBehaviour//单例模式
         else
         {
             flowchart.SetBooleanVariable("OnTask", false);
+        }
+
+        if (!currentTaskData.onTask)
+        {
+            GoButton.interactable = false;
+        }
+        else
+        {
+            GoButton.interactable = true;
         }
     }
 
@@ -410,6 +421,14 @@ public class TaskManager : MonoBehaviour//单例模式
         {
             TaskTalk.SetActive(false);
             TaskSheet.SetActive(true);
+        }
+    }
+
+    public void ButtonGoTask()
+    {
+        if (currentTaskData.onTask)
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

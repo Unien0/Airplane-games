@@ -25,6 +25,6 @@ MonoBehaviour:
   maxEnemiesReached: 0
   isWaveActive: 0
   remuneration: 0
-  onTask: 1
+  onTask: 0
   taskCompleted: 0
   isMandatoryTask: 0
