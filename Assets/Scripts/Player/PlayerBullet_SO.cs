@@ -11,39 +11,31 @@ public class PlayerBullet_SO : ScriptableObject
     public int playerBulletDamage;//基础力量
     public int playerBulletDamageLevel;
     public List<playerVolumeLevelRange> bulletDamageLevel;
-
+    [Header("_伤害倍率")]
+    public float linerBulletDamageMultipler;//子弹倍率
+    public float FSBulletDamageMultipler;//子弹倍率
+    public float TMBulletDamageMultipler;//子弹倍率
     [Header("_子弹冷却时间")]
     public float linerBulletCoolDownTime;//基础
     public int linerBulletCoolDownTimeLevel;
     public List<playerVolumeLevelRange> coolDownTimeLevel;
+    public float FSbulletCDMultipler;//子弹冷却倍率
+    public float TMbulletCDMultipler;//子弹冷却倍率
     [Header("_存在时间")]
     public float linerBulletExistenceTime;//存在时间
     public int linerBulletExistenceTimeLevel;
     public List<playerVolumeLevelRange> bulletExistenceTimeLevel;
+    public float FSbulletETMultipler;//子弹时间倍率
+    public float TMbulletETMultipler;//子弹时间倍率
     [Header("_存在距离")]
     public float linerBulletExistenceDistance;
-
-
-    [Header("直线子弹")]
     [Header("_速度")]
     public float linerBulletSpeed;//基础
-    //public float linerBulletCurrentSpeed;//当前
-    [Header("_伤害倍率")]
-    public int linerBulletDamageMultipler;//子弹倍率
-    //public int linerBulletCurrentDamage;//当前
+    public float FSBulletSpeed;//基础
+    public float TMBulletSpeed;//基础
     [Header("_穿透")]
     public int linerBulletPenetrationCount;//穿透次数
+    public int FSBulletPenetrationCount;//穿透次数
+    public int TMBulletPenetrationCount;//穿透次数
 
-    [Header("侧翼霰弹")]
-    public float FSBulletCoolDownTime;//基础
-    public float FSBulletSpeed;
-    public int FSBulletDamageMultipler;
-    public int FSBulletPenetrationCount;
-
-    [Header("追踪子弹")]
-    [Header("_速度")]
-    public float TMBulletCoolDownTime;//基础
-    public float TMBulletSpeed;//基础
-    public int TMBulletDamageMultipler;
-    public int TMBulletPenetrationCount;
 }

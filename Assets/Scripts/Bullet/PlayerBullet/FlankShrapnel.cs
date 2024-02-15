@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,10 +23,14 @@ public class FlankShrapnel : MonoBehaviour
     {
         //FollowParentRotation();
         time += Time.deltaTime;
-        if (time >= bulletData.FSBulletCoolDownTime)
+        float bulletCD = bulletData.FSbulletCDMultipler * bulletData.linerBulletCoolDownTime;
+        if (time >= bulletCD)
         {
-            time -= bulletData.FSBulletCoolDownTime;
-            FindObjectOfType<BulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
+            for (int i = 0; i < firePoint.Length; i++)
+            {
+                FindObjectOfType<BulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
+            }
+            time -= bulletCD;
             EventHandler.CallPlaySoundEvent(SoundName.Shot1);
         }
     }

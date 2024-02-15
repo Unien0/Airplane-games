@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +20,10 @@ public class TrackingMissile : MonoBehaviour
     {
         //FollowParentRotation();
         time += Time.deltaTime;
-        if (time >= bulletData.TMBulletCoolDownTime)
+        float bulletCD = bulletData.TMbulletCDMultipler * bulletData.linerBulletCoolDownTime;
+        if (time >= bulletCD)
         {
-            time -= bulletData.TMBulletCoolDownTime;
+            time -= bulletCD;
             FindObjectOfType<BulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
             EventHandler.CallPlaySoundEvent(SoundName.Shot1);
         }

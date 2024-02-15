@@ -143,9 +143,9 @@ GameObject:
   - component: {fileID: 7073131001011608192}
   - component: {fileID: 8602000564361976376}
   - component: {fileID: 1366213432349261301}
-  - component: {fileID: -75500796185780947}
+  - component: {fileID: -4378361179397828160}
   m_Layer: 0
-  m_Name: FSBullet
+  m_Name: TMBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.22831964, g: 0.7131123, b: 0.9528302, a: 1}
+  m_Color: {r: 0.22745095, g: 0.4334578, b: 0.9529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -256,7 +256,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &-75500796185780947
+--- !u!114 &-4378361179397828160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,12 +265,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7073131001011608199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56854af40734594a9b3872d3f413b52, type: 3}
+  m_Script: {fileID: 11500000, guid: 3107ad7811a44ab459933e8e4de766d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: 05ec617357afbf14e8fd9074b2701a12, type: 2}
-  bulletCurrentSpeed: 1
-  bulletCurrentDamage: 1
-  bulletCurrentDamageMultipler: 1
-  bulletCurrentPenetrationCount: 1
-  newTime: 0

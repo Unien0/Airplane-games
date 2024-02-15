@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerBullet_SO
   m_EditorClassIdentifier: 
   playerBulletDamage: 5
+  playerBulletDamageLevel: 0
   bulletDamageLevel:
   - Level: 1
     levelIncrease: 0
@@ -24,7 +25,11 @@ MonoBehaviour:
     levelIncrease: 0
   - Level: 5
     levelIncrease: 0
+  linerBulletDamageMultipler: 1
+  FSBulletDamageMultipler: 1.5
+  TMBulletDamageMultipler: 2
   linerBulletCoolDownTime: 0.2
+  linerBulletCoolDownTimeLevel: 0
   coolDownTimeLevel:
   - Level: 1
     levelIncrease: 0
@@ -36,7 +41,10 @@ MonoBehaviour:
     levelIncrease: 0
   - Level: 5
     levelIncrease: 0
+  FSbulletCDMultipler: 3
+  TMbulletCDMultipler: 5
   linerBulletExistenceTime: 3
+  linerBulletExistenceTimeLevel: 0
   bulletExistenceTimeLevel:
   - Level: 1
     levelIncrease: 0
@@ -48,8 +56,12 @@ MonoBehaviour:
     levelIncrease: 0
   - Level: 5
     levelIncrease: 0
+  FSbulletETMultipler: 2
+  TMbulletETMultipler: 5
   linerBulletExistenceDistance: 0
   linerBulletSpeed: 20
-  linerBulletDamageMultipler: 1
+  FSBulletSpeed: 10
+  TMBulletSpeed: 15
   linerBulletPenetrationCount: 1
-  trackingBulletSpeed: 0
+  FSBulletPenetrationCount: 1
+  TMBulletPenetrationCount: 1
