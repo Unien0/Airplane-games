@@ -195,7 +195,8 @@ public class EnemySpawner : MonoBehaviour
                     if (enemyPool != null)
                     {
                         // 从对象池中获取敌人对象
-                        GameObject enemy = enemyPool.Get().gameObject;
+                        var enemy = enemyPool.Get();
+
 
                         if (enemy != null)
                         {
