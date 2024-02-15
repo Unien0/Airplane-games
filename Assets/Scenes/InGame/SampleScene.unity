@@ -1600,8 +1600,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1633030971}
-  - {fileID: 1476976206}
   - {fileID: 1823223145}
+  - {fileID: 1476976206}
   m_Father: {fileID: 1018102789}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3422,6 +3422,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTaskData: {fileID: 11400000, guid: f7988551f9e8aa7438ac9025b1c01929, type: 2}
   currentTaskTarget: {fileID: 11400000, guid: b910b538de5cb1c48ab78388ac729997, type: 2}
+  enemyPools:
+  - enemyID: 002
+    enemyPool: {fileID: 1633030972}
+  - enemyID: 003
+    enemyPool: {fileID: 1823223146}
+  - enemyID: 004
+    enemyPool: {fileID: 1476976207}
   waves:
   - waveName: "\u654C\u4EBA"
     enemyGroups:
@@ -4578,7 +4585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 466361314}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1476976207
 MonoBehaviour:
@@ -4595,6 +4602,7 @@ MonoBehaviour:
   objPrefab: {fileID: 269260988980863533, guid: 388c4d58b7909414cbbf042e3bac0c93, type: 3}
   defaultSize: 10
   maxSize: 100
+  enemyID: 004
 --- !u!1 &1498891741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,6 +5080,7 @@ MonoBehaviour:
   objPrefab: {fileID: 269260988980863533, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
   defaultSize: 10
   maxSize: 100
+  enemyID: 002
 --- !u!1 &1637144347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5551,7 +5560,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 466361314}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823223146
 MonoBehaviour:
@@ -5568,6 +5577,7 @@ MonoBehaviour:
   objPrefab: {fileID: 269260988980863533, guid: 8d414901925d60a4fbcaaf41f4b73197, type: 3}
   defaultSize: 10
   maxSize: 100
+  enemyID: 003
 --- !u!1 &1824895889
 GameObject:
   m_ObjectHideFlags: 0
