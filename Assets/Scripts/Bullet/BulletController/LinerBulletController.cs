@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LinerBulletController : MonoBehaviour
 {
+    [Header("直线子弹")]
     public PlayerBullet_SO bulletData;
     public float linerBulletCoolDownTime
     {

@@ -34,8 +34,16 @@ public class PlayerBullet_SO : ScriptableObject
     [Header("_穿透")]
     public int linerBulletPenetrationCount;//穿透次数
 
+    [Header("侧翼霰弹")]
+    public float FSBulletCoolDownTime;//基础
+    public float FSBulletSpeed;
+    public int FSBulletDamageMultipler;
+    public int FSBulletPenetrationCount;
 
     [Header("追踪子弹")]
     [Header("_速度")]
-    public float trackingBulletSpeed;//基础
+    public float TMBulletCoolDownTime;//基础
+    public float TMBulletSpeed;//基础
+    public int TMBulletDamageMultipler;
+    public int TMBulletPenetrationCount;
 }
