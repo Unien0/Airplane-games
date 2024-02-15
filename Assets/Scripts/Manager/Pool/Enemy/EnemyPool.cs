@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyPool : BasePool<EnemyStats>
 {
     private PlayerState playerState;
+    public string enemyID;
 
     void Awake()
     {

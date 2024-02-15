@@ -9,6 +9,14 @@ public class EnemySpawner : MonoBehaviour
     public CurrentTask_SO currentTaskTarget;
 
     [System.Serializable]
+    public class EnemyPoolEntry
+    {
+        public string enemyID;
+        public EnemyPool enemyPool;
+    }
+
+    public List<EnemyPoolEntry> enemyPools;
+    [System.Serializable]
     public class Wave
     {
         public string waveName;
@@ -182,21 +190,30 @@ public class EnemySpawner : MonoBehaviour
                         maxEnemiesReached = true;
                         return;
                     }
-                    int PointsCount = relativeSpawnPoints.Count;//敌人生成点列表的数量
+                    // 获取敌人对应的对象池
+                    EnemyPool enemyPool = GetEnemyPoolByID(enemyGroup.enemyID);
+                    if (enemyPool != null)
+                    {
+                        // 从对象池中获取敌人对象
+                        GameObject enemy = enemyPool.Get().gameObject;
 
-                    //生成敌人，之后可以把他们改成使用对象池
-                    //Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, PointsCount)].position, Quaternion.identity);
+                        if (enemy != null)
+                        {
+                            int spawnPointIndex = Random.Range(0, relativeSpawnPoints.Count);
+                            Transform spawnPoint = relativeSpawnPoints[spawnPointIndex];
 
-                    //对象池方法
-                    var enemyP = enemyPool.Get();//取出敌人
-                    enemyP.transform.position = player.position + relativeSpawnPoints[Random.Range(0, PointsCount)].position;
-                    enemyP.transform.rotation = Quaternion.identity;
+                            // 设置敌人对象的位置和旋转
+                            enemy.transform.position = player.position + spawnPoint.position;
+                            enemy.transform.rotation = Quaternion.identity;
 
-                    //Vector2 spawnPosition = new Vector2(player.transform.position.x + Random.Range(-10f, 10f), player.transform.position.y + Random.Range(-10f, 10f));
-                    //Instantiate(enemyGroup.enemyPrefab, spawnPosition, Quaternion.identity);
-                    enemyGroup.spawnCount++;//增加出怪计时，用于增加波次
-                    waves[currentWaveCount].spawnCount++;
-                    enemiesAlive++;//增加怪物存活计时器，用于刷新怪物
+                            // 增加敌人的出生计数
+                            enemyGroup.spawnCount++;
+                            // 增加当前波次的出生计数
+                            waves[currentWaveCount].spawnCount++;
+                            // 增加敌人存活计数
+                            enemiesAlive++;
+                        }
+                    }
                 }
             }
         }
@@ -206,6 +223,23 @@ public class EnemySpawner : MonoBehaviour
             maxEnemiesReached = false;
         }
     }
+
+    // 根据敌人 ID 获取对应的对象池
+    EnemyPool GetEnemyPoolByID(string enemyID)
+    {
+        foreach (var pool in enemyPools)
+        {
+            if (pool.enemyID == enemyID)
+            {
+                return pool.enemyPool;
+            }
+        }
+        return null;
+    }
+
+
+
+
     /// <summary>
     /// 敌人死亡时候调用
     /// </summary>
