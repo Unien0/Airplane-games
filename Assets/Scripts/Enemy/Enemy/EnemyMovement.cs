@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    public float followRadius = 4.5f;
+    public float followRadius = 6f;
     public float escapeRadius = 3f;
-    public float moveSpeed = 2f;
-    public float maxSpeed = 4f;
+    public float moveSpeed = 3f;
+    public float maxSpeed = 5f;
     public float randomMoveDuration = 3f;
-    public float stopDuration = 2f; // 时间间隔，停顿一段时间后再次判定左移还是右移
+    public float stopDuration = 4f; // 时间间隔，停顿一段时间后再次判定左移还是右移
     private bool isRandomMoving = false;
     private Rigidbody2D rb;
 

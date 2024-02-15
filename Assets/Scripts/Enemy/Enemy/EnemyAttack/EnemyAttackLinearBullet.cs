@@ -10,9 +10,9 @@ public class EnemyAttackLinearBullet : MonoBehaviour
     Transform player;          // 玩家对象的Transform组件
     //public GameObject bulletPrefab;   // 子弹预制体
     public Transform bulletSpawnPoint; // 子弹生成点
-    public float bulletForce = 10f;    // 子弹的推力
-    public float shootInterval = 0.5f;   // 射击间隔时间
-    public float detectionDistance = 5f; // 检测玩家距离
+    public float bulletForce = 15f;    // 子弹的推力
+    public float shootInterval = 0.3f;   // 射击间隔时间
+    public float detectionDistance = 6f; // 检测玩家距离
 
     private EnemyBulletPool bulletPool;
 
