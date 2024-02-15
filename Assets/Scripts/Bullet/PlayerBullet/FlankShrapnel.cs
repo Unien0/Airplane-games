@@ -10,6 +10,7 @@ public class FlankShrapnel : MonoBehaviour
     [SerializeField]
     [ReadOnly]
     private float time;
+    private float bulletCD;
     private Transform player;
 
     public Transform[] firePoint;
@@ -17,18 +18,17 @@ public class FlankShrapnel : MonoBehaviour
     private void Start()
     {
         player = GetComponent<Transform>();
+        bulletCD= bulletData.FSbulletCDMultipler * bulletData.linerBulletCoolDownTime;
     }
 
     void Update()
     {
-        //FollowParentRotation();
         time += Time.deltaTime;
-        float bulletCD = bulletData.FSbulletCDMultipler * bulletData.linerBulletCoolDownTime;
         if (time >= bulletCD)
         {
             for (int i = 0; i < firePoint.Length; i++)
             {
-                FindObjectOfType<BulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
+                FindObjectOfType<FSBulletPool>().GetExplosion(firePoint[i].position, firePoint[i].rotation);
             }
             time -= bulletCD;
             EventHandler.CallPlaySoundEvent(SoundName.Shot1);

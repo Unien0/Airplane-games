@@ -11,20 +11,21 @@ public class TrackingMissile : MonoBehaviour
     [ReadOnly]
     private float time;
     private Transform player;
+    private float bulletCD;
     private void Start()
     {
         player = GetComponent<Transform>();
+        bulletCD = bulletData.FSbulletCDMultipler * bulletData.linerBulletCoolDownTime;
     }
 
     void Update()
     {
         //FollowParentRotation();
         time += Time.deltaTime;
-        float bulletCD = bulletData.TMbulletCDMultipler * bulletData.linerBulletCoolDownTime;
         if (time >= bulletCD)
         {
             time -= bulletCD;
-            FindObjectOfType<BulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
+            FindObjectOfType<TMBulletPool>().GetExplosion(this.transform.position, this.transform.rotation);
             EventHandler.CallPlaySoundEvent(SoundName.Shot1);
         }
     }
