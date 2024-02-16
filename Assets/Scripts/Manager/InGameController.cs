@@ -11,6 +11,8 @@ public class InGameController : MonoBehaviour
     public TaskData_SO taskData;
     public CurrentTask_SO currentTask;
     public PlayerData_SO playerData;
+    public GameObject stopCanvas;
+    bool stop;
 
     public void Awake()
     {
@@ -28,6 +30,14 @@ public class InGameController : MonoBehaviour
     private void Start()
     {
         EventHandler.CallAfterSceneLoadedEvent();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ButtonStop();
+        }
     }
 
     /// <summary>
@@ -49,5 +59,31 @@ public class InGameController : MonoBehaviour
         currentTask.ResetTaskData();
         //返回场景
         SceneManager.LoadScene("Rest");
+    }
+
+    public void ButtonStop()
+    {
+        if (!stop)
+        {
+            stop = true;
+            stopCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            stop = false;
+            stopCanvas.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
+    public void ButtonToRest()
+    {
+        SceneManager.LoadScene("Rest");
+    }
+
+    public void ButtonGameOver()
+    {
+        Application.Quit();
     }
 }

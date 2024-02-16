@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
     public PlayerData_SO playerData;
+    public PlayerBullet_SO playerBullet;
 
     #region SO数据获取
     //获取血量相关
@@ -30,7 +31,22 @@ public class PlayerState : MonoBehaviour
     [Header("摄像机")]
     public FollowCamera followCamera;
 
-    // Start is called before the first frame update
+    public GameObject FSWeapen;
+    public GameObject TMWeapen;
+
+    private void Awake()
+    {
+        if (playerBullet.FSWeapenOn)
+        {
+            FSWeapen.SetActive(true);
+            
+        }
+        if (playerBullet.TMWeapenOn)
+        {
+            TMWeapen.SetActive(true);
+        }
+    }
+
     void Start()
     {
         playerHP = playerMaxHP;
@@ -40,13 +56,6 @@ public class PlayerState : MonoBehaviour
             followCamera = GameObject.Find("CM vcam1").GetComponent<FollowCamera>();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void TakeDamage(int damage)
     {

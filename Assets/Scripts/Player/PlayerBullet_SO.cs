@@ -38,4 +38,10 @@ public class PlayerBullet_SO : ScriptableObject
     public int FSBulletPenetrationCount;//穿透次数
     public int TMBulletPenetrationCount;//穿透次数
 
+    [Header("追踪子弹属性")]
+    public float trackingRange = 10f; // 定义追踪范围的默认值
+
+    public bool FSWeapenOn;
+    public bool TMWeapenOn;
+
 }
