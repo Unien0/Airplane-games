@@ -56,6 +56,10 @@ public class ShopManager : MonoBehaviour
 
     [Title ("相关按钮")]
     public Button levelUpButton;
+    public Button FSBuyButton;
+    public Button TMBuyButton;
+    public TMP_Text FSBuyText;
+    public TMP_Text TMBuyText;
 
     private int currentCode;//当前编号
 
@@ -372,5 +376,27 @@ public class ShopManager : MonoBehaviour
         coolDownTimeValue.text = bulletData.linerBulletCoolDownTime.ToString("F1");
         bulletExistenceTimeValue.text = bulletData.linerBulletExistenceTime.ToString("F1");
         #endregion
+    }
+
+    public void ButtonFSWeapenOn()
+    {
+        if (playerData.playerMoney>= 15000)
+        {
+            playerData.playerMoney -= 15000;
+            bulletData.FSWeapenOn = true;
+            FSBuyButton.interactable = false;
+            FSBuyText.text = "已购买".ToString();
+        }
+    }
+
+    public void ButtonTMWeapenOn()
+    {
+        if (playerData.playerMoney >= 20000)
+        {
+            playerData.playerMoney -= 20000;
+            bulletData.TMWeapenOn = true;
+            TMBuyButton.interactable = false;
+            TMBuyText.text = "已购买".ToString();
+        }
     }
 }

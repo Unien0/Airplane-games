@@ -176,15 +176,27 @@ public class TaskManager : MonoBehaviour//单例模式
                         taskSheetDescription1.text = taskDetails.taskDescription;
                         taskSheetRemuneration1.text = taskDetails.remuneration.ToString();
 
-                        string taskInfo1 = null;
-                        foreach (var wave in taskDetails.waves)
+                        switch (taskDetails.taskType)
                         {
-                            foreach (var enemyGroup in wave.enemyGroups)
-                            {
-                                taskInfo1 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
-                            }
+                            case TaskType.exterminate:
+                                string taskInfo1 = null;
+                                foreach (var wave in taskDetails.waves)
+                                {
+                                    foreach (var enemyGroup in wave.enemyGroups)
+                                    {
+                                        taskInfo1 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                                    }
+                                }
+                                taskSheetTarget1.text = taskInfo1;
+                                break;
+                            case TaskType.collect:
+                                taskTarget.text = "依靠雷达搜集重要资源";
+                                break;
+                            case TaskType.survival:
+                                taskTarget.text = "坚持存活，直到增援队到来";
+                                break;
                         }
-                        taskSheetTarget1.text = taskInfo1;
+                        
                     }
                     else
                     {
@@ -210,16 +222,27 @@ public class TaskManager : MonoBehaviour//单例模式
                         taskSheetType2.text = taskDetails.taskType.ToString();
                         taskSheetDescription2.text = taskDetails.taskDescription;
                         taskSheetRemuneration2.text = taskDetails.remuneration.ToString();
-
-                        string taskInfo2 = null;
-                        foreach (var wave in taskDetails.waves)
+                        switch (taskDetails.taskType)
                         {
-                            foreach (var enemyGroup in wave.enemyGroups)
-                            {
-                                taskInfo2 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
-                            }
+                            case TaskType.exterminate:
+                                string taskInfo2 = null;
+                                foreach (var wave in taskDetails.waves)
+                                {
+                                    foreach (var enemyGroup in wave.enemyGroups)
+                                    {
+                                        taskInfo2 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                                    }
+                                }
+                                taskSheetTarget2.text = taskInfo2;
+                                break;
+                            case TaskType.collect:
+                                taskTarget.text = "依靠雷达搜集重要资源";
+                                break;
+                            case TaskType.survival:
+                                taskTarget.text = "坚持存活，直到增援队到来";
+                                break;
                         }
-                        taskSheetTarget2.text = taskInfo2;
+                        
                     }
                     else
                     {
@@ -245,16 +268,27 @@ public class TaskManager : MonoBehaviour//单例模式
                         taskSheetType3.text = taskDetails.taskType.ToString();
                         taskSheetDescription3.text = taskDetails.taskDescription;
                         taskSheetRemuneration3.text = taskDetails.remuneration.ToString();
-
-                        string taskInfo3 = null;
-                        foreach (var wave in taskDetails.waves)
+                        switch (taskDetails.taskType)
                         {
-                            foreach (var enemyGroup in wave.enemyGroups)
-                            {
-                                taskInfo3 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
-                            }
+                            case TaskType.exterminate:
+                                string taskInfo3 = null;
+                                foreach (var wave in taskDetails.waves)
+                                {
+                                    foreach (var enemyGroup in wave.enemyGroups)
+                                    {
+                                        taskInfo3 += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                                    }
+                                }
+                                taskSheetTarget3.text = taskInfo3;
+                                break;
+                            case TaskType.collect:
+                                taskTarget.text = "依靠雷达搜集重要资源";
+                                break;
+                            case TaskType.survival:
+                                taskTarget.text = "坚持存活，直到增援队到来";
+                                break;
                         }
-                        taskSheetTarget3.text = taskInfo3;
+                        
                     }
                     else
                     {
@@ -361,18 +395,34 @@ public class TaskManager : MonoBehaviour//单例模式
 
         if (!isClear&& !missID)
         {
-            taskInfo = null;//先清空后再复制
-            if (taskInfo == null && currentTaskData != null)
+            switch (currentTaskData.taskType)
             {
-                foreach (var wave in currentTaskData.waves)
-                {
-                    foreach (var enemyGroup in wave.enemyGroups)
+                case TaskType.Default:
+                    break;
+                case TaskType.exterminate:
+                    taskInfo = null;//先清空后再复制
+                    if (taskInfo == null && currentTaskData != null)
                     {
-                        taskInfo += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                        foreach (var wave in currentTaskData.waves)
+                        {
+                            foreach (var enemyGroup in wave.enemyGroups)
+                            {
+                                taskInfo += $"{enemyGroup.enemyName} 数量: {enemyGroup.enemyCount}\n";
+                            }
+                        }
                     }
-                }
+                    taskTarget.text = taskInfo;
+                    break;
+                case TaskType.collect:
+                    taskTarget.text = "依靠雷达搜集重要资源";
+                    break;
+                case TaskType.survival:
+                    taskTarget.text = "坚持存活，直到增援队到来";
+                    break;
+                default:
+                    break;
             }
-            taskTarget.text = taskInfo;
+            
         }
         else
         {

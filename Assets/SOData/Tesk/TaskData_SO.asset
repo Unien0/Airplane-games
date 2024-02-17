@@ -26,7 +26,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 0.5
       spawnCount: 0
     currentWaveCount: 0
     waveInterval: 0.5
@@ -88,7 +88,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 0.5
       spawnCount: 0
     - waveName: 
       enemyGroups:
@@ -98,7 +98,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 0.5
       spawnCount: 0
     - waveName: 
       enemyGroups:
@@ -108,7 +108,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 1
       spawnCount: 0
     currentWaveCount: 0
     waveInterval: 1
@@ -134,7 +134,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 0}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 1
       spawnCount: 0
     currentWaveCount: 0
     waveInterval: 1
@@ -165,7 +165,7 @@ MonoBehaviour:
         spawnCount: 0
         enemyPrefab: {fileID: 0}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 1
       spawnCount: 0
     currentWaveCount: 0
     waveInterval: 0
@@ -189,19 +189,50 @@ MonoBehaviour:
         enemyName: "\u94C1\u9524\u7EA7\u6218\u8230"
         enemyCount: 1
         spawnCount: 0
-        enemyPrefab: {fileID: 0}
+        enemyPrefab: {fileID: 4039769169165120709, guid: 388c4d58b7909414cbbf042e3bac0c93, type: 3}
       - enemyID: 002
         enemyName: "\u6D77\u76D7\u65E0\u4EBA\u673A"
         enemyCount: 10
         spawnCount: 0
         enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
       waveQuota: 0
-      spawnInterval: 0
+      spawnInterval: 1
       spawnCount: 0
     currentWaveCount: 0
     waveInterval: 0
     enemiesAlive: 0
     maxEnemiesAllowed: 4
+    maxEnemiesReached: 0
+    isWaveActive: 0
+    remuneration: 7000
+    onTask: 0
+    taskCompleted: 0
+    taskOpened: 0
+    isMandatoryTask: 0
+  - taskID: 7
+    taskName: "\u6218\u540E\u56DE\u6536"
+    taskType: 2
+    taskDescription: "\u4E39\u5C3C\uFF1A\u6709\u65B0\u6D3B\u4E86\uFF0C\u4E4B\u524D\u527F\u532A\u540E\u519B\u65B9\u53EC\u96C6\u4EBA\u624B\u6536\u62FE\u6218\u573A\u3002\u4F60\u53BB\u627E\u4E00\u4E0B\u98D8\u5728\u6218\u573A\u8FB9\u7F18\u7684\u7535\u5B50\u96F6\u4EF6\uFF0C\u5750\u6807\u6211\u4E4B\u540E\u53D1\u7ED9\u4F60\uFF0C\u6CE8\u610F\u907F\u5F00\u5468\u56F4\u6563\u843D\u7684\u6D77\u76D7"
+    waves:
+    - waveName: 
+      enemyGroups:
+      - enemyID: 002
+        enemyName: "\u6D77\u76D7\u65E0\u4EBA\u673A"
+        enemyCount: 90
+        spawnCount: 0
+        enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
+      - enemyID: 003
+        enemyName: "\u6D77\u76D7\u5C0F\u578B\u98DE\u8239"
+        enemyCount: 10
+        spawnCount: 0
+        enemyPrefab: {fileID: 4039769169165120709, guid: 8d414901925d60a4fbcaaf41f4b73197, type: 3}
+      waveQuota: 0
+      spawnInterval: 1
+      spawnCount: 0
+    currentWaveCount: 0
+    waveInterval: 0
+    enemiesAlive: 8
+    maxEnemiesAllowed: 8
     maxEnemiesReached: 0
     isWaveActive: 0
     remuneration: 7000
