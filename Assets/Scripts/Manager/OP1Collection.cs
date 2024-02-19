@@ -8,6 +8,7 @@ public class OP1Collection : MonoBehaviour
 {
     public SwitchData_SO switchData;
     public Flowchart flowchart;
+    public TaskManager taskManager;
 
     public Button plan1;
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class OP1Collection : MonoBehaviour
         if (flowchart.GetBooleanVariable("OneTask"))
         {
             plan1.interactable = true;
+            taskManager.NewPlayerTask();
         }
         else
         {

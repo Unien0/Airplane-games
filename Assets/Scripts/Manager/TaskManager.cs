@@ -316,13 +316,18 @@ public class TaskManager : MonoBehaviour//单例模式
         CopyTaskDataToCurrentTask(taskListData, currentTaskData,ID);
     }
 
+    public void NewPlayerTask()
+    {
+        CopyTaskDataToCurrentTask(taskListData, currentTaskData,1);
+    }
+
     /// <summary>
     /// 复制任务从任务总表至当前任务SO
     /// </summary>
     /// <param name="source"></param>
     /// <param name="destination"></param>
     /// <param name="ID"></param>
-    void CopyTaskDataToCurrentTask(TaskData_SO source, CurrentTask_SO destination,int ID)
+    public void CopyTaskDataToCurrentTask(TaskData_SO source, CurrentTask_SO destination,int ID)
     {
         isClear = false;
         missID = false;
