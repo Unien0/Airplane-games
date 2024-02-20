@@ -28,34 +28,34 @@ MonoBehaviour:
   linerBulletDamageMultipler: 1
   FSBulletDamageMultipler: 1.5
   TMBulletDamageMultipler: 2
-  linerBulletCoolDownTime: 0.2
+  linerBulletCoolDownTime: 0.5
   linerBulletCoolDownTimeLevel: 0
   coolDownTimeLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 0.05
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 0.05
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 0.05
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 0.05
   - Level: 5
-    levelIncrease: 0
+    levelIncrease: 0.05
   FSbulletCDMultipler: 3
   TMbulletCDMultipler: 5
-  linerBulletExistenceTime: 3
+  linerBulletExistenceTime: 1.5
   linerBulletExistenceTimeLevel: 0
   bulletExistenceTimeLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 0.2
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 0.2
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 0.2
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 0.2
   - Level: 5
-    levelIncrease: 0
+    levelIncrease: 0.2
   FSbulletETMultipler: 2
   TMbulletETMultipler: 5
   linerBulletExistenceDistance: 0
@@ -65,3 +65,6 @@ MonoBehaviour:
   linerBulletPenetrationCount: 1
   FSBulletPenetrationCount: 1
   TMBulletPenetrationCount: 1
+  trackingRange: 10
+  FSWeapenOn: 0
+  TMWeapenOn: 0

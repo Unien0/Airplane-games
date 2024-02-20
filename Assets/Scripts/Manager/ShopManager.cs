@@ -135,7 +135,7 @@ public class ShopManager : MonoBehaviour
                 if (hpLevelRange != null)
                 {
                     // 将属性成长值列表中的值累加到玩家的属性上
-                    playerData.playerMaxHP += hpLevelRange.levelIncrease;
+                    playerData.playerMaxHP += (int)hpLevelRange.levelIncrease;
                 }
                 break;
             case ShopType.damage:
@@ -145,7 +145,7 @@ public class ShopManager : MonoBehaviour
                 if (damageLevelRange != null)
                 {
                     // 将属性成长值列表中的值累加到玩家的属性上
-                    bulletData.playerBulletDamage += damageLevelRange.levelIncrease;
+                    bulletData.playerBulletDamage += (int)damageLevelRange.levelIncrease;
                 }
                 break;
             case ShopType.baseSpeed:

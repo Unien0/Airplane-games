@@ -58,5 +58,5 @@ public class playerVolumeLevelRange
     [FoldoutGroup("$Level", expanded: true)]
     public int Level;//对应等级
     [FoldoutGroup("$Level", expanded: true)]
-    public int levelIncrease;//等级成长值
+    public float levelIncrease;//等级成长值
 }

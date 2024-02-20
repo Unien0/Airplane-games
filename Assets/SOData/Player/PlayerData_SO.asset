@@ -26,54 +26,54 @@ MonoBehaviour:
   - Level: 2
     levelIncrease: 30
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 40
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 50
   - Level: 5
-    levelIncrease: 0
-  playerHP: 98
+    levelIncrease: 60
+  playerHP: 100
   playerLucky: 0
   playerBaseSpeed: 2
   playerBaseSpeedLevel: 0
   baseSpeedLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 0.2
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 0.3
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 0.3
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 0.4
   - Level: 5
-    levelIncrease: 0
+    levelIncrease: 0.5
   playerMaxSpeed: 5
   playerMaxSpeedLevel: 0
   maxSpeedLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 0.5
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 0.5
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 0.7
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 0.7
   - Level: 5
-    levelIncrease: 0
+    levelIncrease: 1
   playerMinSpeed: 0
   playerCurrentSpeed: 2
   playerTurningSpeed: 30
   playerTurningSpeedLevel: 0
   turningSpeedLevel:
   - Level: 1
-    levelIncrease: 0
+    levelIncrease: 5
   - Level: 2
-    levelIncrease: 0
+    levelIncrease: 5
   - Level: 3
-    levelIncrease: 0
+    levelIncrease: 5
   - Level: 4
-    levelIncrease: 0
+    levelIncrease: 5
   - Level: 5
-    levelIncrease: 0
+    levelIncrease: 5
   playerAcceleration: 5
   playerDeceleration: 5
   playerReverseDecelerationMultiplier: 1
