@@ -14,20 +14,15 @@ public class InGameController : MonoBehaviour
     public PlayerData_SO playerData;
     public GameObject stopCanvas;
     public GameObject treasureObj;
-    bool stop;
-    bool newPlayerBool;
-    public Flowchart flowchart;
+    public bool stop;
+
 
     public void Awake()
     {
         EventCenter.AddListener(EventType.ExterminateTaskClear, TaskClear);
         EventCenter.AddListener(EventType.CollectTaskClear, TaskClear);
         EventCenter.AddListener(EventType.SurvivalTaskClear, TaskClear);
-        if (currentTask.taskID == 1)
-        {
-            flowchart.SetBooleanVariable("newPlayer", true);
-            Time.timeScale = 0;
-        }
+        
     }
 
     public void OnDestroy()
@@ -51,17 +46,8 @@ public class InGameController : MonoBehaviour
         {
             ButtonStop();
         }
-        Explanationed();
     }
-    public void Explanationed()
-    {
-        if (flowchart.GetBooleanVariable("explanationed") && !newPlayerBool)
-        {
-            Time.timeScale = 1;
-            newPlayerBool = true;
-            flowchart.SetBooleanVariable("newPlayer", false);
-        }
-    }
+    
 
     /// <summary>
     /// 任务结算

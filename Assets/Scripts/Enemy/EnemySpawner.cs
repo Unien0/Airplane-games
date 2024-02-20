@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public CurrentTask_SO currentTaskData;
     public CurrentTask_SO currentTaskTarget;
+    public InGameController gameController;
 
     [System.Serializable]
     public class EnemyPoolEntry
@@ -178,7 +179,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemies()
     {
         //如果敌人数量小于额定数量，且未到达最大数量时
-        if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached)
+        if (waves[currentWaveCount].spawnCount < waves[currentWaveCount].waveQuota && !maxEnemiesReached && !gameController.stop)
         {
             //循环敌人类型
             foreach (var enemyGroup in waves[currentWaveCount].enemyGroups)

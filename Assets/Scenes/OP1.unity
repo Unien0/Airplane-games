@@ -12616,7 +12616,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: NewPlayerGame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &611472962
@@ -30853,7 +30853,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5185\u5BB9\uFF1A\n11\n1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b3a56b87145cc3c48a51b1b48b2015e0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d2cf09190b9cc24459da084062679d05, type: 2}
   m_sharedMaterial: {fileID: -5386078572413202346, guid: b3a56b87145cc3c48a51b1b48b2015e0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -30917,7 +30917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1435238132
