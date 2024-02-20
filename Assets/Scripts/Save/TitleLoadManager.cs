@@ -26,6 +26,11 @@ public class TitleLoadManager : MonoBehaviour
 
     public string sceneName;
 
+    private void Start()
+    {
+        EventHandler.CallAfterSceneLoadedEvent();
+    }
+
     private void Update()
     {        
         loadTime1.text = "时间：" + saveTimeDate.time1;

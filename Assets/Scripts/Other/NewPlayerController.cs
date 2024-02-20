@@ -8,6 +8,7 @@ public class NewPlayerController : MonoBehaviour
     public CurrentTask_SO currentTask;
     public Flowchart flowchart;
     public InGameController gameController;
+    private bool endChat;
 
     private void Start()
     {
@@ -20,9 +21,10 @@ public class NewPlayerController : MonoBehaviour
     }
     public void Explanationed()
     {
-        if (flowchart.GetBooleanVariable("explanationed"))
+        if (flowchart.GetBooleanVariable("explanationed") && !endChat)
         {
             gameController.stop = false;
+            endChat = true;
         }
     }
 }

@@ -13,18 +13,28 @@ MonoBehaviour:
   m_Name: CurrentTaskData_SO
   m_EditorClassIdentifier: 
   taskID: 1
-  taskName: 
-  taskType: 0
-  taskDescription: 
-  waves: []
+  taskName: "\u65B0\u624B\u4EFB\u52A1"
+  taskType: 1
+  taskDescription: "\u4E39\u5C3C\u7684\u65B0\u624B\u4EFB\u52A1\uFF0C\u89E3\u51B3\u638910\u4E2A\u6D77\u76D7\u65E0\u4EBA\u673A"
+  waves:
+  - waveName: "\u65B0\u4EFB\u52A1"
+    enemyGroups:
+    - enemyID: 002
+      enemyName: "\u6D77\u5E26\u65E0\u4EBA\u673A"
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 4039769169165120709, guid: 6ec77fc7941ec90459225dd5e29ac812, type: 3}
+    waveQuota: 0
+    spawnInterval: 0
+    spawnCount: 0
   currentWaveCount: 0
   spawnTimer: 0
-  waveInterval: 0
+  waveInterval: 0.5
   enemiesAlive: 0
-  maxEnemiesAllowed: 0
+  maxEnemiesAllowed: 3
   maxEnemiesReached: 0
   isWaveActive: 0
-  remuneration: 0
-  onTask: 0
+  remuneration: 1000
+  onTask: 1
   taskCompleted: 0
-  isMandatoryTask: 0
+  isMandatoryTask: 1

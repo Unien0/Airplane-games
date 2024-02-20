@@ -23,6 +23,11 @@ public class TitleSwitchController : MonoBehaviour
         FullScreen();
     }
 
+    private void OnDestroy()
+    {
+        ES3.Save("settingData", settingData);
+    }
+
     #region 全屏设置
     public void ToggleFullScreen()
     {

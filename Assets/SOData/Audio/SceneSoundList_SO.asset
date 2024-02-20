@@ -19,3 +19,12 @@ MonoBehaviour:
   - sceneName: SampleScene
     ambient: 0
     music: 2
+  - sceneName: OP1
+    ambient: 0
+    music: 1
+  - sceneName: Title
+    ambient: 0
+    music: 12
+  - sceneName: NewPlayerGame
+    ambient: 0
+    music: 2

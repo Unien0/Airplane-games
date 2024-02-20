@@ -8,13 +8,13 @@ public class TestPM : MonoBehaviour
     public bool isDead = false;
 
     private Vector2 movement;
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody1;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody1 = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class TestPM : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement.normalized * MoveSpeed * Time.fixedDeltaTime);
+        rigidbody1.MovePosition(rigidbody1.position + movement.normalized * MoveSpeed * Time.fixedDeltaTime);
     }
 
     void LookAt()

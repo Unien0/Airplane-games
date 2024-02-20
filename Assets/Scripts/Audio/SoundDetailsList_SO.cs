@@ -33,5 +33,6 @@ public enum SoundName
     Shot1,Shot2,Shot3,
     Hit,
     ShopBuy,
-    EnemyDie1, EnemyDie2, EnemyDie3
+    EnemyDie1, EnemyDie2, EnemyDie3,
+    BGMTitle
 }
