@@ -64,6 +64,11 @@ public class InGameController : MonoBehaviour
             taskDetailsToCopy.taskCompleted = true;
         }
 
+        if (currentTask.taskID ==1)
+        {
+            EventCenter.Broadcast(EventType.NewPlayer);
+        }
+
         //清空当前任务
         currentTask.ResetTaskData();
         //返回场景
@@ -88,6 +93,10 @@ public class InGameController : MonoBehaviour
 
     public void ButtonToRest()
     {
+        if (currentTask.taskID == 1)
+        {
+            EventCenter.Broadcast(EventType.NewPlayer);
+        }
         SceneManager.LoadScene("Rest");
     }
 

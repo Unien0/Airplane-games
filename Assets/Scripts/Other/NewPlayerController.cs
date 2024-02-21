@@ -5,10 +5,22 @@ using Fungus;
 
 public class NewPlayerController : MonoBehaviour
 {
+    public SwitchData_SO switchData;
     public CurrentTask_SO currentTask;
     public Flowchart flowchart;
     public InGameController gameController;
     private bool endChat;
+
+    private void Awake()
+    {
+        EventCenter.AddListener(EventType.NewPlayer, Switch);
+    }
+
+    private void OnDestroy()
+    {
+        EventCenter.RemoveListener(EventType.NewPlayer, Switch);
+
+    }
 
     private void Start()
     {
@@ -26,5 +38,10 @@ public class NewPlayerController : MonoBehaviour
             gameController.stop = false;
             endChat = true;
         }
+    }
+
+    void Switch()
+    {
+        switchData.newbieTaskClear = true;
     }
 }
