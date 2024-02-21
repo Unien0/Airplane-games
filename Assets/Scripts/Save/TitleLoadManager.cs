@@ -52,7 +52,7 @@ public class TitleLoadManager : MonoBehaviour
         currentTask = ES3.Load<CurrentTask_SO>("currentTask1");
         switchData = ES3.Load<SwitchData_SO>("switchData1");
         saveTimeDate = ES3.Load<SaveTimeDate_SO>("saveTimeDate1");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
 
     }
     public void LoadButton2()
@@ -64,7 +64,7 @@ public class TitleLoadManager : MonoBehaviour
         currentTask = ES3.Load<CurrentTask_SO>("currentTask2");
         switchData = ES3.Load<SwitchData_SO>("switchData2");
         saveTimeDate = ES3.Load<SaveTimeDate_SO>("saveTimeDate2");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
 
     }
     public void LoadButton3()
@@ -76,7 +76,7 @@ public class TitleLoadManager : MonoBehaviour
         currentTask = ES3.Load<CurrentTask_SO>("currentTask3");
         switchData = ES3.Load<SwitchData_SO>("switchData3");
         saveTimeDate = ES3.Load<SaveTimeDate_SO>("saveTimeDate3");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
 
     }
     public void LoadButton4()
@@ -88,7 +88,7 @@ public class TitleLoadManager : MonoBehaviour
         currentTask = ES3.Load<CurrentTask_SO>("currentTask4");
         switchData = ES3.Load<SwitchData_SO>("switchData4");
         saveTimeDate = ES3.Load<SaveTimeDate_SO>("saveTimeDate4");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
 
     }
 

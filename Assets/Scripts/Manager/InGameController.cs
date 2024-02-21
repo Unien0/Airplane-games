@@ -15,6 +15,7 @@ public class InGameController : MonoBehaviour
     public GameObject stopCanvas;
     public GameObject treasureObj;
     public bool stop;
+    public GameObject transitionPos;
 
 
     public void Awake()
@@ -72,7 +73,8 @@ public class InGameController : MonoBehaviour
         //清空当前任务
         currentTask.ResetTaskData();
         //返回场景
-        SceneManager.LoadScene("Rest");
+        transitionPos.SetActive(true);
+        //SceneManager.LoadScene("Rest");
     }
 
     public void ButtonStop()
@@ -97,7 +99,8 @@ public class InGameController : MonoBehaviour
         {
             EventCenter.Broadcast(EventType.NewPlayer);
         }
-        SceneManager.LoadScene("Rest");
+        //SceneManager.LoadScene("Rest");
+        transitionPos.SetActive(true);
     }
 
     public void ButtonGameOver()

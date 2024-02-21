@@ -13,7 +13,7 @@ public class SwitchSetting : MonoBehaviour
 
     private void Awake()
     {
-        if (switchData.newbieTaskClear)
+        if (switchData.newbieTaskClear && flowchart!= null)
         {
             flowchart.SetBooleanVariable("NewPlayer", true);
             takeObject.SetActive(true);
