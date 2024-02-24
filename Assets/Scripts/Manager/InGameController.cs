@@ -16,6 +16,7 @@ public class InGameController : MonoBehaviour
     public GameObject treasureObj;
     public bool stop;
     public GameObject transitionPos;
+    public Flowchart flowchart;
 
 
     public void Awake()
@@ -47,6 +48,10 @@ public class InGameController : MonoBehaviour
         {
             ButtonStop();
         }
+        if (flowchart.GetBooleanVariable("taskClear"))
+        {
+            transitionPos.SetActive(true);
+        }
     }
     
 
@@ -73,7 +78,7 @@ public class InGameController : MonoBehaviour
         //清空当前任务
         currentTask.ResetTaskData();
         //返回场景
-        transitionPos.SetActive(true);
+        flowchart.ExecuteBlock("任务完成");
         //SceneManager.LoadScene("Rest");
     }
 

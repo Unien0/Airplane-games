@@ -83,17 +83,41 @@ public class TitleSwitchController : MonoBehaviour
         switch (index)
         {
             case 0:
-                Screen.SetResolution(1920, 1080, false);
+                if (settingData.fullSceen)
+                {
+                    Screen.SetResolution(1920, 1080, true);
+                }
+                else
+                {
+                    Screen.SetResolution(1920, 1080, false);
+                }
+                
                 settingData.setQuality = 0;
                 ES3.Save("settingData", settingData);
                 break;
             case 1:
-                Screen.SetResolution(1600, 900, false);
+                if (settingData.fullSceen)
+                {
+                    Screen.SetResolution(1600, 900, true);
+                }
+                else
+                {
+                    Screen.SetResolution(1600, 900, false);
+                }
+                
                 settingData.setQuality = 1;
                 ES3.Save("settingData", settingData);
                 break;
             case 2:
-                Screen.SetResolution(1280, 720, false);
+                if (settingData.fullSceen)
+                {
+                    Screen.SetResolution(1280, 720, true);
+                }
+                else
+                {
+                    Screen.SetResolution(1280, 720, false);
+                }
+                
                 settingData.setQuality = 2;
                 ES3.Save("settingData", settingData);
                 break;
