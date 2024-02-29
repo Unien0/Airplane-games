@@ -24,7 +24,7 @@ public class InGameController : MonoBehaviour
         EventCenter.AddListener(EventType.ExterminateTaskClear, TaskClear);
         EventCenter.AddListener(EventType.CollectTaskClear, TaskClear);
         EventCenter.AddListener(EventType.SurvivalTaskClear, TaskClear);
-        
+        EventCenter.AddListener(EventType.PlayerDid, PlayerDeath);
     }
 
     public void OnDestroy()
@@ -32,6 +32,7 @@ public class InGameController : MonoBehaviour
         EventCenter.RemoveListener(EventType.ExterminateTaskClear, TaskClear);
         EventCenter.RemoveListener(EventType.CollectTaskClear, TaskClear);
         EventCenter.RemoveListener(EventType.SurvivalTaskClear, TaskClear);
+        EventCenter.RemoveListener(EventType.PlayerDid, PlayerDeath);
     }
     private void Start()
     {
@@ -112,4 +113,10 @@ public class InGameController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayerDeath()
+    {
+        flowchart.ExecuteBlock("任务失败");
+    }
+
 }

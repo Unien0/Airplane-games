@@ -24,9 +24,9 @@ MonoBehaviour:
     soundPitchMax: 1
     soundVolume: 0.75
   - soundName: 2
-    soundClip: {fileID: 8300000, guid: 5bc7927f28e1052488dde6b6702239d7, type: 3}
-    soundPitchMin: 1
-    soundPitchMax: 1
+    soundClip: {fileID: 8300000, guid: e75df5cd9c1f944ce99e585d983fa119, type: 3}
+    soundPitchMin: 0.917
+    soundPitchMax: 1.056
     soundVolume: 0.7
   - soundName: 3
     soundClip: {fileID: 8300000, guid: 481cfc1ac95141243ad102346907deb9, type: 3}

@@ -6,6 +6,7 @@ public class FlankShrapnel : MonoBehaviour
 {
     [Header("侧翼散弹")]
     public PlayerBullet_SO bulletData;
+    public PlayerData_SO playerData;
 
     [SerializeField]
     [ReadOnly]
@@ -23,15 +24,18 @@ public class FlankShrapnel : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= bulletCD)
+        if (!playerData.isDead)
         {
-            for (int i = 0; i < firePoint.Length; i++)
+            time += Time.deltaTime;
+            if (time >= bulletCD)
             {
-                FindObjectOfType<FSBulletPool>().GetExplosion(firePoint[i].position, firePoint[i].rotation);
+                for (int i = 0; i < firePoint.Length; i++)
+                {
+                    FindObjectOfType<FSBulletPool>().GetExplosion(firePoint[i].position, firePoint[i].rotation);
+                }
+                time -= bulletCD;
+                EventHandler.CallPlaySoundEvent(SoundName.Shot1);
             }
-            time -= bulletCD;
-            EventHandler.CallPlaySoundEvent(SoundName.Shot1);
         }
     }
 }

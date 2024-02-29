@@ -58,6 +58,7 @@ public class TMBullet : MonoBehaviour
         // 更新子弹的方向，朝向目标
         Vector2 direction = (target.position - transform.position).normalized;
         rb2D.velocity = direction * bulletCurrentSpeed;
+        transform.up = direction;
     }
 
     void Existence()

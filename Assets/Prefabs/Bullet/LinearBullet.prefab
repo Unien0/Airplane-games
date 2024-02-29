@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 8602000564361976376}
   - component: {fileID: 1366213432349261301}
   - component: {fileID: 2778854720483538901}
+  - component: {fileID: 8017319733021376323}
   m_Layer: 0
   m_Name: LinearBullet
   m_TagString: Untagged
@@ -158,9 +159,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7073131001011608199}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.3, z: 0.2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7073131000626589947}
@@ -208,8 +209,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4009434, g: 0.99419457, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cf9760a2dafc94f97b705a62ec67e9ff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -270,6 +271,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletData: {fileID: 11400000, guid: 05ec617357afbf14e8fd9074b2701a12, type: 2}
   linerBulletCurrentSpeed: 0
-  speed: 10
-  damage: 1
-  existenceTime: 3
+  playerBulletCurrentDamage: 1
+  linerBulletCurrentDamage: 1
+  linerBulletCurrentPenetrationCount: 1
+  newTime: 0
+--- !u!95 &8017319733021376323
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073131001011608199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a767d342f70a54806ade1a7245b9aa18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -6,5 +6,5 @@ public enum EventType
     Save,Load,//存档相关，场景移动时调用
 
     ExterminateTaskClear, CollectTaskClear, SurvivalTaskClear,
-    NewPlayer,
+    NewPlayer,PlayerDid,
 }
